@@ -57,4 +57,24 @@ router.post('/ingest', requireApiKey, express.json({ limit: '2mb' }), async (req
   }
 });
 
+router.post('/seed', requireApiKey, async (req, res) => {
+  try {
+    const seed = require('../data/seed-bandi');
+    const { rows } = await db.query('SELECT count(*)::int AS n FROM bandi');
+    if (rows[0].n > 0) return res.json({ ok: true, skipped: true, existing: rows[0].n });
+    for (const b of seed) {
+      await db.query(
+        `INSERT INTO bandi (id,title_it,title_en,ente,livello,tipo,regione,provincia,settore,categoria_it,categoria_en,scadenza,importo_it,importo_en,sintesi_it,sintesi_en,link,fonte)
+         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18)
+         ON CONFLICT (id) DO NOTHING`,
+        [b.id,b.title_it,b.title_en,b.ente,b.livello,b.tipo,b.regione,b.provincia||'',b.settore,b.categoria_it,b.categoria_en,b.scadenza,b.importo_it,b.importo_en,b.sintesi_it,b.sintesi_en,b.link,b.fonte]
+      );
+    }
+    res.json({ ok: true, inserted: seed.length });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: 'errore interno' });
+  }
+});
+
 module.exports = router;
