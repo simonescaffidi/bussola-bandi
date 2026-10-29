@@ -1,0 +1,85 @@
+<%- include('layout_top') %>
+<section class="hero">
+  <h1><%= t('h1') %></h1>
+  <p><%= t('lede') %></p>
+</section>
+
+<form class="filters" method="get" action="/" id="filters-form">
+  <div class="field">
+    <label><%= t('f_search') %></label>
+    <input type="text" name="q" id="q" placeholder="<%= t('f_search_ph') %>">
+  </div>
+  <div class="field">
+    <label><%= t('f_target') %></label>
+    <select id="f-target">
+      <option value=""><%= t('all') %></option>
+      <option value="cittadino"><%= t('citizen') %></option>
+      <option value="impresa"><%= t('business') %></option>
+    </select>
+  </div>
+  <div class="field">
+    <label><%= t('f_region') %></label>
+    <select id="f-regione">
+      <option value=""><%= t('all') %></option>
+      <% regioni.forEach(function(r){ %><option value="<%= r %>"><%= r %></option><% }) %>
+    </select>
+  </div>
+  <div class="field">
+    <label><%= t('f_province') %></label>
+    <select id="f-provincia"><option value=""><%= t('all') %></option></select>
+  </div>
+  <div class="field">
+    <label><%= t('f_sector') %></label>
+    <select id="f-settore">
+      <option value=""><%= t('all') %></option>
+      <% settori.forEach(function(s){ %><option value="<%= s %>"><%= s %></option><% }) %>
+    </select>
+  </div>
+</form>
+
+<div id="result-count" style="color:#4b564e;font-size:13px;margin-bottom:6px"></div>
+<div class="results" id="results">
+  <% bandi.forEach(function(b){ %>
+  <div class="card" data-tipo="<%= b.tipo %>" data-regione="<%= b.regione %>" data-provincia="<%= b.provincia||'' %>" data-settore="<%= b.settore %>" data-q="<%= (lang==='en'? b.title_en : b.title_it).toLowerCase() + ' ' + b.ente.toLowerCase() %>">
+    <span class="chip"><%= b.livello %></span><span class="chip"><%= b.regione %></span>
+    <h3><a href="<%= b.link %>" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><%= lang==='en' ? b.title_en : b.title_it %></a></h3>
+    <div class="ente"><%= b.ente %></div>
+    <p><%= lang==='en' ? b.sintesi_en : b.sintesi_it %></p>
+    <div class="meta">
+      <span><strong><%= t('deadline') %>:</strong> <%= b.scadenza || '-' %></span>
+      <span><strong><%= t('amount') %>:</strong> <%= lang==='en' ? b.importo_en : b.importo_it %></span>
+    </div>
+    <a class="btn" href="<%= b.link %>" target="_blank" rel="noopener"><%= t('go_to') %></a>
+  </div>
+  <% }) %>
+</div>
+<p id="no-results" style="display:none;color:#4b564e"><%= t('no_results') %></p>
+
+<script>
+(function(){
+  var cards = Array.from(document.querySelectorAll('.card'));
+  var q = document.getElementById('q'), target = document.getElementById('f-target'),
+      regione = document.getElementById('f-regione'), provincia = document.getElementById('f-provincia'),
+      settore = document.getElementById('f-settore'), count = document.getElementById('result-count'),
+      noRes = document.getElementById('no-results');
+  function apply(){
+    var qv = q.value.toLowerCase(), tv = target.value, rv = regione.value, pv = provincia.value, sv = settore.value;
+    var visible = 0;
+    cards.forEach(function(c){
+      var ok = true;
+      if (qv && c.dataset.q.indexOf(qv) === -1) ok = false;
+      if (tv && c.dataset.tipo !== tv && c.dataset.tipo !== 'entrambi') ok = false;
+      if (rv && c.dataset.regione !== rv) ok = false;
+      if (pv && c.dataset.provincia !== pv) ok = false;
+      if (sv && c.dataset.settore !== sv) ok = false;
+      c.style.display = ok ? '' : 'none';
+      if (ok) visible++;
+    });
+    count.textContent = visible + ' <%= t("results") %>';
+    noRes.style.display = visible === 0 ? 'block' : 'none';
+  }
+  [q, target, regione, provincia, settore].forEach(function(el){ el.addEventListener('input', apply); });
+  apply();
+})();
+</script>
+<%- include('layout_bottom') %>

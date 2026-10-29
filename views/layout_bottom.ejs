@@ -1,0 +1,33 @@
+</main>
+<footer>
+  <div class="wrap">
+    <p><%= t('footer_disclaimer') %> &middot; <a href="/privacy"><%= t('privacy_link') %></a></p>
+    <p><%= t('powered') %> <a href="https://www.simonescaffidi.it" target="_blank" rel="noopener">www.simonescaffidi.it</a></p>
+  </div>
+</footer>
+<div id="cookie-banner" role="dialog" style="display:none">
+  <p><%= t('cookie_text') %></p>
+  <div class="row">
+    <button class="btn2" id="cookie-decline"><%= t('cookie_decline') %></button>
+    <button class="btn2 primary" id="cookie-accept"><%= t('cookie_accept') %></button>
+  </div>
+</div>
+<script>
+(function(){
+  try{
+    if(!localStorage.getItem('cookie-consent')){
+      document.getElementById('cookie-banner').style.display='block';
+    }
+    document.getElementById('cookie-accept').onclick=function(){
+      localStorage.setItem('cookie-consent','accepted');
+      document.getElementById('cookie-banner').style.display='none';
+    };
+    document.getElementById('cookie-decline').onclick=function(){
+      localStorage.setItem('cookie-consent','essential');
+      document.getElementById('cookie-banner').style.display='none';
+    };
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

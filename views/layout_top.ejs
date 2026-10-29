@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="<%= lang %>">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><%= typeof pageTitle !== 'undefined' ? pageTitle : t('site_name') + ' - ' + t('tagline') %></title>
+<meta name="description" content="<%= typeof pageDesc !== 'undefined' ? pageDesc : t('lede') %>">
+<meta name="robots" content="index, follow">
+<link rel="alternate" hreflang="it" href="?lang=it">
+<link rel="alternate" hreflang="en" href="?lang=en">
+<meta property="og:title" content="<%= t('site_name') %>">
+<meta property="og:description" content="<%= t('lede') %>">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap site-bar">
+    <div class="brand"><%= t('site_name') %></div>
+    <nav>
+      <a href="/"><%= t('nav_home') %></a>
+      <a href="/canali"><%= t('nav_canali') %></a>
+      <a href="/newsletter"><%= t('nav_newsletter') %></a>
+    </nav>
+    <div class="lang">
+      <a class="<%= lang==='it'?'active':'' %>" href="?lang=it">IT</a>
+      <a class="<%= lang==='en'?'active':'' %>" href="?lang=en">EN</a>
+    </div>
+  </div>
+</header>
+<main class="wrap">

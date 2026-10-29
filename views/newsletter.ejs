@@ -1,0 +1,21 @@
+<%- include('layout_top', {pageTitle: t('newsletter_title') + ' - ' + t('site_name')}) %>
+<section class="hero">
+  <h1><%= t('newsletter_title') %></h1>
+  <p><%= t('newsletter_lede') %></p>
+</section>
+<div class="nl-box">
+  <% if (ok) { %><div class="msg-ok"><%= t('newsletter_success') %></div><% } %>
+  <% if (err) { %><div class="msg-err">Errore, controlla l'indirizzo email.</div><% } %>
+  <form method="post" action="/newsletter">
+    <input type="email" name="email" required placeholder="<%= t('newsletter_email') %>">
+    <select name="target">
+      <option value="tutti"><%= t('all') %></option>
+      <option value="cittadino"><%= t('citizen') %></option>
+      <option value="impresa"><%= t('business') %></option>
+    </select>
+    <input type="text" name="regione" placeholder="<%= t('f_region') %> (<%= t('all').toLowerCase() %>)">
+    <input type="text" name="settore" placeholder="<%= t('f_sector') %> (<%= t('all').toLowerCase() %>)">
+    <button type="submit"><%= t('newsletter_submit') %></button>
+  </form>
+</div>
+<%- include('layout_bottom') %>

@@ -1,0 +1,17 @@
+<%- include('layout_top', {pageTitle: t('canali_title') + ' - ' + t('site_name'), pageDesc: t('canali_lede')}) %>
+<section class="hero">
+  <h1><%= t('canali_title') %></h1>
+  <p><%= t('canali_lede') %></p>
+</section>
+<% gruppi.forEach(function(g){ %>
+  <h3><%= g %></h3>
+  <table class="canali">
+    <% canali.filter(function(c){return c.gruppo===g}).forEach(function(c){ %>
+    <tr>
+      <td><strong><%= c.nome %></strong><% if(c.note_it){ %><br><span style="color:#4b564e"><%= c.note_it %></span><% } %></td>
+      <td><a href="<%= c.url %>" target="_blank" rel="noopener"><%= c.url.replace('https://','') %></a></td>
+    </tr>
+    <% }) %>
+  </table>
+<% }) %>
+<%- include('layout_bottom') %>

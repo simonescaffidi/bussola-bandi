@@ -1,0 +1,1 @@
+-- Seed iniziale gestito via codice (src/seed-run.js), non via SQL puro, per evitare duplicazioni.

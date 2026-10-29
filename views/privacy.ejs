@@ -1,0 +1,16 @@
+<%- include('layout_top', {pageTitle: t('privacy_link') + ' - ' + t('site_name')}) %>
+<section class="hero">
+<h1><%= t('privacy_link') %></h1>
+<% if (lang==='it') { %>
+<p>Bussola Bandi (<a href="https://www.simonescaffidi.it">www.simonescaffidi.it</a>) non è un ente erogatore né un intermediario finanziario: è un servizio informativo indipendente.</p>
+<p><strong>Dati raccolti:</strong> se vi iscrivete alla newsletter raccogliamo l'indirizzo email e i filtri scelti (regione, settore, destinatario), al solo scopo di inviarvi le notifiche richieste. I dati sono trattati tramite Brevo (fornitore email) e conservati fino a disiscrizione.</p>
+<p><strong>Vostri diritti:</strong> potete annullare l'iscrizione in ogni momento tramite il link presente in ogni email, oppure scrivendo a info@simonescaffidi.it per l'accesso, la rettifica o la cancellazione dei vostri dati (artt. 15-22 GDPR Reg. UE 2016/679).</p>
+<p><strong>Cookie:</strong> usiamo solo cookie tecnici necessari (lingua) e nessun cookie di tracciamento o profilazione pubblicitaria.</p>
+<% } else { %>
+<p>Bussola Bandi (<a href="https://www.simonescaffidi.it">www.simonescaffidi.it</a>) is not a funding body or financial intermediary: it is an independent information service.</p>
+<p><strong>Data collected:</strong> if you subscribe to the newsletter we collect your email address and chosen filters (region, sector, audience), solely to send the notifications you requested. Data is processed via Brevo (email provider) and kept until you unsubscribe.</p>
+<p><strong>Your rights:</strong> you can unsubscribe anytime via the link in every email, or write to info@simonescaffidi.it to access, correct or delete your data (GDPR Articles 15-22, EU Regulation 2016/679).</p>
+<p><strong>Cookies:</strong> we only use necessary technical cookies (language) and no tracking or advertising cookies.</p>
+<% } %>
+</section>
+<%- include('layout_bottom') %>
