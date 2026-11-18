@@ -1,0 +1,29 @@
+<%- include('layout_top', {pageTitle: sim.titolo + ' - ' + t('site_name'), pageDesc: sim.intro.slice(0, 155)}) %>
+<section class="hero">
+  <p class="crumb"><a href="/simulatori">← <%= t('nav_simulatori') %></a></p>
+  <h1><%= sim.titolo %></h1><p><%= sim.intro %></p>
+</section>
+<div class="sim">
+  <form id="sim-form" data-slug="<%= sim.slug %>" class="sim-form" novalidate>
+    <% sim.campi.forEach(function(c){ %>
+      <% if (c.tipo === 'numero') { %>
+        <label for="s-<%= c.nome %>"><%= c.etichetta %></label>
+        <input id="s-<%= c.nome %>" type="number" name="<%= c.nome %>" min="<%= c.min %>" max="<%= c.max %>" step="1000" value="<%= c.valore %>" inputmode="numeric">
+      <% } else if (c.tipo === 'scelta') { %>
+        <label for="s-<%= c.nome %>"><%= c.etichetta %></label>
+        <select id="s-<%= c.nome %>" name="<%= c.nome %>"><% c.opzioni.forEach(function(o){ %><option value="<%= o[0] %>"><%= o[1] %></option><% }) %></select>
+      <% } else { %>
+        <label class="check"><input type="checkbox" name="<%= c.nome %>"> <span><%= c.etichetta %></span></label>
+      <% } %>
+    <% }) %>
+  </form>
+  <div class="sim-ris" aria-live="polite">
+    <div class="sim-lab"><%= t('sim_stima') %></div>
+    <div id="sim-out"></div>
+  </div>
+</div>
+<p class="muted small"><%= sim.nota %> <%= t('sim_agg') %> <%= new Date(sim.aggiornato).toLocaleDateString(lang === 'en' ? 'en-GB' : 'it-IT') %>.</p>
+<% if (b) { %><p class="azioni"><a class="btn ghost" href="/bando/<%= b.id %>"><%= t('sim_scheda') %></a> <a class="btn ghost" href="<%= b.link %>" target="_blank" rel="noopener"><%= t('official') %> ↗</a></p><% } %>
+<%- include('_assistenza', {bandoId: sim.bando_id, origine: 'simulatore', ritorno: '/simulatori/' + sim.slug}) %>
+<script src="/js/simulatori.js" defer></script>
+<%- include('layout_bottom') %>

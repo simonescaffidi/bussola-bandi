@@ -3,7 +3,7 @@ const { chiudiScaduti, logImport } = require('../bandi-store');
 const { notificaNuovi } = require('../notify');
 const { sendAlert } = require('../alert');
 
-const IMPORTATORI = { incentivitalia: require('./incentivitalia'), eu: require('./eu'), rss: require('./rss') };
+const IMPORTATORI = { incentivitalia: require('./incentivitalia'), eu: require('./eu'), rss: require('./rss'), monitor: require('./monitor') };
 let inCorso = false;
 
 async function eseguiTutti(quali) {

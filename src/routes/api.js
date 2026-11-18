@@ -46,7 +46,7 @@ router.post('/import', (req, res) => {
 router.get('/import/stato', async (req, res) => {
   const log = await db.query('SELECT importer, ok, dettagli, created_at FROM import_log ORDER BY id DESC LIMIT 12');
   const tot = await db.query(`SELECT origine, count(*)::int AS n FROM bandi WHERE attivo GROUP BY origine ORDER BY n DESC`);
-  const fonti = await db.query(`SELECT gruppo, count(*)::int AS n FROM fonti GROUP BY gruppo ORDER BY n DESC`);
+  const fonti = await db.query(`SELECT gruppo, count(*)::int AS n, count(*) FILTER (WHERE monitor_status='ok')::int AS lette, count(*) FILTER (WHERE changed_at IS NOT NULL AND (last_checked_at IS NULL OR changed_at > last_checked_at))::int AS cambiate FROM fonti GROUP BY gruppo ORDER BY n DESC`);
   const segn = await db.query(`SELECT stato, count(*)::int AS n FROM segnalazioni GROUP BY stato`);
   res.json({ bandi_attivi: tot.rows, fonti: fonti.rows, segnalazioni: segn.rows, log: log.rows });
 });
@@ -71,15 +71,43 @@ router.get('/probe', async (req, res) => {
   res.json(out);
 });
 
-// Rotazione delle fonti: restituisce quelle controllate meno di recente e le segna come prese in carico.
+// Fonti da leggere: prima quelle la cui pagina è cambiata dall'ultimo controllo dell'agente, poi le meno recenti.
 router.get('/fonti/da-controllare', async (req, res) => {
   const n = Math.min(parseInt(req.query.n, 10) || 40, 100);
   const gruppo = req.query.gruppo || null;
   const { rows } = await db.query(
-    `SELECT id, nome, gruppo, area, regione, url_bandi, note FROM fonti
+    `SELECT id, nome, gruppo, area, regione, url_bandi, note,
+            (changed_at IS NOT NULL AND (last_checked_at IS NULL OR changed_at > last_checked_at)) AS cambiata
+     FROM fonti
      WHERE url_bandi <> '' AND ($2::text IS NULL OR gruppo = $2)
-     ORDER BY last_checked_at ASC NULLS FIRST, id LIMIT $1`, [n, gruppo]);
+     ORDER BY (changed_at IS NOT NULL AND (last_checked_at IS NULL OR changed_at > last_checked_at)) DESC,
+              (gruppo = 'Altri enti erogatori') ASC, last_checked_at ASC NULLS FIRST, id LIMIT $1`, [n, gruppo]);
   await db.query('UPDATE fonti SET last_checked_at = now() WHERE id = ANY($1)', [rows.map(r => r.id)]);
+  res.json(rows);
+});
+
+// Aggiunta di una nuova fonte al registro (scoperta dall'agente).
+router.post('/fonti', json, async (req, res) => {
+  const f = req.body || {};
+  if (!f.nome || !/^https?:\/\//.test(f.url_bandi || '')) return res.status(400).json({ error: 'nome e url_bandi obbligatori' });
+  const gruppi = ['Nazionali ed europee', 'Regioni e fondi UE regionali', 'Finanziarie e agenzie regionali', 'Camere di Commercio', 'GAL', 'FLAG (pesca)', 'Fonti tematiche', 'Altri enti erogatori'];
+  const chiave = String(f.url_bandi).toLowerCase().replace(/^https?:\/\/(www\.)?/, '').replace(/\/+$/, '') + '|' + String(f.nome).toLowerCase().slice(0, 60);
+  const r = await db.query(
+    `INSERT INTO fonti (chiave, nome, gruppo, area, regione, url, url_bandi, feed, verificato, note) VALUES ($1,$2,$3,$4,$5,$6,$6,$7,true,$8) ON CONFLICT (chiave) DO NOTHING RETURNING id`,
+    [chiave, f.nome, gruppi.includes(f.gruppo) ? f.gruppo : 'Altri enti erogatori', f.area || '', f.regione || '', f.url_bandi, f.feed || '', f.note || 'Aggiunta dall\'agente']);
+  res.json({ ok: true, aggiunta: r.rowCount === 1 });
+});
+
+// Scheda completa di un bando (requisiti, spese, procedura, FAQ) e messa in evidenza.
+router.post('/bandi/:id/dettagli', json, async (req, res) => {
+  const d = req.body || {};
+  const r = await db.query(`UPDATE bandi SET dettagli = $2, in_evidenza = COALESCE($3, in_evidenza) WHERE id = $1`, [req.params.id, JSON.stringify(d.dettagli || {}), typeof d.in_evidenza === 'boolean' ? d.in_evidenza : null]);
+  res.json({ ok: true, aggiornati: r.rowCount });
+});
+
+// Richieste di assistenza arrivate dal sito.
+router.get('/richieste', async (req, res) => {
+  const { rows } = await db.query(`SELECT * FROM richieste ORDER BY id DESC LIMIT 200`);
   res.json(rows);
 });
 

@@ -40,6 +40,13 @@
       <% ['europeo','nazionale','regionale'].forEach(function(l){ %><option value="<%= l %>" <%= f.livello===l?'selected':'' %>><%= t('lvl_' + l) %></option><% }) %>
     </select>
   </div>
+  <div class="field">
+    <label for="stato"><%= t('f_stato') %></label>
+    <select name="stato" id="stato">
+      <option value=""><%= t('all') %></option>
+      <% stati.forEach(function(st){ %><option value="<%= st %>" <%= f.stato===st?'selected':'' %>><%= t('stato_' + st) %></option><% }) %>
+    </select>
+  </div>
   <% if (province.length) { %>
   <div class="field">
     <label for="provincia"><%= t('f_province') %></label>
@@ -62,8 +69,8 @@
 <div class="results">
   <% bandi.forEach(function(b){ var scad = b.data_chiusura ? new Date(b.data_chiusura).toLocaleDateString(lang === 'en' ? 'en-GB' : 'it-IT') : (b.scadenza === 'rolling' || b.scadenza === 'a sportello' ? t('rolling') : (b.scadenza || '-')); %>
   <article class="card">
-    <div><span class="chip"><%= t('lvl_' + b.livello) %></span><span class="chip"><%= b.regione %></span><span class="chip alt"><%= t('settore_' + b.settore) %></span></div>
-    <h3><a href="<%= b.link %>" target="_blank" rel="noopener"><%= lang==='en' ? b.title_en : b.title_it %></a></h3>
+    <div><span class="chip st-<%= b.stato %>"><%= t('stato_' + b.stato) %></span><span class="chip"><%= t('lvl_' + b.livello) %></span><span class="chip"><%= b.regione %></span><span class="chip alt"><%= t('settore_' + b.settore) %></span></div>
+    <h3><a href="/bando/<%= encodeURIComponent(b.id) %>"><%= lang==='en' ? b.title_en : b.title_it %></a></h3>
     <div class="ente"><%= b.ente %></div>
     <p><%= lang==='en' ? b.sintesi_en : b.sintesi_it %></p>
     <div class="meta">
@@ -72,7 +79,9 @@
       <% if (b.beneficiari) { %><span><strong><%= t('beneficiaries') %>:</strong> <%= b.beneficiari.length > 140 ? b.beneficiari.slice(0,137) + '…' : b.beneficiari %></span><% } %>
       <% if (b.fonte) { %><span><strong><%= t('source') %>:</strong> <%= b.fonte %></span><% } %>
     </div>
-    <a class="btn" href="<%= b.link %>" target="_blank" rel="noopener"><%= t('go_to') %></a>
+    <a class="btn" href="/bando/<%= encodeURIComponent(b.id) %>"><%= t('details') %></a>
+    <% if (b.simulatore) { %><a class="btn ghost" href="/simulatori/<%= b.simulatore %>"><%= t('nav_simulatori') %></a><% } %>
+    <a class="btn ghost" href="<%= b.link %>" target="_blank" rel="noopener"><%= t('go_to') %> ↗</a>
   </article>
   <% }) %>
 </div>

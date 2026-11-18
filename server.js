@@ -27,6 +27,7 @@ app.get('/health', (req, res) => res.json({ ok: true }));
 
 app.use('/', require('./src/routes/index'));
 app.use('/', require('./src/routes/newsletter'));
+app.use('/', require('./src/routes/pubbliche'));
 app.use('/api', require('./src/routes/api'));
 
 app.use((req, res) => res.status(404).send('Pagina non trovata'));
@@ -43,5 +44,6 @@ app.listen(port, () => {
   require('./src/seed-fonti').seedFonti()
     .then(n => console.log('Registro fonti aggiornato:', n))
     .catch(e => { console.error(e); sendAlert('Caricamento registro fonti', e); });
+  require('./src/schede').applicaSchede().catch(e => { console.error(e); sendAlert('Schede in evidenza', e); });
   require('./src/importers').pianifica();
 });

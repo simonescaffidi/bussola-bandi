@@ -67,3 +67,47 @@ table.canali td{vertical-align:top;overflow-wrap:anywhere}
 table.canali td:last-child{min-width:180px}
 nav a{display:inline-block;padding:4px 0}
 .nl-box label{display:block;font-size:11px;text-transform:uppercase;color:var(--ink-soft);margin:4px 0}
+/* v3: stati, scheda bando, scadenze, simulatori, richiesta assistenza */
+.chip.st-aperto{background:#e5f2e8;color:#2f7a4d}
+.chip.st-in-scadenza{background:#fbe3d6;color:#a3421a}
+.chip.st-in-arrivo{background:#e2eaf7;color:#2a4f8f}
+.chip.st-chiuso{background:#eceee8;color:#6b7068}
+.card a.btn,.azioni a.btn{margin-right:8px}
+a.btn{display:inline-block;margin-top:10px;background:var(--accent);color:var(--accent-ink);padding:8px 14px;border-radius:7px;text-decoration:none;font-size:13px;font-weight:700}
+a.btn.ghost,.card a.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+form.filters.two{grid-template-columns:repeat(2,minmax(0,280px))}
+@media (max-width:560px){form.filters.two{grid-template-columns:1fr}}
+.crumb{font-size:13px;margin:18px 0 10px}.crumb a{color:var(--accent);text-decoration:none}
+.scheda{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:8px 24px 22px;margin:18px 0}
+.scheda h1{font-size:clamp(22px,3vw,30px);line-height:1.2;margin:12px 0 4px;overflow-wrap:anywhere}
+.scheda h2{font-size:18px;margin:22px 0 6px}
+.scheda p,.scheda li{font-size:15px;max-width:75ch;overflow-wrap:anywhere}
+.scheda .ente{color:var(--ink-soft);margin:0 0 14px}
+dl.fatti{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0;padding:14px;background:var(--paper);border-radius:8px}
+dl.fatti dt{font-size:11px;text-transform:uppercase;color:var(--ink-soft)}
+dl.fatti dd{margin:2px 0 0;font-weight:600;font-size:14.5px;overflow-wrap:anywhere}
+details.faq{border-top:1px solid var(--line);padding:8px 0}details.faq summary{cursor:pointer;font-weight:600}
+.small{font-size:12.5px}
+.lead{background:var(--surface);border:2px solid var(--accent);border-radius:var(--radius);padding:8px 24px 22px;margin:22px 0}
+.lead h2{font-size:20px;margin:14px 0 4px}
+.lead p{color:var(--ink-soft);max-width:70ch}
+.lead-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 14px;margin:10px 0}
+@media (max-width:640px){.lead-grid{grid-template-columns:1fr}.scheda,.lead{padding:6px 16px 18px}}
+.lead label,.sim-form label{display:block;font-size:12px;color:var(--ink-soft);margin:6px 0 3px}
+.lead input[type=text],.lead input[type=email],.lead input[type=tel],.lead select,.lead textarea,.sim-form input[type=number],.sim-form select{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:7px;background:var(--paper);font:inherit;font-size:14px}
+.lead label.check,.sim-form label.check{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--ink);margin:12px 0}
+.lead label.check a{color:var(--accent)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.sim{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;margin:16px 0}
+@media (max-width:760px){.sim{grid-template-columns:1fr}}
+.sim-form,.sim-ris{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px}
+.sim-ris{border-left:4px solid var(--gold)}
+.sim-lab{font-size:11px;text-transform:uppercase;color:var(--ink-soft)}
+.sim-val{font-size:clamp(28px,5vw,40px);font-weight:700;color:var(--accent);margin:6px 0;font-variant-numeric:tabular-nums}
+.sim-err{color:#a3421a}
+.giorno h2{font-size:17px;margin:20px 0 6px;text-transform:capitalize}
+.giorno ul{margin:0;padding:0;list-style:none;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+.giorno li{padding:9px 14px;border-bottom:1px solid var(--line);font-size:14px;overflow-wrap:anywhere}
+.giorno li:last-child{border-bottom:0}
+.giorno li a{color:var(--ink);font-weight:600;text-decoration:none}.giorno li a:hover{color:var(--accent)}
+.site-bar nav{display:flex;flex-wrap:wrap;gap:2px 16px}.site-bar nav a{margin-right:0}

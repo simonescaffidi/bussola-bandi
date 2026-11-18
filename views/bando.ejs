@@ -1,0 +1,29 @@
+<% var titolo = lang==='en' ? b.title_en : b.title_it; var sint = lang==='en' ? b.sintesi_en : b.sintesi_it; var d = b.dettagli || {};
+   var fmt = function(x){ return x ? new Date(x).toLocaleDateString(lang === 'en' ? 'en-GB' : 'it-IT') : ''; };
+   var scad = b.data_chiusura ? fmt(b.data_chiusura) : (b.scadenza === 'rolling' || b.scadenza === 'a sportello' ? t('rolling') : (b.scadenza || '-')); %>
+<%- include('layout_top', {pageTitle: titolo.slice(0, 90) + ' - ' + t('site_name'), pageDesc: (sint || titolo).slice(0, 155)}) %>
+<article class="scheda">
+  <p class="crumb"><a href="/">← <%= t('nav_home') %></a></p>
+  <div><span class="chip st-<%= b.stato %>"><%= t('stato_' + b.stato) %></span><span class="chip"><%= t('lvl_' + b.livello) %></span><span class="chip"><%= b.regione %></span><span class="chip alt"><%= t('settore_' + b.settore) %></span></div>
+  <h1><%= titolo %></h1>
+  <p class="ente"><%= b.ente %></p>
+  <dl class="fatti">
+    <div><dt><%= t('deadline') %></dt><dd><%= scad %></dd></div>
+    <% if (b.data_apertura) { %><div><dt><%= t('opens') %></dt><dd><%= fmt(b.data_apertura) %></dd></div><% } %>
+    <div><dt><%= t('amount') %></dt><dd><%= lang==='en' ? b.importo_en : b.importo_it %></dd></div>
+    <% if (b.forma || b.categoria_it) { %><div><dt><%= t('type') %></dt><dd><%= b.forma || (lang==='en' ? b.categoria_en : b.categoria_it) %></dd></div><% } %>
+  </dl>
+  <p class="sintesi"><%= sint %></p>
+  <% if (d.beneficiari || b.beneficiari) { %><h2><%= t('who') %></h2><p><%= d.beneficiari || b.beneficiari %></p><% } %>
+  <% if (d.spese) { %><h2><%= t('expenses') %></h2><p><%= d.spese %></p><% } %>
+  <% if (d.procedura && d.procedura.length) { %><h2><%= t('how') %></h2><ol><% d.procedura.forEach(function(p){ %><li><%= p %></li><% }) %></ol><% } %>
+  <% if (d.faq && d.faq.length) { %><h2><%= t('faq') %></h2><% d.faq.forEach(function(q){ %><details class="faq"><summary><%= q[0] %></summary><p><%= q[1] %></p></details><% }) %><% } %>
+  <p class="azioni">
+    <a class="btn" href="<%= b.link %>" target="_blank" rel="noopener"><%= t('official') %> ↗</a>
+    <% if (sim) { %><a class="btn ghost" href="/simulatori/<%= sim.slug %>"><%= t('try_sim') %></a><% } %>
+  </p>
+  <% if (b.fonte) { %><p class="muted small"><%= t('source') %>: <%= b.fonte %> · <%= t('stat_agg') %>: <%= fmt(b.updated_at) %></p><% } %>
+</article>
+<% if (b.stato !== 'chiuso') { %><%- include('_assistenza', {bandoId: b.id, origine: 'scheda', ritorno: '/bando/' + b.id}) %><% } %>
+<script type="application/ld+json"><%- JSON.stringify({ '@context': 'https://schema.org', '@type': 'GovernmentService', name: b.title_it, description: b.sintesi_it, provider: { '@type': 'Organization', name: b.ente }, url: base + '/bando/' + b.id, areaServed: b.regione }).replace(/</g, '\\u003c') %></script>
+<%- include('layout_bottom') %>

@@ -1,0 +1,25 @@
+<section class="lead" id="assistenza">
+  <h2><%= t('lead_title') %></h2>
+  <% if (ok) { %><div class="msg-ok"><%= t('lead_ok') %></div><% } else { %>
+  <p><%= t('lead_lede') %></p>
+  <form method="post" action="/richiesta" class="lead-form">
+    <input type="hidden" name="bando_id" value="<%= bandoId || '' %>">
+    <input type="hidden" name="origine" value="<%= origine %>">
+    <input type="hidden" name="ritorno" value="<%= ritorno %>">
+    <input type="hidden" name="simulazione" id="sim-hidden" value="">
+    <input type="text" name="sito" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="lead-grid">
+      <div><label for="l-nome"><%= t('lead_nome') %></label><input id="l-nome" type="text" name="nome" required maxlength="120" autocomplete="name"></div>
+      <div><label for="l-email">Email</label><input id="l-email" type="email" name="email" required maxlength="200" autocomplete="email"></div>
+      <div><label for="l-tel"><%= t('lead_tel') %></label><input id="l-tel" type="tel" name="telefono" maxlength="40" autocomplete="tel"></div>
+      <div><label for="l-az"><%= t('lead_azienda') %></label><input id="l-az" type="text" name="azienda" maxlength="160" autocomplete="organization"></div>
+      <div><label for="l-reg"><%= t('f_region') %></label>
+        <select id="l-reg" name="regione"><option value=""></option><% regioni.forEach(function(r){ %><option value="<%= r %>"><%= r %></option><% }) %></select></div>
+    </div>
+    <label for="l-msg"><%= t('lead_msg') %></label>
+    <textarea id="l-msg" name="messaggio" rows="3" maxlength="2000"></textarea>
+    <label class="check"><input type="checkbox" name="consenso" value="1" required> <span><%= t('lead_consenso') %> <a href="/privacy" target="_blank"><%= t('privacy_link') %></a></span></label>
+    <button type="submit" class="btn"><%= t('lead_invia') %></button>
+  </form>
+  <% } %>
+</section>

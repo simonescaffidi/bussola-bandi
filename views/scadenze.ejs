@@ -1,0 +1,22 @@
+<%- include('layout_top', {pageTitle: t('scad_title') + ' - ' + t('site_name'), pageDesc: t('scad_lede')}) %>
+<section class="hero"><h1><%= t('scad_title') %></h1><p><%= t('scad_lede') %></p></section>
+<form class="filters two" method="get" action="/scadenze">
+  <div class="field"><label for="regione"><%= t('f_region') %></label>
+    <select name="regione" id="regione" onchange="this.form.submit()"><option value=""><%= t('all') %></option>
+      <% regioni.forEach(function(r){ %><option value="<%= r %>" <%= regione===r?'selected':'' %>><%= r %></option><% }) %></select></div>
+  <div class="field"><label for="giorni"><%= t('scad_giorni') %></label>
+    <select name="giorni" id="giorni" onchange="this.form.submit()">
+      <% [30,60,90].forEach(function(g){ %><option value="<%= g %>" <%= giorni===g?'selected':'' %>><%= t('scad_g').replace('{n}', g) %></option><% }) %></select></div>
+  <noscript><button class="btn" type="submit"><%= t('search_btn') %></button></noscript>
+</form>
+<p class="count"><strong><%= totale %></strong> <%= t('scad_tot') %></p>
+<% perGiorno.forEach(function(g){ %>
+<section class="giorno">
+  <h2><%= new Date(g.data).toLocaleDateString(lang === 'en' ? 'en-GB' : 'it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) %> <span class="chip"><%= g.bandi.length %></span></h2>
+  <ul>
+    <% g.bandi.forEach(function(b){ %><li><a href="/bando/<%= encodeURIComponent(b.id) %>"><%= lang==='en' ? b.title_en : b.title_it %></a> <span class="muted">· <%= b.ente %> · <%= b.regione %></span></li><% }) %>
+  </ul>
+</section>
+<% }) %>
+<% if (!totale) { %><p class="count"><%= t('scad_empty') %></p><% } %>
+<%- include('layout_bottom') %>

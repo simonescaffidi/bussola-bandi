@@ -1,0 +1,12 @@
+<%- include('layout_top', {pageTitle: t('sim_title') + ' - ' + t('site_name'), pageDesc: t('sim_lede')}) %>
+<section class="hero"><h1><%= t('sim_title') %></h1><p><%= t('sim_lede') %></p></section>
+<div class="results">
+  <% simulatori.forEach(function(s){ %>
+  <article class="card">
+    <h3><a href="/simulatori/<%= s.slug %>"><%= s.titolo %></a></h3>
+    <p><%= s.intro %></p>
+    <a class="btn" href="/simulatori/<%= s.slug %>"><%= t('sim_apri') %></a>
+  </article>
+  <% }) %>
+</div>
+<%- include('layout_bottom') %>

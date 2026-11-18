@@ -111,7 +111,24 @@ async function importa(datiGiaScaricati) {
   for (const b of aperti) { if (await upsertBando(b)) nuovi.push(b); }
   const ids = aperti.map(b => b.id);
   const chiusi = await db.query(`UPDATE bandi SET attivo=false WHERE origine='incentivitalia' AND attivo=true AND NOT (id = ANY($1))`, [ids]);
-  return { totale_dataset: raw.length, aperti: aperti.length, nuovi, disattivati: chiusi.rowCount };
+  // Scoperta di nuove fonti: ogni ente con un incentivo aperto il cui sito non è ancora nel registro viene aggiunto.
+  let fontiNuove = 0;
+  try {
+    const { rows } = await db.query(`SELECT url, url_bandi FROM fonti`);
+    const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch (e) { return ''; } };
+    const noti = new Set(rows.flatMap(r => [host(r.url), host(r.url_bandi)]).filter(Boolean));
+    for (const b of aperti) {
+      const h = host(b.link);
+      if (!h || noti.has(h) || /incentivitalia\.gov\.it$/.test(h)) continue;
+      noti.add(h);
+      const origine = new URL(b.link).origin + '/';
+      const r = await db.query(
+        `INSERT INTO fonti (chiave, nome, gruppo, regione, url, url_bandi, verificato, note) VALUES ($1,$2,'Altri enti erogatori',$3,$4,$4,false,'Aggiunta in automatico: ente con incentivi nel catalogo Incentivi Italia.') ON CONFLICT (chiave) DO NOTHING`,
+        [h + '|auto', b.ente.slice(0, 200) || h, ['Nazionale', 'Multiregionale'].includes(b.regione) ? '' : b.regione, origine]);
+      fontiNuove += r.rowCount;
+    }
+  } catch (e) { console.error('Scoperta fonti:', e.message); }
+  return { totale_dataset: raw.length, aperti: aperti.length, nuovi, disattivati: chiusi.rowCount, fonti_nuove: fontiNuove };
 }
 
 module.exports = { importa, scarica };
