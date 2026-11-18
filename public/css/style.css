@@ -111,3 +111,4 @@ details.faq{border-top:1px solid var(--line);padding:8px 0}details.faq summary{c
 .giorno li:last-child{border-bottom:0}
 .giorno li a{color:var(--ink);font-weight:600;text-decoration:none}.giorno li a:hover{color:var(--accent)}
 .site-bar nav{display:flex;flex-wrap:wrap;gap:2px 16px}.site-bar nav a{margin-right:0}
+.wrap.site-bar{padding:14px 20px}
