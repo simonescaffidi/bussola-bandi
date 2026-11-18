@@ -1,55 +1,34 @@
-// Endpoint di ingestione usato dal task pianificato Cowork per aggiornare i bandi
-// e inviare le notifiche email ai iscritti i cui filtri corrispondono.
+// API protette da chiave (header x-api-key): usate dal task pianificato e per la manutenzione.
 const express = require('express');
 const router = express.Router();
 const db = require('../db');
-const { sendMail } = require('../mailer');
 const { sendAlert } = require('../alert');
+const { upsertBando } = require('../bandi-store');
+const { notificaNuovi } = require('../notify');
+const { eseguiTutti } = require('../importers');
 
 function requireApiKey(req, res, next) {
   const key = req.get('x-api-key');
-  if (!key || key !== process.env.INGEST_API_KEY) return res.status(401).json({ error: 'unauthorized' });
+  if (!key || !process.env.INGEST_API_KEY || key !== process.env.INGEST_API_KEY) return res.status(401).json({ error: 'unauthorized' });
   next();
 }
+router.use(requireApiKey);
+const json = express.json({ limit: '5mb' });
 
-router.post('/ingest', requireApiKey, express.json({ limit: '2mb' }), async (req, res) => {
+// Inserimento/aggiornamento di bandi trovati dall'agente giornaliero.
+router.post('/ingest', json, async (req, res) => {
   try {
-    const { bandi } = req.body;
+    const { bandi, segnalazione_id } = req.body || {};
     if (!Array.isArray(bandi)) return res.status(400).json({ error: 'bandi deve essere un array' });
-    const nuovi = [];
+    const nuovi = [], scartati = [];
     for (const b of bandi) {
-      const { rows: existing } = await db.query('SELECT id FROM bandi WHERE id = $1', [b.id]);
-      await db.query(
-        `INSERT INTO bandi (id,title_it,title_en,ente,livello,tipo,regione,provincia,settore,categoria_it,categoria_en,scadenza,importo_it,importo_en,sintesi_it,sintesi_en,link,fonte,updated_at)
-         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18, now())
-         ON CONFLICT (id) DO UPDATE SET title_it=$2,title_en=$3,ente=$4,livello=$5,tipo=$6,regione=$7,provincia=$8,settore=$9,categoria_it=$10,categoria_en=$11,scadenza=$12,importo_it=$13,importo_en=$14,sintesi_it=$15,sintesi_en=$16,link=$17,fonte=$18,updated_at=now()`,
-        [b.id, b.title_it, b.title_en, b.ente, b.livello, b.tipo, b.regione, b.provincia || '', b.settore || 'altro', b.categoria_it, b.categoria_en, b.scadenza, b.importo_it, b.importo_en, b.sintesi_it, b.sintesi_en, b.link, b.fonte || '']
-      );
-      if (existing.length === 0) nuovi.push(b);
+      if (!b || !b.id || !b.title_it || !/^https?:\/\//.test(b.link || '')) { scartati.push(b && b.id); continue; }
+      b.origine = b.origine || 'agente';
+      if (await upsertBando(b)) nuovi.push(b);
     }
-
-    let notificati = 0;
-    if (nuovi.length) {
-      const { rows: subs } = await db.query('SELECT * FROM subscribers WHERE confirmed = true');
-      for (const bando of nuovi) {
-        for (const s of subs) {
-          const matchTarget = s.target === 'tutti' || bando.tipo === 'entrambi' || s.target === bando.tipo;
-          const matchRegione = !s.regione || s.regione === bando.regione || bando.regione === 'Nazionale' || bando.regione === 'Europeo' || bando.regione === 'Multiregionale';
-          const matchSettore = !s.settore || s.settore === bando.settore;
-          if (matchTarget && matchRegione && matchSettore) {
-            await sendMail({
-              to: s.email,
-              subject: `Nuovo bando: ${bando.title_it}`,
-              text: `${bando.title_it}\n\n${bando.sintesi_it || ''}\n\nScadenza: ${bando.scadenza || 'variabile'}\nDettagli: ${bando.link}\n\nPer annullare l'iscrizione: ${process.env.BASE_URL}/newsletter/unsubscribe?token=${s.unsubscribe_token}`,
-              html: `<h2>${bando.title_it}</h2><p>${bando.sintesi_it || ''}</p><p><strong>Scadenza:</strong> ${bando.scadenza || 'variabile'}</p><p><a href="${bando.link}">Vai al bando</a></p><hr><p style="font-size:12px;color:#888"><a href="${process.env.BASE_URL}/newsletter/unsubscribe?token=${s.unsubscribe_token}">Annulla iscrizione</a></p>`
-            });
-            await db.query('INSERT INTO email_log (subscriber_id, bando_id, tipo) VALUES ($1,$2,$3)', [s.id, bando.id, 'nuovo_bando']);
-            notificati++;
-          }
-        }
-      }
-    }
-    res.json({ ok: true, totale: bandi.length, nuovi: nuovi.length, email_inviate: notificati });
+    if (segnalazione_id) await db.query(`UPDATE segnalazioni SET stato='convertita' WHERE id=$1`, [segnalazione_id]);
+    const email = await notificaNuovi(nuovi);
+    res.json({ ok: true, totale: bandi.length, nuovi: nuovi.length, scartati, email_inviate: email });
   } catch (e) {
     console.error(e);
     await sendAlert('POST /api/ingest', e);
@@ -57,24 +36,69 @@ router.post('/ingest', requireApiKey, express.json({ limit: '2mb' }), async (req
   }
 });
 
-router.post('/seed', requireApiKey, async (req, res) => {
-  try {
-    const seed = require('../data/seed-bandi');
-    const { rows } = await db.query('SELECT count(*)::int AS n FROM bandi');
-    if (rows[0].n > 0) return res.json({ ok: true, skipped: true, existing: rows[0].n });
-    for (const b of seed) {
-      await db.query(
-        `INSERT INTO bandi (id,title_it,title_en,ente,livello,tipo,regione,provincia,settore,categoria_it,categoria_en,scadenza,importo_it,importo_en,sintesi_it,sintesi_en,link,fonte)
-         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18)
-         ON CONFLICT (id) DO NOTHING`,
-        [b.id,b.title_it,b.title_en,b.ente,b.livello,b.tipo,b.regione,b.provincia||'',b.settore,b.categoria_it,b.categoria_en,b.scadenza,b.importo_it,b.importo_en,b.sintesi_it,b.sintesi_en,b.link,b.fonte]
-      );
+// Avvio manuale degli importatori automatici (?solo=incentivitalia,eu,rss). Risponde subito, il lavoro prosegue in background.
+router.post('/import', (req, res) => {
+  const solo = String(req.query.solo || '').split(',').filter(Boolean);
+  eseguiTutti(solo).then(r => console.log('Import completato', JSON.stringify(r))).catch(e => console.error(e));
+  res.json({ ok: true, avviato: true });
+});
+
+router.get('/import/stato', async (req, res) => {
+  const log = await db.query('SELECT importer, ok, dettagli, created_at FROM import_log ORDER BY id DESC LIMIT 12');
+  const tot = await db.query(`SELECT origine, count(*)::int AS n FROM bandi WHERE attivo GROUP BY origine ORDER BY n DESC`);
+  const fonti = await db.query(`SELECT gruppo, count(*)::int AS n FROM fonti GROUP BY gruppo ORDER BY n DESC`);
+  const segn = await db.query(`SELECT stato, count(*)::int AS n FROM segnalazioni GROUP BY stato`);
+  res.json({ bandi_attivi: tot.rows, fonti: fonti.rows, segnalazioni: segn.rows, log: log.rows });
+});
+
+// Verifica di raggiungibilità di un sito dal server (per capire quali fonti bloccano il cloud).
+router.get('/probe', async (req, res) => {
+  const urls = [].concat(req.query.url || []).slice(0, 12);
+  const out = [];
+  for (const u of urls) {
+    const t0 = Date.now();
+    try {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 15000);
+      const r = await fetch(u, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; BussolaBandi/1.0)', Range: 'bytes=0-2000' }, signal: ctrl.signal });
+      const body = await r.text();
+      clearTimeout(timer);
+      out.push({ url: u, status: r.status, ms: Date.now() - t0, bytes: body.length });
+    } catch (e) {
+      out.push({ url: u, errore: e.name === 'AbortError' ? 'timeout' : e.message + (e.cause ? ' (' + (e.cause.code || e.cause.message) + ')' : ''), ms: Date.now() - t0 });
     }
-    res.json({ ok: true, inserted: seed.length });
-  } catch (e) {
-    console.error(e);
-    res.status(500).json({ error: 'errore interno' });
   }
+  res.json(out);
+});
+
+// Rotazione delle fonti: restituisce quelle controllate meno di recente e le segna come prese in carico.
+router.get('/fonti/da-controllare', async (req, res) => {
+  const n = Math.min(parseInt(req.query.n, 10) || 40, 100);
+  const gruppo = req.query.gruppo || null;
+  const { rows } = await db.query(
+    `SELECT id, nome, gruppo, area, regione, url_bandi, note FROM fonti
+     WHERE url_bandi <> '' AND ($2::text IS NULL OR gruppo = $2)
+     ORDER BY last_checked_at ASC NULLS FIRST, id LIMIT $1`, [n, gruppo]);
+  await db.query('UPDATE fonti SET last_checked_at = now() WHERE id = ANY($1)', [rows.map(r => r.id)]);
+  res.json(rows);
+});
+
+// Segnalazioni (avvisi/decreti/notizie dai feed) ancora da trasformare in schede bando.
+router.get('/segnalazioni', async (req, res) => {
+  const n = Math.min(parseInt(req.query.n, 10) || 40, 100);
+  const { rows } = await db.query(`SELECT id, fonte_nome, regione, titolo, link, estratto, pubblicato FROM segnalazioni WHERE stato='nuova' ORDER BY pubblicato DESC NULLS LAST, id DESC LIMIT $1`, [n]);
+  res.json(rows);
+});
+router.post('/segnalazioni/:id', json, async (req, res) => {
+  const stato = ['convertita', 'scartata', 'nuova'].includes((req.body || {}).stato) ? req.body.stato : 'scartata';
+  await db.query('UPDATE segnalazioni SET stato=$2 WHERE id=$1', [req.params.id, stato]);
+  res.json({ ok: true });
+});
+
+// Elenco compatto dei bandi attivi, per evitare duplicati.
+router.get('/bandi', async (req, res) => {
+  const { rows } = await db.query(`SELECT id, title_it, ente, regione, data_chiusura, origine FROM bandi WHERE attivo AND ($1::text IS NULL OR regione = $1) ORDER BY updated_at DESC LIMIT 2000`, [req.query.regione || null]);
+  res.json(rows);
 });
 
 module.exports = router;

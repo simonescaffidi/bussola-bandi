@@ -2,16 +2,20 @@
 <section class="hero">
   <h1><%= t('canali_title') %></h1>
   <p><%= t('canali_lede') %></p>
+  <p class="stats"><strong><%= totale %></strong> <%= t('canali_tot') %></p>
 </section>
-<% gruppi.forEach(function(g){ %>
-  <h3><%= g %></h3>
-  <table class="canali">
-    <% canali.filter(function(c){return c.gruppo===g}).forEach(function(c){ %>
+<% gruppi.forEach(function(g, i){ %>
+<details class="gruppo" <%= i === 0 ? 'open' : '' %>>
+  <summary><%= g.nome %> <span class="chip"><%= g.fonti.length %></span></summary>
+  <div class="tablewrap"><table class="canali">
+    <% g.fonti.forEach(function(c){ %>
     <tr>
-      <td><strong><%= c.nome %></strong><% if(c.note_it){ %><br><span style="color:#4b564e"><%= c.note_it %></span><% } %></td>
-      <td><a href="<%= c.url %>" target="_blank" rel="noopener"><%= c.url.replace('https://','') %></a></td>
+      <td><strong><%= c.nome %></strong><% if (c.regione) { %> <span class="muted">· <%= c.regione %></span><% } %>
+        <% if (c.feed) { %><span class="chip alt"><%= t('canali_feed') %></span><% } %><% if (!c.verificato) { %><span class="chip warn"><%= t('canali_nv') %></span><% } %></td>
+      <td><a href="<%= c.url_bandi %>" target="_blank" rel="noopener nofollow"><%= c.url_bandi.replace(/^https?:\/\/(www\.)?/, '').slice(0, 60) %></a></td>
     </tr>
     <% }) %>
-  </table>
+  </table></div>
+</details>
 <% }) %>
 <%- include('layout_bottom') %>

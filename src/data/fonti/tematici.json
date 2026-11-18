@@ -1,0 +1,826 @@
+[
+ {
+  "ente": "MASE - Bandi e avvisi",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.mase.gov.it/portale/bandi-e-avvisi",
+  "feed": null,
+  "verificato": true,
+  "note": "Elenco unico (Liferay), paginabile con ?delta=60&start=N; nessun RSS rilevato -> scraping HTML. Mescola bandi, decreti e consultazioni: filtrare per parole chiave (rifiuti, riciclo, economia circolare, RAEE, imballaggi, Mangiaplastica, credito d'imposta materiali di recupero). Al 18/11/2026 nessun bando rifiuti aperto in prima pagina."
+ },
+ {
+  "ente": "MASE - Archivio bandi PNRR (incl. M2C1 economia circolare)",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.mase.gov.it/portale/archivio-bandi-pnrr",
+  "feed": null,
+  "verificato": true,
+  "note": "Archivio avvisi PNRR MASE; M2C1 1.1/1.2 (impianti rifiuti, progetti faro) chiusi, restano graduatorie/FAQ. Hub PNRR: https://www.mase.gov.it/portale/pnrr"
+ },
+ {
+  "ente": "MASE - DG Economia circolare, bonifiche e danno ambientale",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.mase.gov.it/portale/economia-circolare-bonifiche-e-danno-ambientale",
+  "feed": null,
+  "verificato": true,
+  "note": "Pagina tematica con news su rifiuti, RENTRI, EPR; utile come fonte secondaria."
+ },
+ {
+  "ente": "Albo Nazionale Gestori Ambientali",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.albonazionalegestoriambientali.it/Public/News",
+  "feed": null,
+  "verificato": true,
+  "note": "Non eroga contributi: pubblica news, delibere e circolari su iscrizioni/requisiti (utile come 'scadenze e adempimenti' per imprese di igiene ambientale). Nessun RSS rilevato."
+ },
+ {
+  "ente": "CONAI - Bando ANCI-CONAI comunicazione locale",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.conai.org/enti-locali/servizi/comunicazione-locale/",
+  "feed": null,
+  "verificato": false,
+  "note": "non verificato: sito blocca accessi automatici (403/robots); URL ricavato dai risultati di ricerca, pagina non aperta. Tag notizie: https://www.conai.org/tag-notizie/bando-anci-conai/ ; piattaforma domande http://bandoanciconai.conai.org/ (403 da script). Bando annuale per Comuni/gestori delegati."
+ },
+ {
+  "ente": "ANCI - notizie ambiente/rifiuti (bandi ANCI-CONAI, ANCI-CdC RAEE, ANCI-consorzi)",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.anci.it/",
+  "feed": null,
+  "verificato": false,
+  "note": "non verificato: sito blocca accessi automatici (403/robots); URL ricavato dai risultati di ricerca, pagina non aperta. I bandi ANCI vengono ripresi integralmente da https://www.segretaricomunalivighenzi.it/ (verificato, leggibile)."
+ },
+ {
+  "ente": "CdC RAEE - Bando RAEE (fondo infrastrutturazione centri di raccolta)",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.cdcraee.it/news/pubblicato-il-bando-raee-2026-per-il-potenziamento-delle-infrastrutture-di-raccolta-dei-rifiuti-elettronici/",
+  "feed": "https://www.cdcraee.it/feed/",
+  "verificato": true,
+  "note": "Bando annuale (pubblicato a marzo, scadenza maggio) per Comuni e aziende della raccolta; non esiste una pagina 'bandi' fissa (/bandi/ = 404): seguire il feed RSS e filtrare 'bando'. Domande su https://areariservata.cdcservizi.it/app/"
+ },
+ {
+  "ente": "Comieco (carta e cartone)",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.comieco.org/",
+  "feed": null,
+  "verificato": true,
+  "note": "Nessuna sezione bandi fissa né RSS (/feed/ 404); bandi/premi escono come news in homepage (es. Capitale del riciclo, bandi ANCI-Comieco)."
+ },
+ {
+  "ente": "Corepla (plastica)",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.corepla.it/",
+  "feed": "https://www.corepla.it/feed/",
+  "verificato": true,
+  "note": "Nessuna pagina bandi dedicata; seguire RSS."
+ },
+ {
+  "ente": "CiAl (alluminio)",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.cial.it/",
+  "feed": "https://www.cial.it/feed/",
+  "verificato": true,
+  "note": "Premi/bandi per Comuni (es. Comuni Ricicloni) come news; seguire RSS."
+ },
+ {
+  "ente": "Ricrea (acciaio)",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.consorzioricrea.org/",
+  "feed": "https://www.consorzioricrea.org/feed/",
+  "verificato": true,
+  "note": "Nessuna pagina bandi; seguire RSS."
+ },
+ {
+  "ente": "Rilegno (legno)",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.rilegno.org/",
+  "feed": "https://www.rilegno.org/feed/",
+  "verificato": true,
+  "note": "Nessuna pagina bandi; seguire RSS."
+ },
+ {
+  "ente": "CoReVe (vetro) - Bandi ANCI-CoReVe",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://coreve.it/bandi/",
+  "feed": "https://coreve.it/feed/",
+  "verificato": true,
+  "note": "Pagina bandi dedicata. Al 18/11/2026: 'bandi non attualmente attivi, risorse esaurite' (Bando Nord, Bando Sud incl. Sicilia, Bando mezzi)."
+ },
+ {
+  "ente": "Biorepack (bioplastiche compostabili)",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://biorepack.org/",
+  "feed": null,
+  "verificato": false,
+  "note": "non verificato: Cloudflare blocca l'accesso. Pubblica un bando comunicazione locale con ANCI (edizioni 2023-2025 documentate da terzi)."
+ },
+ {
+  "ente": "CONOU (oli usati)",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.conou.it/",
+  "feed": "https://www.conou.it/feed/",
+  "verificato": true,
+  "note": "Nessuna pagina bandi; RSS news."
+ },
+ {
+  "ente": "Ecopneus (PFU)",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.ecopneus.it/",
+  "feed": null,
+  "verificato": true,
+  "note": "Nessuna pagina bandi; /feed/ risponde 500."
+ },
+ {
+  "ente": "ISPRA",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.isprambiente.gov.it/it/amministrazione-trasparente/bandi-di-gara-e-contratti",
+  "feed": "https://www.isprambiente.gov.it/it/news/RSS",
+  "verificato": true,
+  "note": "Solo gare, concorsi e manifestazioni di interesse (no contributi). Concorsi: https://www.isprambiente.gov.it/it/amministrazione-trasparente/bandi-di-concorso . Feed Atom news."
+ },
+ {
+  "ente": "GSE - Conto Termico 3.0",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.gse.it/servizi-per-te/efficienza-energetica/conto-termico-3-0/chi-puo-accedere",
+  "feed": null,
+  "verificato": false,
+  "note": "non verificato: sito blocca accessi automatici (403/robots); URL ricavato dai risultati di ricerca, pagina non aperta. Incentivo a sportello continuo (PA, imprese, privati)."
+ },
+ {
+  "ente": "GSE - CER e misura PNRR; biometano",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.gse.it/servizi-per-te/autoconsumo/gruppi-di-autoconsumatori-e-comunita-di-energia-rinnovabile/misura-pnrr",
+  "feed": null,
+  "verificato": false,
+  "note": "non verificato: sito blocca accessi automatici (403/robots); URL ricavato dai risultati di ricerca, pagina non aperta. Hub misure PNRR GSE: https://www.gse.it/servizi-per-te/attuazione-misure-pnrr (anche biometano, rilevante per impianti FORSU)."
+ },
+ {
+  "ente": "ARERA",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.arera.it/atti-e-provvedimenti",
+  "feed": null,
+  "verificato": true,
+  "note": "Non pubblica bandi di contributo; rilevante per regolazione tariffaria rifiuti (MTR) e bonus sociale rifiuti. Bandi di gara: https://www.arera.it/stampa-bandi-gara . CSEA (csea.it) non raggiungibile."
+ },
+ {
+  "ente": "Regione Siciliana - Dipartimento Acqua e Rifiuti (bandi filtrati)",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.regione.sicilia.it/istituzioni/servizi-informativi/bandi?f%5B0%5D=expired%3A0&f%5B1%5D=group%3A13&f%5B2%5D=group%3A41",
+  "feed": "https://www.regione.sicilia.it/rss.xml",
+  "verificato": true,
+  "note": "Elenco bandi/avvisi aperti del solo DAR (filtro group:13/41; togliere expired:0 per includere scaduti). Attenzione: molti avvisi rifiuti (PR FESR 2.6.1/2.6.2, Sicilia Pulita) escono solo come decreti (sezione decreti-e-direttive) e come notizie 'La Regione informa'. RSS generale del portale."
+ },
+ {
+  "ente": "Regione Siciliana - pagina Dipartimento Acqua e Rifiuti",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.regione.sicilia.it/istituzioni/regione/strutture-regionali/assessorato-energia-servizi-pubblica-utilita/dipartimento-acqua-rifiuti",
+  "feed": null,
+  "verificato": true,
+  "note": "Home del dipartimento: avvisi, circolari, decreti."
+ },
+ {
+  "ente": "EuroInfoSicilia - PR FESR Sicilia 2021-2027 bandi aperti",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.euroinfosicilia.it/bandi-e-avvisi-aperti/",
+  "feed": "https://www.euroinfosicilia.it/feed/",
+  "verificato": true,
+  "note": "Tutti gli avvisi FESR/FSC Sicilia (anche Azioni 2.6.1 compostaggio, 2.6.2 centri raccolta, 2.7.4 bonifiche). Al 18/11/2026 nessun avviso rifiuti aperto."
+ },
+ {
+  "ente": "SRR Messina Provincia",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://srrmessinaprovincia.it/bandi-e-avvisi/",
+  "feed": null,
+  "verificato": true,
+  "note": "Bandi/avvisi SRR (gare servizio rifiuti) + sezione 'Avvisi pubblicati da enti terzi' https://srrmessinaprovincia.it/avvisi-pubblicati-da-enti-terzi/ . Le altre SRR siciliane hanno siti separati (es. https://srrpalermo.it/)."
+ },
+ {
+  "ente": "Fondo Kyoto (MASE/CDP)",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.cdp.it/sitointernet/it/fondo_kyoto.page",
+  "feed": null,
+  "verificato": false,
+  "note": "non verificato: cdp.it protetto da captcha anti-bot; pagine MASE storiche non più raggiungibili (404). Ultimo sportello documentato: riapertura 2022 (scuole, impianti sportivi, ospedali pubblici, tasso 0,25%). Stato 2026 non accertato."
+ },
+ {
+  "ente": "RENTRI (MASE/Albo)",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.rentri.gov.it/",
+  "feed": null,
+  "verificato": true,
+  "note": "Non è una fonte di bandi: registro tracciabilità rifiuti, utile per contenuti su adempimenti."
+ },
+ {
+  "ente": "Regione Toscana - bandi rifiuti/economia circolare (esempio regionale)",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.regione.toscana.it/-/economia-circolare-il-bando-per-trasformare-i-rifiuti-in-risorse",
+  "feed": null,
+  "verificato": true,
+  "note": "Esempio di fonte regionale; i bandi rifiuti delle Regioni vanno presi dai portali bandi regionali."
+ },
+ {
+  "ente": "Regione Lombardia - Bandi e Servizi (Ri.Circo.Lo.)",
+  "area": "rifiuti-ambiente",
+  "url_bandi": "https://www.bandi.regione.lombardia.it/",
+  "feed": null,
+  "verificato": false,
+  "note": "URL citato dalla pagina regionale verificata; home portale non aperta."
+ },
+ {
+  "ente": "Ministero della Cultura - Bandi",
+  "area": "cultura",
+  "url_bandi": "https://cultura.gov.it/comunicati/bandi-e-concorsi",
+  "feed": null,
+  "verificato": true,
+  "note": "Avvisi: https://cultura.gov.it/comunicati/avvisi ; Agevolazioni: https://cultura.gov.it/agevolazioni-per-la-cultura ; GrantOffice UE: https://cultura.gov.it/grantoffice-opportunita-dall-europa"
+ },
+ {
+  "ente": "MiC - DG Spettacolo (FNSV e bandi extra)",
+  "area": "cultura",
+  "url_bandi": "https://spettacolo.cultura.gov.it/category/contributi-fus/news-avvisi-contributi-fus/",
+  "feed": "https://spettacolo.cultura.gov.it/feed/",
+  "verificato": true,
+  "note": "Contributi extra FNSV: https://spettacolo.cultura.gov.it/category/contributi-extra-fus/"
+ },
+ {
+  "ente": "MiC - DG Cinema e audiovisivo",
+  "area": "cultura",
+  "url_bandi": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/contributi-selettivi/",
+  "feed": null,
+  "verificato": true,
+  "note": "Contributi selettivi/automatici, tax credit."
+ },
+ {
+  "ente": "MiC - DG Creatività Contemporanea",
+  "area": "cultura",
+  "url_bandi": "https://creativitacontemporanea.cultura.gov.it/",
+  "feed": null,
+  "verificato": false,
+  "note": "Solo la pagina gare (/bandidigara-contratti/) è stata aperta; URL elenco avvisi contributi non verificato."
+ },
+ {
+  "ente": "Istituto per il Credito Sportivo e Culturale (ICSC)",
+  "area": "cultura",
+  "url_bandi": "https://www.creditosportivo.it/fondi-speciali-bandi-cultura-2026/",
+  "feed": "https://www.creditosportivo.it/feed/",
+  "verificato": true,
+  "note": "Cultura Missione Comune 2026; per lo sport: https://www.creditosportivo.it/fondi-speciali-bandi-sport-2026/"
+ },
+ {
+  "ente": "Ministero del Turismo - Strumenti di sostegno",
+  "area": "turismo",
+  "url_bandi": "https://www.ministeroturismo.gov.it/strumenti-di-sostegno/",
+  "feed": "https://www.ministeroturismo.gov.it/feed/",
+  "verificato": true,
+  "note": "Avvisi per linea (strutture ricettive, turismo sostenibile, siti UNESCO, agenzie viaggio...). Feed dichiarato nell'HTML, non aperto."
+ },
+ {
+  "ente": "Dipartimento per lo Sport - Piattaforma avvisi e bandi",
+  "area": "sport",
+  "url_bandi": "https://avvisibandi.sport.governo.it/",
+  "feed": null,
+  "verificato": true,
+  "note": "Piattaforma bandi online (risponde 200). Sezione istituzionale https://www.sport.governo.it/it/bandi-e-avvisi/ non verificata (robots/timeout)."
+ },
+ {
+  "ente": "Sport e Salute S.p.A.",
+  "area": "sport",
+  "url_bandi": "https://www.sportesalute.eu/bandi-e-avvisi.html",
+  "feed": null,
+  "verificato": true,
+  "note": "Sottosezioni: bandi altri enti https://www.sportesalute.eu/bandi-e-avvisi/bandi-altri-enti.html ; bandi europei .../bandi-europei.html ; piattaforma https://bandi.sportesalute.eu/"
+ },
+ {
+  "ente": "Dipartimento Politiche Giovanili e Servizio Civile Universale",
+  "area": "lavoro-formazione",
+  "url_bandi": "https://www.politichegiovanili.gov.it/comunicazione/avvisi-e-bandi/",
+  "feed": null,
+  "verificato": false,
+  "note": "non verificato: sito blocca accessi automatici (403/robots); URL ricavato dai risultati di ricerca, pagina non aperta. Bandi volontari SCU: https://www.politichegiovanili.gov.it/servizio-civile/bandi-e-avvisi-di-servizio-civile/bandi-di-selezione-volontari/"
+ },
+ {
+  "ente": "Dipartimento per la Trasformazione Digitale - Avvisi pubblici",
+  "area": "digitale",
+  "url_bandi": "https://innovazione.gov.it/notizie/avvisi-pubblici/",
+  "feed": null,
+  "verificato": true,
+  "note": "Avvisi DTD (non solo PNRR)."
+ },
+ {
+  "ente": "PA digitale 2026 - Avvisi",
+  "area": "digitale",
+  "url_bandi": "https://areariservata.padigitale2026.gov.it/Pa_digitale2026_avvisi",
+  "feed": null,
+  "verificato": true,
+  "note": "Avvisi PNRR per Comuni, scuole, ASL. Open data: https://padigitale2026.gov.it/open-data (verificato 200)."
+ },
+ {
+  "ente": "ACN - Agenzia Cybersicurezza Nazionale",
+  "area": "digitale",
+  "url_bandi": "https://www.acn.gov.it/portale/avvisi",
+  "feed": "https://www.acn.gov.it/portale/feedrss/-/journal/rss/20119/723192",
+  "verificato": true,
+  "note": "Opportunità di finanziamento NCC-IT (Digital Europe/ECCC): https://www.acn.gov.it/portale/ncc-italia/opportunita-di-finanziamento . Il feed RSS verificato è quello CSIRT (alert), non degli avvisi."
+ },
+ {
+  "ente": "ISMEA",
+  "area": "agricoltura",
+  "url_bandi": "https://www.ismea.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/7130",
+  "feed": null,
+  "verificato": true,
+  "note": "Bandi aperti (terreni/riassegnazione). Altri strumenti con pagine proprie: ISMEA Investe 2026 .../IDPagina/13531, Più Impresa .../IDPagina/13520."
+ },
+ {
+  "ente": "AGEA",
+  "area": "agricoltura",
+  "url_bandi": "https://www.agea.gov.it/portale-agea/",
+  "feed": null,
+  "verificato": true,
+  "note": "Home verificata; nessuna sezione bandi individuabile via HTML statico (portale JS). Organismo pagatore: più circolari che bandi."
+ },
+ {
+  "ente": "MASAF",
+  "area": "agricoltura",
+  "url_bandi": "https://www.masaf.gov.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/9",
+  "feed": null,
+  "verificato": true,
+  "note": "Pagina notizie; sezione bandi dedicata non verificata. Rete PAC: https://www.reterurale.it/"
+ },
+ {
+  "ente": "Dipartimento Politiche di Coesione e per il Sud",
+  "area": "coesione",
+  "url_bandi": "https://politichecoesione.governo.it/it/",
+  "feed": null,
+  "verificato": false,
+  "note": "non verificato: sito blocca accessi automatici (403/robots); URL ricavato dai risultati di ricerca, pagina non aperta. (L'Agenzia per la Coesione è stata soppressa e confluita nel Dipartimento.)"
+ },
+ {
+  "ente": "OpenCoesione - Opportunità e open data",
+  "area": "coesione",
+  "url_bandi": "https://opencoesione.gov.it/it/opendata/",
+  "feed": null,
+  "verificato": false,
+  "note": "non verificato: sito blocca accessi automatici (403/robots); URL ricavato dai risultati di ricerca, pagina non aperta. Elenchi opportunità: https://opencoesione.gov.it/it/opportunita_2014_2020/ e https://opencoesione.gov.it/it/opportunita_STEP/ ; dataset scaricabili (CSV)."
+ },
+ {
+  "ente": "ZES Unica - Struttura di Missione",
+  "area": "coesione",
+  "url_bandi": "https://www.strutturazes.gov.it/it/bandi-avvisi-accordi-e-protocolli/chi-siamo/",
+  "feed": null,
+  "verificato": false,
+  "note": "non verificato: sito blocca accessi automatici (403/robots); URL ricavato dai risultati di ricerca, pagina non aperta. Pagina DPCoe: https://politichecoesione.governo.it/it/politica-di-coesione/strategie-tematiche-e-territoriali/strategie-territoriali/zes-unica-e-zone-economiche-speciali-zes/"
+ },
+ {
+  "ente": "incentivi.gov.it (MIMIT) - catalogo e open data",
+  "area": "altro",
+  "url_bandi": "https://www.incentivi.gov.it/it/open-data",
+  "feed": null,
+  "verificato": false,
+  "note": "non verificato: timeout da script. Catalogo nazionale incentivi con open data: fonte primaria per aggregazione."
+ },
+ {
+  "ente": "Italia Domani (PNRR) - bandi amministrazioni titolari",
+  "area": "altro",
+  "url_bandi": "https://www.italiadomani.gov.it/it/opportunita/bandi-amministrazioni-titolari.html",
+  "feed": null,
+  "verificato": false,
+  "note": "non verificato: 403 Access Denied."
+ },
+ {
+  "ente": "Cassa Depositi e Prestiti",
+  "area": "credito",
+  "url_bandi": "https://www.cdp.it/",
+  "feed": null,
+  "verificato": false,
+  "note": "non verificato: captcha anti-bot. Prodotti finanziari, non bandi in senso stretto."
+ },
+ {
+  "ente": "Mediocredito Centrale",
+  "area": "credito",
+  "url_bandi": "https://www.mcc.it/agevolazioni/",
+  "feed": "https://www.mcc.it/feed/",
+  "verificato": true,
+  "note": "Agevolazioni gestite; Fondo di garanzia PMI: https://www.fondidigaranzia.it/ (feed /feed/ dichiarato)."
+ },
+ {
+  "ente": "Ente Nazionale per il Microcredito",
+  "area": "credito",
+  "url_bandi": "https://www.microcredito.gov.it/",
+  "feed": "https://www.microcredito.gov.it/?format=feed&type=rss",
+  "verificato": true,
+  "note": "Home + RSS verificati; pagina avvisi dedicata non individuata."
+ },
+ {
+  "ente": "Invitalia",
+  "area": "credito",
+  "url_bandi": "https://www.invitalia.it/",
+  "feed": null,
+  "verificato": true,
+  "note": "Già nelle fonti abituali; home verificata."
+ },
+ {
+  "ente": "SIMEST",
+  "area": "credito",
+  "url_bandi": "https://www.simest.it/",
+  "feed": null,
+  "verificato": true,
+  "note": "Finanziamenti agevolati internazionalizzazione; home verificata."
+ },
+ {
+  "ente": "INAIL - Finanziamenti per la sicurezza (Bando ISI)",
+  "area": "lavoro-formazione",
+  "url_bandi": "https://www.inail.it/portale/prevenzione-e-sicurezza/it/prevenzione-e-sicurezza/finanziamenti-per-la-sicurezza.html",
+  "feed": null,
+  "verificato": true,
+  "note": "Hub ISI, avvisi formazione, BRIC. Il Bando ISI finanzia anche mezzi/attrezzature per imprese di igiene ambientale. Pagina RSS https://www.inail.it/portale/it/rss.html non verificata (timeout)."
+ },
+ {
+  "ente": "INPS - Welfare, assistenza e mutualità",
+  "area": "lavoro-formazione",
+  "url_bandi": "https://www.inps.it/it/it/avvisi-bandi-e-fatturazione/welfare-assistenza-e-mutualita.html",
+  "feed": null,
+  "verificato": true,
+  "note": "Bandi welfare (borse studio, Home Care Premium, soggiorni). Hub: https://www.inps.it/it/it/avvisi-bandi-e-fatturazione.html"
+ },
+ {
+  "ente": "Ministero del Lavoro - incentivi all'assunzione",
+  "area": "lavoro-formazione",
+  "url_bandi": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/repertorio-degli-incentivi-allassunzione",
+  "feed": "https://www.lavoro.gov.it/_layouts/15/Lavoro.Web/AppPages/RSS",
+  "verificato": true,
+  "note": "Repertorio incentivi; RSS generale del sito."
+ },
+ {
+  "ente": "Fondimpresa",
+  "area": "lavoro-formazione",
+  "url_bandi": "https://www.fondimpresa.it/come-funzioniamo/i-canali-di-finanziamento/conto-di-sistema/avvisi-aperti",
+  "feed": null,
+  "verificato": false,
+  "note": "non verificato: sito blocca accessi automatici (403/robots); URL ricavato dai risultati di ricerca, pagina non aperta. URL dedotto dal prefisso comune degli avvisi indicizzati (es. .../avvisi-aperti/1936-avviso-2-2021-...)."
+ },
+ {
+  "ente": "FonARCom",
+  "area": "lavoro-formazione",
+  "url_bandi": "https://www.fonarcom.it/strumenti/avviso-generale/",
+  "feed": null,
+  "verificato": true,
+  "note": "Altri: /strumenti/avvisi-tematici/, /strumenti/avvisi-voucher/"
+ },
+ {
+  "ente": "Fondir",
+  "area": "lavoro-formazione",
+  "url_bandi": "https://www.fondir.it/fondo-trasparente/avvisi",
+  "feed": null,
+  "verificato": true,
+  "note": ""
+ },
+ {
+  "ente": "Fondo For.Te.",
+  "area": "lavoro-formazione",
+  "url_bandi": "https://www.fondoforte.it/elenco-avvisi/",
+  "feed": null,
+  "verificato": true,
+  "note": "Avvisi attivi."
+ },
+ {
+  "ente": "Fondartigianato",
+  "area": "lavoro-formazione",
+  "url_bandi": "https://www.fondartigianato.it/trasparenza/avvisi",
+  "feed": null,
+  "verificato": false,
+  "note": "Link rilevato in homepage, pagina non aperta."
+ },
+ {
+  "ente": "Fondirigenti",
+  "area": "lavoro-formazione",
+  "url_bandi": "https://www.fondirigenti.it/avvisi",
+  "feed": null,
+  "verificato": true,
+  "note": ""
+ },
+ {
+  "ente": "MUR - Concorsi e avvisi",
+  "area": "altro",
+  "url_bandi": "https://www.mur.gov.it/it/ministero/concorsi-e-avvisi",
+  "feed": null,
+  "verificato": true,
+  "note": "Bandi ricerca anche in https://www.mur.gov.it/it/atti-e-normativa"
+ },
+ {
+  "ente": "MIM - PNRR Istruzione (Futura) avvisi",
+  "area": "altro",
+  "url_bandi": "https://pnrr.istruzione.it/avvisi/",
+  "feed": "https://pnrr.istruzione.it/feed/",
+  "verificato": true,
+  "note": "Avvisi per scuole/enti locali. Sito MIM: avvisi in homepage https://www.mim.gov.it/ (nessun elenco bandi stabile verificato)."
+ },
+ {
+  "ente": "Agenzia delle Entrate - Agevolazioni e crediti d'imposta",
+  "area": "altro",
+  "url_bandi": "https://www.agenziaentrate.gov.it/portale/schede/agevolazioni",
+  "feed": null,
+  "verificato": true,
+  "note": "Schede per singola agevolazione/credito d'imposta; nessun feed rilevato."
+ },
+ {
+  "ente": "ACRI - Fondazioni di origine bancaria",
+  "area": "fondazioni",
+  "url_bandi": "https://www.acri.it/fondazioni/",
+  "feed": "https://www.acri.it/feed/",
+  "verificato": true,
+  "note": "Pagina con elenco/mappa delle fondazioni associate (da cui derivare i siti delle singole fondazioni)."
+ },
+ {
+  "ente": "Fondazione CON IL SUD",
+  "area": "fondazioni",
+  "url_bandi": "https://www.fondazioneconilsud.it/bandi/",
+  "feed": "https://www.fondazioneconilsud.it/feed/",
+  "verificato": true,
+  "note": "Es. Bando Volontariato 2026, beni confiscati, housing sociale."
+ },
+ {
+  "ente": "Con i Bambini",
+  "area": "fondazioni",
+  "url_bandi": "https://www.conibambini.org/bandi-e-iniziative/",
+  "feed": "https://www.conibambini.org/feed/",
+  "verificato": true,
+  "note": ""
+ },
+ {
+  "ente": "Fondazione Cariplo",
+  "area": "fondazioni",
+  "url_bandi": "https://www.fondazionecariplo.it/it/bandi/index.html",
+  "feed": null,
+  "verificato": false,
+  "note": "non verificato: Cloudflare. Schede bando indicizzate come https://www.fondazionecariplo.it/bando/<slug>/"
+ },
+ {
+  "ente": "Fondazione Compagnia di San Paolo",
+  "area": "fondazioni",
+  "url_bandi": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
+  "feed": null,
+  "verificato": true,
+  "note": ""
+ },
+ {
+  "ente": "Fondazione Sicilia",
+  "area": "fondazioni",
+  "url_bandi": "https://www.fondazionesicilia.it/bandi-fondazione/",
+  "feed": "https://www.fondazionesicilia.it/feed/",
+  "verificato": true,
+  "note": "Archivio: https://www.fondazionesicilia.it/archivio-bandi/"
+ },
+ {
+  "ente": "Fondo per la Repubblica Digitale",
+  "area": "fondazioni",
+  "url_bandi": "https://www.fondorepubblicadigitale.it/pagina-bandi/",
+  "feed": "https://www.fondorepubblicadigitale.it/feed/",
+  "verificato": true,
+  "note": ""
+ },
+ {
+  "ente": "Assifero - Opportunità",
+  "area": "fondazioni",
+  "url_bandi": "https://assifero.org/opportunita/",
+  "feed": "https://assifero.org/feed/",
+  "verificato": true,
+  "note": "Associazione fondazioni ed enti filantropici; segnala opportunità."
+ },
+ {
+  "ente": "Aggregatori bandi fondazioni (Italia non profit, Infobandi CSVnet)",
+  "area": "fondazioni",
+  "url_bandi": "https://italianonprofit.it/",
+  "feed": null,
+  "verificato": false,
+  "note": "non verificato: /bandi/ dà 404 e infobandi.csvnet.it non risponde; URL corretti da individuare."
+ },
+ {
+  "ente": "EU Funding & Tenders Portal",
+  "area": "europeo",
+  "url_bandi": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/calls-for-proposals",
+  "feed": null,
+  "verificato": true,
+  "note": "Portale SPA (JS). API di ricerca SEDIA https://api.tech.ec.europa.eu/search-api/prod/rest/search?apiKey=SEDIA richiede POST (GET=405): non verificata in dettaglio."
+ },
+ {
+  "ente": "Interreg - elenco programmi",
+  "area": "europeo",
+  "url_bandi": "https://interreg.eu/programmes/",
+  "feed": null,
+  "verificato": true,
+  "note": "Directory ufficiale di tutti i programmi."
+ },
+ {
+  "ente": "Interreg Italia-Malta",
+  "area": "europeo",
+  "url_bandi": "https://italiamalta.eu/it/bandi-e-avvisi",
+  "feed": null,
+  "verificato": true,
+  "note": "Pagina bandi verificata tramite link in home. Autorità di gestione Regione Siciliana"
+ },
+ {
+  "ente": "Interreg NEXT Italia-Tunisia",
+  "area": "europeo",
+  "url_bandi": "https://italietunisie.eu/",
+  "feed": null,
+  "verificato": true,
+  "note": "Home programma verificata; pagina call da individuare nel sito. AdG Regione Siciliana"
+ },
+ {
+  "ente": "Interreg NEXT MED",
+  "area": "europeo",
+  "url_bandi": "https://www.interregnextmed.eu/",
+  "feed": null,
+  "verificato": true,
+  "note": "Home programma verificata; pagina call da individuare nel sito."
+ },
+ {
+  "ente": "Interreg Euro-MED",
+  "area": "europeo",
+  "url_bandi": "https://interreg-euro-med.eu/en/",
+  "feed": null,
+  "verificato": true,
+  "note": "Home programma verificata; pagina call da individuare nel sito."
+ },
+ {
+  "ente": "Interreg Europe",
+  "area": "europeo",
+  "url_bandi": "https://www.interregeurope.eu/",
+  "feed": null,
+  "verificato": true,
+  "note": "Home programma verificata; pagina call da individuare nel sito."
+ },
+ {
+  "ente": "Interreg Central Europe",
+  "area": "europeo",
+  "url_bandi": "https://www.interreg-central.eu/",
+  "feed": null,
+  "verificato": true,
+  "note": "Home programma verificata; pagina call da individuare nel sito."
+ },
+ {
+  "ente": "Interreg Alpine Space",
+  "area": "europeo",
+  "url_bandi": "https://www.alpine-space.eu/",
+  "feed": null,
+  "verificato": true,
+  "note": "Home programma verificata; pagina call da individuare nel sito."
+ },
+ {
+  "ente": "Interreg IPA ADRION",
+  "area": "europeo",
+  "url_bandi": "https://www.interreg-ipa-adrion.eu/",
+  "feed": null,
+  "verificato": true,
+  "note": "Home programma verificata; pagina call da individuare nel sito. sito precedente: https://www.adrioninterreg.eu/"
+ },
+ {
+  "ente": "Interreg Italia-Croazia",
+  "area": "europeo",
+  "url_bandi": "https://www.italy-croatia.eu/",
+  "feed": null,
+  "verificato": true,
+  "note": "Home programma verificata; pagina call da individuare nel sito."
+ },
+ {
+  "ente": "Interreg Italia-Slovenia",
+  "area": "europeo",
+  "url_bandi": "https://www.ita-slo.eu/",
+  "feed": null,
+  "verificato": true,
+  "note": "Home programma verificata; pagina call da individuare nel sito."
+ },
+ {
+  "ente": "Interreg Italia-Austria",
+  "area": "europeo",
+  "url_bandi": "https://interreg.net/",
+  "feed": null,
+  "verificato": true,
+  "note": "Home programma verificata; pagina call da individuare nel sito."
+ },
+ {
+  "ente": "Interreg ALCOTRA (Italia-Francia)",
+  "area": "europeo",
+  "url_bandi": "https://www.interreg-alcotra.eu/",
+  "feed": null,
+  "verificato": true,
+  "note": "Home programma verificata; pagina call da individuare nel sito."
+ },
+ {
+  "ente": "Interreg Italia-Francia Marittimo",
+  "area": "europeo",
+  "url_bandi": "https://interreg-maritime.eu/",
+  "feed": null,
+  "verificato": true,
+  "note": "Home programma verificata; pagina call da individuare nel sito."
+ },
+ {
+  "ente": "Interreg Italia-Svizzera",
+  "area": "europeo",
+  "url_bandi": "https://www.interreg-italiasvizzera.eu/",
+  "feed": null,
+  "verificato": true,
+  "note": "Home programma verificata; pagina call da individuare nel sito."
+ },
+ {
+  "ente": "Interreg Grecia-Italia",
+  "area": "europeo",
+  "url_bandi": "https://www.greece-italy.eu/",
+  "feed": null,
+  "verificato": true,
+  "note": "Home programma verificata; pagina call da individuare nel sito."
+ },
+ {
+  "ente": "Interreg IPA Italia-Albania-Montenegro",
+  "area": "europeo",
+  "url_bandi": "https://www.italy-albania-montenegro.eu/",
+  "feed": null,
+  "verificato": true,
+  "note": "Home programma verificata; pagina call da individuare nel sito."
+ },
+ {
+  "ente": "URBACT",
+  "area": "europeo",
+  "url_bandi": "https://urbact.eu/",
+  "feed": null,
+  "verificato": true,
+  "note": "Home programma verificata; pagina call da individuare nel sito."
+ },
+ {
+  "ente": "Erasmus+ Italia (portale delle tre agenzie)",
+  "area": "europeo",
+  "url_bandi": "https://www.erasmusplus.it/",
+  "feed": "https://www.erasmusplus.it/feed/",
+  "verificato": true,
+  "note": "Portale comune INDIRE/INAPP/AIG."
+ },
+ {
+  "ente": "INDIRE (AN Erasmus+ istruzione)",
+  "area": "europeo",
+  "url_bandi": "https://www.indire.it/",
+  "feed": "https://www.indire.it/feed/",
+  "verificato": true,
+  "note": "Sul sito INDIRE solo concorsi/gare; le call Erasmus+ stanno su erasmusplus.it."
+ },
+ {
+  "ente": "INAPP (AN Erasmus+ VET)",
+  "area": "europeo",
+  "url_bandi": "https://www.inapp.gov.it/en/erasmus/inapp-erasmus-national-agency-what-we-do",
+  "feed": null,
+  "verificato": false,
+  "note": "non verificato: Cloudflare."
+ },
+ {
+  "ente": "Agenzia Italiana per la Gioventù (AN Erasmus+ Gioventù/ESC)",
+  "area": "europeo",
+  "url_bandi": "https://agenziagioventu.gov.it/erasmus-2021-2027/",
+  "feed": null,
+  "verificato": true,
+  "note": "Risponde 200."
+ },
+ {
+  "ente": "Europa Creativa - Desk Italia",
+  "area": "europeo",
+  "url_bandi": "https://europacreativa.cultura.gov.it/",
+  "feed": "https://europacreativa.cultura.gov.it/feed/",
+  "verificato": true,
+  "note": "Elenco bandi con link ai topic del F&T Portal."
+ },
+ {
+  "ente": "CERV - Citizens, Equality, Rights and Values",
+  "area": "europeo",
+  "url_bandi": "https://commission.europa.eu/funding-and-tenders/find-funding/eu-funding-programmes/citizens-equality-rights-and-values-programme_en",
+  "feed": null,
+  "verificato": true,
+  "note": "Call gestite da EACEA: https://www.eacea.ec.europa.eu/grants_en"
+ },
+ {
+  "ente": "Single Market Programme / EISMEA",
+  "area": "europeo",
+  "url_bandi": "https://eismea.ec.europa.eu/funding-opportunities_en",
+  "feed": null,
+  "verificato": true,
+  "note": ""
+ },
+ {
+  "ente": "Digital Europe Programme",
+  "area": "europeo",
+  "url_bandi": "https://digital-strategy.ec.europa.eu/en/activities/digital-programme",
+  "feed": null,
+  "verificato": true,
+  "note": "Call via HaDEA: https://hadea.ec.europa.eu/calls-proposals_en"
+ },
+ {
+  "ente": "EUIPO - SME Fund",
+  "area": "europeo",
+  "url_bandi": "https://www.euipo.europa.eu/it/sme-corner/sme-fund",
+  "feed": null,
+  "verificato": true,
+  "note": "Voucher PMI per marchi/disegni/brevetti."
+ },
+ {
+  "ente": "Obiettivo Europa (aggregatore privato)",
+  "area": "europeo",
+  "url_bandi": "https://www.obiettivoeuropa.com/bandi/",
+  "feed": null,
+  "verificato": true,
+  "note": "Aggregatore terzo, utile come controllo di copertura."
+ }
+]

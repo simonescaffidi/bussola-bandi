@@ -1,0 +1,20 @@
+[
+ {"nome":"Incentivi Italia (open data nazionale)","url_bandi":"https://www.incentivitalia.gov.it/","feed":"","note":"Catalogo nazionale degli incentivi, importato in automatico ogni giorno (licenza CC BY 4.0)."},
+ {"nome":"MIMIT - Incentivi","url_bandi":"https://www.mimit.gov.it/it/incentivi","feed":"https://www.mimit.gov.it/it/incentivi?format=feed&type=rss"},
+ {"nome":"Invitalia","url_bandi":"https://www.invitalia.it/incentivi-e-strumenti","feed":"https://www.invitalia.it/rss.xml"},
+ {"nome":"Italia Domani (PNRR) - Bandi e avvisi","url_bandi":"https://www.italiadomani.gov.it/content/sogei-ng/it/it/opportunita/bandi-amministrazioni-titolari.html","feed":"https://www.italiadomani.gov.it/content/sogei-ng/it/it/feed-rss.makers_notices_feed_rss.xml"},
+ {"nome":"Gazzetta Ufficiale - Serie Generale","url_bandi":"https://www.gazzettaufficiale.it/","feed":"https://www.gazzettaufficiale.it/rss/SG"},
+ {"nome":"EU Funding & Tenders Portal","url_bandi":"https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home","feed":"","note":"Bandi UE a gestione diretta, importati in automatico ogni giorno."},
+ {"nome":"Punto Impresa Digitale - Voucher digitali delle Camere di Commercio","url_bandi":"https://www.puntoimpresadigitale.camcom.it/bandi-incentivi/voucher-digitali","feed":""},
+ {"nome":"Unioncamere","url_bandi":"https://www.unioncamere.gov.it/","feed":"https://www.unioncamere.gov.it/rss.xml"},
+ {"nome":"Unioncamere Lombardia - Bandi e incentivi","url_bandi":"https://www.unioncamerelombardia.it/bandi-e-incentivi-alle-imprese","feed":""},
+ {"nome":"Unioncamere Piemonte - Bandi per imprese","url_bandi":"https://pie.camcom.it/bandi-per-imprese","feed":""},
+ {"nome":"Rete PAC - Elenco GAL 2023-2027","url_bandi":"https://www.reterurale.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/27580","feed":""},
+ {"nome":"Sviluppo rurale Sicilia - Ultime dai GAL","url_bandi":"https://svilupporurale.regione.sicilia.it/gal/","feed":"https://svilupporurale.regione.sicilia.it/categoria/ultime-dai-gal/feed/","regione":"Sicilia"},
+ {"nome":"Regione Siciliana - Notizie e atti","url_bandi":"https://www.regione.sicilia.it/","feed":"https://www.regione.sicilia.it/rss.xml","regione":"Sicilia"},
+ {"nome":"InfoBandi CSVnet (terzo settore)","url_bandi":"https://infobandi.csvnet.it/","feed":"https://infobandi.csvnet.it/feed/"},
+ {"nome":"Cantiere Terzo Settore","url_bandi":"https://www.cantiereterzosettore.it/","feed":"https://www.cantiereterzosettore.it/feed/"},
+ {"nome":"Compagnia di San Paolo","url_bandi":"https://www.compagniadisanpaolo.it/it/bandi/","feed":"https://www.compagniadisanpaolo.it/it/feed/"},
+ {"nome":"PA digitale 2026 - Avvisi","url_bandi":"https://padigitale2026.gov.it/","feed":""},
+ {"nome":"OpenCoesione - Opportunità 2021-2027","url_bandi":"https://opencoesione.gov.it/it/opportunita_2021_2027/","feed":""}
+]

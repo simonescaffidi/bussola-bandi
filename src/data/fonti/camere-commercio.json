@@ -1,0 +1,729 @@
+[
+  {
+    "nome": "Camera di commercio di Agrigento",
+    "regione": "Sicilia",
+    "province": [
+      "AG"
+    ],
+    "sito": "https://www.ag.camcom.it/",
+    "url_bandi": "https://www.ag.camcom.it/servizio/promozione/",
+    "verificato": true,
+    "note": "Nessun elenco bandi dedicato: i bandi (es. Bando Voucher PID 2026) sono voci della sezione Promozione. Feed WordPress: https://www.ag.camcom.it/feed/ . Accorpamento AG-CL-TP (DM 21/04/2015) non ancora operativo: nell'elenco Unioncamere risulta camera autonoma. Sito a tratti lento/instabile."
+  },
+  {
+    "nome": "Camera di commercio di Alessandria-Asti",
+    "regione": "Piemonte",
+    "province": [
+      "AL",
+      "AT"
+    ],
+    "sito": "https://www.aa.camcom.it/",
+    "url_bandi": "https://www.aa.camcom.it/bandi",
+    "verificato": true,
+    "note": "Template Infocamere/Drupal. RSS bandi: https://www.aa.camcom.it/bandi/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Arezzo-Siena",
+    "regione": "Toscana",
+    "province": [
+      "AR",
+      "SI"
+    ],
+    "sito": "https://www.as.camcom.it/",
+    "url_bandi": "https://www.as.camcom.it/notizie?combine=&field_notizia_categoria_tid=195",
+    "verificato": true,
+    "note": "La pagina /bandi esiste ma e' vuota (RSS bandi a 0 elementi): i bandi escono come notizie, categoria 'Contributi e finanziamenti'. RSS generale: https://www.as.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Bari",
+    "regione": "Puglia",
+    "province": [
+      "BA",
+      "BT"
+    ],
+    "sito": "https://www.ba.camcom.it/",
+    "url_bandi": "https://www.ba.camcom.it/bari/bandi-per-sostegno-alle-imprese",
+    "verificato": true,
+    "note": "Indice generale bandi: https://www.ba.camcom.it/info/bandi (gare, concorsi, sostegno imprese, altri enti)."
+  },
+  {
+    "nome": "Camera di commercio della Basilicata",
+    "regione": "Basilicata",
+    "province": [
+      "PZ",
+      "MT"
+    ],
+    "sito": "https://www.basilicata.camcom.it/",
+    "url_bandi": "https://www.basilicata.camcom.it/promozione",
+    "verificato": true,
+    "note": "I bandi sono sottopagine della sezione Promozione (innovazione digitale, internazionalizzazione, formazione lavoro). /bandi e /avvisi-bandi non contengono i contributi. RSS generale: https://www.basilicata.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Bergamo",
+    "regione": "Lombardia",
+    "province": [
+      "BG"
+    ],
+    "sito": "https://www.bg.camcom.it/",
+    "url_bandi": "https://www.bg.camcom.it/bandi",
+    "verificato": true,
+    "note": "RSS bandi: https://www.bg.camcom.it/bandi/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Bologna",
+    "regione": "Emilia-Romagna",
+    "province": [
+      "BO"
+    ],
+    "sito": "https://www.bo.camcom.it/it",
+    "url_bandi": "https://www.bo.camcom.it/it/promozione-interna/contributi-della-camera-di-bologna",
+    "verificato": true,
+    "note": "L'elenco Unioncamere riporta www.bo.camcom.gov.it, che reindirizza a www.bo.camcom.it. RSS generale: https://www.bo.camcom.it/it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Bolzano",
+    "regione": "Trentino-Alto Adige",
+    "province": [
+      "BZ"
+    ],
+    "sito": "https://www.camcom.bz.it/it",
+    "url_bandi": "https://www.camcom.bz.it/it/servizi/agevolazioni-e-servizi-ue",
+    "verificato": false,
+    "note": "pagina bandi non verificata: la sezione 'Agevolazioni e Servizi UE' e' di orientamento (Portale Agevolazioni, EEN), non un elenco di bandi camerali. RSS generale: https://www.camcom.bz.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Brescia",
+    "regione": "Lombardia",
+    "province": [
+      "BS"
+    ],
+    "sito": "https://bs.camcom.it/",
+    "url_bandi": "https://bs.camcom.it/bandi-e-contributi",
+    "verificato": true,
+    "note": "La pagina /bandi del template e' vuota; usare /bandi-e-contributi. RSS generale: https://bs.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Brindisi-Taranto",
+    "regione": "Puglia",
+    "province": [
+      "BR",
+      "TA"
+    ],
+    "sito": "https://www.brta.camcom.it/",
+    "url_bandi": "https://www.brta.camcom.it/promozione/orientamento-al-lavoro-e-alle-professioni/bandi",
+    "verificato": true,
+    "note": "Elenco bandi (ultimo aggiornamento ott. 2025: ITS, start-up, certificazione competenze). La pagina /bandi contiene solo una voce di concorso. Controllare anche le notizie: https://www.brta.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Cagliari-Oristano",
+    "regione": "Sardegna",
+    "province": [
+      "CA",
+      "OR",
+      "SU"
+    ],
+    "sito": "https://www.caor.camcom.it/",
+    "url_bandi": "https://www.caor.camcom.it/bandi",
+    "verificato": true,
+    "note": "'Bandi e avvisi': contiene anche avvisi non contributivi (esami, ruoli), da filtrare. RSS: https://www.caor.camcom.it/bandi/rss.xml . Copre anche la provincia del Sud Sardegna (attribuzione province sarde da confermare dopo il riordino regionale)."
+  },
+  {
+    "nome": "Camera di commercio di Caltanissetta",
+    "regione": "Sicilia",
+    "province": [
+      "CL"
+    ],
+    "sito": "https://www.cameracommercio.cl.it/",
+    "url_bandi": "https://www.cameracommercio.cl.it/amministrazione-trasparente-main/bandi-in-corso/bandi-in-corso/",
+    "verificato": true,
+    "note": "Pagina 'Bandi in corso' (es. Bando Doppia Transizione 2026). Le novita' escono anche nelle news in homepage. Accorpamento AG-CL-TP non ancora operativo."
+  },
+  {
+    "nome": "Camera di commercio di Caserta",
+    "regione": "Campania",
+    "province": [
+      "CE"
+    ],
+    "sito": "https://www.ce.camcom.it/",
+    "url_bandi": "https://www.ce.camcom.it/bandi-incentivi",
+    "verificato": true,
+    "note": "La pagina /bandi del template e' vuota; usare /bandi-incentivi. RSS generale: https://www.ce.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Catanzaro-Crotone-Vibo Valentia",
+    "regione": "Calabria",
+    "province": [
+      "CZ",
+      "KR",
+      "VV"
+    ],
+    "sito": "https://czkrvv.camcom.it/",
+    "url_bandi": "https://czkrvv.camcom.it/promuovi-limpresa/bandi-e-contributi/",
+    "verificato": true,
+    "note": "WordPress. Feed generale: https://czkrvv.camcom.it/feed/"
+  },
+  {
+    "nome": "Camera di commercio di Chieti Pescara",
+    "regione": "Abruzzo",
+    "province": [
+      "CH",
+      "PE"
+    ],
+    "sito": "https://www.chpe.camcom.it/",
+    "url_bandi": "https://www.chpe.camcom.it/pagina189754_bandi.html",
+    "verificato": true,
+    "note": "Verificata via browser/WebFetch ('Contributi attivi': turismo, internazionalizzazione, doppia transizione 2026). Il sito rifiuta le connessioni da alcuni IP datacenter (reset TLS con curl): prevedere retry o fetch tramite browser."
+  },
+  {
+    "nome": "Camera di commercio di Como-Lecco",
+    "regione": "Lombardia",
+    "province": [
+      "CO",
+      "LC"
+    ],
+    "sito": "https://www.comolecco.camcom.it/",
+    "url_bandi": "https://www.comolecco.camcom.it/pagina478_bandi-ed-opportunit-aperti.html",
+    "verificato": true,
+    "note": "Verificata via browser/WebFetch ('Bandi ed Opportunita' Aperti'). Raggiungibile anche come /index.php?id_sezione=478. Il sito rifiuta le connessioni da alcuni IP datacenter (reset TLS con curl)."
+  },
+  {
+    "nome": "Camera di commercio di Cosenza",
+    "regione": "Calabria",
+    "province": [
+      "CS"
+    ],
+    "sito": "https://www.cs.camcom.it/it",
+    "url_bandi": "https://www.cs.camcom.it/it/content/service/contributi-alle-imprese",
+    "verificato": true,
+    "note": "Indice per anno ('Bandi camerali 2026': https://www.cs.camcom.it/it/content/service/versoleimprese-bandi-2026 , da aggiornare a ogni cambio anno). www.cs.camcom.gov.it reindirizza a www.cs.camcom.it. RSS generale: https://www.cs.camcom.it/it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Cremona-Mantova-Pavia",
+    "regione": "Lombardia",
+    "province": [
+      "CR",
+      "MN",
+      "PV"
+    ],
+    "sito": "https://www.cmp.camcom.it/",
+    "url_bandi": "https://www.cmp.camcom.it/incentivi-alle-imprese/bandi-e-contributi",
+    "verificato": true,
+    "note": "Elenco filtrabile per stato/argomento. RSS bandi: https://www.cmp.camcom.it/bandi/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Cuneo",
+    "regione": "Piemonte",
+    "province": [
+      "CN"
+    ],
+    "sito": "https://www.cn.camcom.it/",
+    "url_bandi": "https://www.cn.camcom.it/bandi",
+    "verificato": true,
+    "note": "'Contributi a favore delle imprese'. RSS generale: https://www.cn.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio dell'Emilia",
+    "regione": "Emilia-Romagna",
+    "province": [
+      "PR",
+      "PC",
+      "RE"
+    ],
+    "sito": "https://www.emilia.camcom.it/",
+    "url_bandi": "https://www.emilia.camcom.it/promuovere-limpresa-e-il-territorio/contributi-alle-imprese",
+    "verificato": true,
+    "note": "Feed Atom generale: https://www.emilia.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Ferrara-Ravenna",
+    "regione": "Emilia-Romagna",
+    "province": [
+      "FE",
+      "RA"
+    ],
+    "sito": "https://www.fera.camcom.it/",
+    "url_bandi": "https://www.fera.camcom.it/bandi",
+    "verificato": true,
+    "note": "RSS bandi: https://www.fera.camcom.it/bandi/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Firenze",
+    "regione": "Toscana",
+    "province": [
+      "FI"
+    ],
+    "sito": "https://www.fi.camcom.gov.it/",
+    "url_bandi": "https://www.fi.camcom.gov.it/bandi",
+    "verificato": true,
+    "note": "RSS bandi: https://www.fi.camcom.gov.it/bandi/rss.xml . Pagina descrittiva: https://www.fi.camcom.gov.it/contributi-0"
+  },
+  {
+    "nome": "Camera di commercio di Foggia",
+    "regione": "Puglia",
+    "province": [
+      "FG"
+    ],
+    "sito": "https://www.fg.camcom.it/",
+    "url_bandi": "https://www.fg.camcom.it/bandi-contributi/bandi-sostegno-imprese",
+    "verificato": true,
+    "note": "Tabella con nome, tipologia e scadenza."
+  },
+  {
+    "nome": "Camera di commercio di Frosinone-Latina",
+    "regione": "Lazio",
+    "province": [
+      "FR",
+      "LT"
+    ],
+    "sito": "https://www.frlt.camcom.it/",
+    "url_bandi": "https://www.frlt.camcom.it/bandi",
+    "verificato": true,
+    "note": "RSS bandi: https://www.frlt.camcom.it/bandi/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Genova",
+    "regione": "Liguria",
+    "province": [
+      "GE"
+    ],
+    "sito": "https://www.ge.camcom.gov.it/it",
+    "url_bandi": "https://www.ge.camcom.gov.it/it/gestisci/finanziamenti-e-contributi-per-limpresa",
+    "verificato": true,
+    "note": "Sezione di orientamento che elenca contributi camerali (es. transizione digitale/ecologica 2026) e misure di altri enti. Feed Atom generale: https://www.ge.camcom.gov.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio del Gran Sasso d'Italia",
+    "regione": "Abruzzo",
+    "province": [
+      "AQ",
+      "TE"
+    ],
+    "sito": "https://www.cameragransasso.camcom.it/",
+    "url_bandi": "https://www.cameragransasso.camcom.it/it/la-camera/promozione-economica/bandi/",
+    "verificato": true,
+    "note": "Nessun RSS."
+  },
+  {
+    "nome": "Camera di commercio Irpinia Sannio",
+    "regione": "Campania",
+    "province": [
+      "AV",
+      "BN"
+    ],
+    "sito": "https://www.irpiniasannio.camcom.it/",
+    "url_bandi": "https://www.irpiniasannio.camcom.it/bandi",
+    "verificato": true,
+    "note": "RSS bandi: https://www.irpiniasannio.camcom.it/bandi/rss.xml . Pagina descrittiva: https://www.irpiniasannio.camcom.it/bandi-di-contributi"
+  },
+  {
+    "nome": "Camera di commercio di Lecce",
+    "regione": "Puglia",
+    "province": [
+      "LE"
+    ],
+    "sito": "https://www.le.camcom.it/",
+    "url_bandi": "https://www.le.camcom.it/promozione-e-sviluppo-del-territorio/bandi-e-contributi",
+    "verificato": true,
+    "note": "La pagina /bandi del template ha una sola voce; usare la pagina di promozione."
+  },
+  {
+    "nome": "Camera di commercio delle Marche",
+    "regione": "Marche",
+    "province": [
+      "AN",
+      "AP",
+      "FM",
+      "MC",
+      "PU"
+    ],
+    "sito": "https://www.marche.camcom.it/",
+    "url_bandi": "https://www.marche.camcom.it/fai-crescere-la-tua-impresa/bandi-e-contributi",
+    "verificato": true,
+    "note": "Feed Atom generale: https://www.marche.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio della Maremma e del Tirreno",
+    "regione": "Toscana",
+    "province": [
+      "GR",
+      "LI"
+    ],
+    "sito": "https://www.lg.camcom.it/",
+    "url_bandi": "https://www.lg.camcom.it/bandi",
+    "verificato": true,
+    "note": "RSS bandi: https://www.lg.camcom.it/bandi/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Messina",
+    "regione": "Sicilia",
+    "province": [
+      "ME"
+    ],
+    "sito": "https://www.me.camcom.it/",
+    "url_bandi": "https://www.me.camcom.it/bandi",
+    "verificato": true,
+    "note": "'Bandi e contributi' ma contiene soprattutto gare/avvisi: filtrare. RSS: https://www.me.camcom.it/bandi/rss.xml . Le opportunita' per imprese escono spesso solo come notizie: https://www.me.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Milano Monza Brianza Lodi",
+    "regione": "Lombardia",
+    "province": [
+      "MI",
+      "MB",
+      "LO"
+    ],
+    "sito": "https://www.milomb.camcom.it/",
+    "url_bandi": "https://www.milomb.camcom.it/bandi-e-contributi",
+    "verificato": true,
+    "note": "Verificata via browser/WebFetch (variante /en/bandi-e-contributi, URL canonico indicato dalla pagina). Sito protetto da Imperva/Incapsula: curl riceve solo una pagina JavaScript, serve un browser headless. I bandi lombardi sono comunque replicati su Unioncamere Lombardia."
+  },
+  {
+    "nome": "Camera di commercio di Modena",
+    "regione": "Emilia-Romagna",
+    "province": [
+      "MO"
+    ],
+    "sito": "https://www.mo.camcom.it/",
+    "url_bandi": "https://www.mo.camcom.it/promozione/contributi-camerali",
+    "verificato": true,
+    "note": "RSS della sezione: https://www.mo.camcom.it/promozione/contributi-camerali/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio del Molise",
+    "regione": "Molise",
+    "province": [
+      "CB",
+      "IS"
+    ],
+    "sito": "https://www.molise.camcom.gov.it/",
+    "url_bandi": "https://www.molise.camcom.gov.it/bandi",
+    "verificato": true,
+    "note": "RSS bandi: https://www.molise.camcom.gov.it/bandi/rss.xml . Pagina descrittiva: https://www.molise.camcom.gov.it/promuovi-la-tua-impresa-e-il-tuo-territorio/bandi-il-sostegno-alle-imprese"
+  },
+  {
+    "nome": "Camera di commercio Monte Rosa Laghi Alto Piemonte",
+    "regione": "Piemonte",
+    "province": [
+      "BI",
+      "NO",
+      "VB",
+      "VC"
+    ],
+    "sito": "https://www.pno.camcom.it/",
+    "url_bandi": "https://www.pno.camcom.it/promozione/bandi",
+    "verificato": true,
+    "note": "La pagina /bandi del template e' vuota; usare /promozione/bandi. RSS generale: https://www.pno.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Napoli",
+    "regione": "Campania",
+    "province": [
+      "NA"
+    ],
+    "sito": "https://www.na.camcom.gov.it/",
+    "url_bandi": "https://www.na.camcom.gov.it/",
+    "verificato": false,
+    "note": "pagina bandi non verificata: https://www.na.camcom.gov.it/bandi esiste ma risulta vuota; i bandi (turismo, voucher digitali, ammodernamento) escono come notizie in homepage. Monitorare homepage e RSS generale: https://www.na.camcom.gov.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Nuoro",
+    "regione": "Sardegna",
+    "province": [
+      "NU"
+    ],
+    "sito": "https://nu.camcom.it/it/index.html",
+    "url_bandi": "https://nu.camcom.it/it/camera/bandi/contributi-attivita-promozionali/",
+    "verificato": true,
+    "note": "Sezione madre: https://nu.camcom.it/it/camera/bandi/ (bandi, avvisi, selezioni)."
+  },
+  {
+    "nome": "Camera di commercio di Padova",
+    "regione": "Veneto",
+    "province": [
+      "PD"
+    ],
+    "sito": "https://www.pd.camcom.it/it",
+    "url_bandi": "https://www.pd.camcom.it/it/incentivi-imprese",
+    "verificato": true,
+    "note": "'Programma incentivi alle imprese' annuale. Feed Atom generale: https://www.pd.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Palermo ed Enna",
+    "regione": "Sicilia",
+    "province": [
+      "PA",
+      "EN"
+    ],
+    "sito": "https://www.paen.camcom.gov.it/it",
+    "url_bandi": "https://www.paen.camcom.gov.it/it/punto-impresa-digitale",
+    "verificato": true,
+    "note": "Nessun elenco bandi vero e proprio: /it/bandi esiste ma e' vuota e la pagina 'Bandi, Finanziamenti e Progetti' (https://www.paen.camcom.gov.it/it/promozione-internazionalizzazione-e-progetto-prevenzione-crisi-dimpresa/promozione/bandi-finanziamenti-e-progetti) e' quasi vuota. I bandi voucher sono storicamente nella sezione PID (ultimo visibile: Voucher Digitali I4.0 2022). Monitorare anche la homepage; RSS generale fermo al 2024."
+  },
+  {
+    "nome": "Camera di commercio di Pistoia-Prato",
+    "regione": "Toscana",
+    "province": [
+      "PT",
+      "PO"
+    ],
+    "sito": "https://www.ptpo.camcom.it/",
+    "url_bandi": "https://www.ptpo.camcom.it/servizi/contributi/index",
+    "verificato": true,
+    "note": "'Agevolazioni camerali' (bandi aperti e scaduti). Newsletter NewsBandi: https://www.ptpo.camcom.it/news/newsletter/news-bandi.php"
+  },
+  {
+    "nome": "Camera di commercio di Pordenone-Udine",
+    "regione": "Friuli-Venezia Giulia",
+    "province": [
+      "PN",
+      "UD"
+    ],
+    "sito": "https://www.pnud.camcom.it/",
+    "url_bandi": "https://www.pnud.camcom.it/contributi-e-rendicontazione",
+    "verificato": true,
+    "note": "Menu con contributi camerali, regionali delegati e distretti del commercio. RSS generale: https://www.pnud.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Reggio Calabria",
+    "regione": "Calabria",
+    "province": [
+      "RC"
+    ],
+    "sito": "https://www.rc.camcom.gov.it/",
+    "url_bandi": "https://www.rc.camcom.gov.it/opportunita",
+    "verificato": true,
+    "note": "'Opportunita', contributi e premi': elenco aggiornato (singole schede sotto /bandi-e-avvisi/...). RSS generale: https://www.rc.camcom.gov.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Rieti-Viterbo",
+    "regione": "Lazio",
+    "province": [
+      "RI",
+      "VT"
+    ],
+    "sito": "https://www.rivt.camcom.it/it/",
+    "url_bandi": "https://www.rivt.camcom.it/it/attivita_34/supporto-alle-imprese_433/",
+    "verificato": true,
+    "note": "Nessun elenco unico: i bandi sono voci di menu della sezione (Bando contributi fiere, Bando competitivita', Bando Temporary Shop) e news in homepage."
+  },
+  {
+    "nome": "Camera di commercio Riviere di Liguria",
+    "regione": "Liguria",
+    "province": [
+      "IM",
+      "SV",
+      "SP"
+    ],
+    "sito": "https://www.rivlig.camcom.gov.it/",
+    "url_bandi": "https://www.rivlig.camcom.gov.it/bandi",
+    "verificato": true,
+    "note": "RSS bandi: https://www.rivlig.camcom.gov.it/bandi/rss.xml . Pagina descrittiva: https://www.rivlig.camcom.gov.it/contributi-alle-imprese"
+  },
+  {
+    "nome": "Camera di commercio di Roma",
+    "regione": "Lazio",
+    "province": [
+      "RM"
+    ],
+    "sito": "https://www.rm.camcom.it/",
+    "url_bandi": "https://www.rm.camcom.it/pagina82_avvisi-pubblici-bandi-per-contributi-e-attivit-promozionali-altre-opportunit.html",
+    "verificato": true,
+    "note": "Pagina sintetica contributi: https://www.rm.camcom.it/pagina105_contributi.html . Nessun RSS."
+  },
+  {
+    "nome": "Camera di commercio della Romagna",
+    "regione": "Emilia-Romagna",
+    "province": [
+      "FC",
+      "RN"
+    ],
+    "sito": "https://www.romagna.camcom.it/",
+    "url_bandi": "https://www.romagna.camcom.it/it/opportunita/finanziamenti-1",
+    "verificato": true,
+    "note": "Pagina 'Finanziamenti' con i bandi camerali in corso."
+  },
+  {
+    "nome": "Camera di commercio di Salerno",
+    "regione": "Campania",
+    "province": [
+      "SA"
+    ],
+    "sito": "https://www.sa.camcom.it/",
+    "url_bandi": "https://www.sa.camcom.it/node/3415",
+    "verificato": true,
+    "note": "Pagina 'Contributi' (fiere, confidi, cofinanziamento iniziative). La pagina /bandi del template e' vuota. Monitorare anche le notizie: https://www.sa.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Sassari (Nord Sardegna)",
+    "regione": "Sardegna",
+    "province": [
+      "SS"
+    ],
+    "sito": "https://www.ss.camcom.it/",
+    "url_bandi": "https://www.ss.camcom.it/promozione-del-territorio",
+    "verificato": true,
+    "note": "I bandi sono voci di menu 'Voucher in corso' / 'Voucher conclusi' della sezione Promozione del territorio; la pagina /bandi contiene solo un test. Copre il Nord Sardegna (incl. Gallura). RSS generale: https://www.ss.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Sondrio",
+    "regione": "Lombardia",
+    "province": [
+      "SO"
+    ],
+    "sito": "https://www.so.camcom.it/",
+    "url_bandi": "https://www.so.camcom.it/bandi",
+    "verificato": true,
+    "note": "Tabella bandi per anno con stato. RSS generale: https://www.so.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio del Sud Est Sicilia",
+    "regione": "Sicilia",
+    "province": [
+      "CT",
+      "RG",
+      "SR"
+    ],
+    "sito": "https://ctrgsr.camcom.gov.it/",
+    "url_bandi": "https://ctrgsr.camcom.gov.it/voucher-digitali",
+    "verificato": true,
+    "note": "Pagina con i bandi camerali per anno (2026: Doppia Transizione, Turismo; 2025: tirocini). Altre pagine: https://ctrgsr.camcom.gov.it/marketing-territoriale/bandi-finanziamenti-e-progetti (contributi a iniziative) e notizie https://ctrgsr.camcom.gov.it/it/blog . RSS generale: https://ctrgsr.camcom.gov.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Torino",
+    "regione": "Piemonte",
+    "province": [
+      "TO"
+    ],
+    "sito": "https://www.to.camcom.it/",
+    "url_bandi": "https://www.to.camcom.it/finanziamenti-bandi-e-contributi",
+    "verificato": true,
+    "note": "Altra pagina utile: https://www.to.camcom.it/contributi (bandi formazione)."
+  },
+  {
+    "nome": "Camera di commercio della Toscana Nord-Ovest",
+    "regione": "Toscana",
+    "province": [
+      "LU",
+      "MS",
+      "PI"
+    ],
+    "sito": "https://tno.camcom.it/",
+    "url_bandi": "https://tno.camcom.it/contributi-e-agevolazioni",
+    "verificato": true,
+    "note": ""
+  },
+  {
+    "nome": "Camera di commercio di Trapani",
+    "regione": "Sicilia",
+    "province": [
+      "TP"
+    ],
+    "sito": "https://www.tp.camcom.it/",
+    "url_bandi": "https://www.tp.camcom.it/punto-impresa-digitale",
+    "verificato": true,
+    "note": "I bandi sono sottovoci della sezione PID (es. 'Bando PID doppia Transizione Digitale ed Ecologica 2026'). La pagina /bandi contiene solo dati di test: non usarla. Notizie: https://www.tp.camcom.it/notizie . Accorpamento AG-CL-TP non ancora operativo."
+  },
+  {
+    "nome": "Camera di commercio di Trento",
+    "regione": "Trentino-Alto Adige",
+    "province": [
+      "TN"
+    ],
+    "sito": "https://www.tn.camcom.it/",
+    "url_bandi": "https://www.tn.camcom.it/imprenditore/impresa-digitale-pid/bandi-contributi",
+    "verificato": true,
+    "note": "RSS generale: https://www.tn.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Treviso-Belluno",
+    "regione": "Veneto",
+    "province": [
+      "TV",
+      "BL"
+    ],
+    "sito": "https://www.tb.camcom.gov.it/",
+    "url_bandi": "https://www.tb.camcom.gov.it/bandi.asp",
+    "verificato": true,
+    "note": "Elenco che include anche bandi di altri enti (MIMIT, INAIL, Provincia). Schede: CCIAA_bandi.asp?cod=N"
+  },
+  {
+    "nome": "Camera di commercio dell'Umbria",
+    "regione": "Umbria",
+    "province": [
+      "PG",
+      "TR"
+    ],
+    "sito": "https://www.umbria.camcom.it/",
+    "url_bandi": "https://www.umbria.camcom.it/promuovere-limpresa-e-il-territorio/bandi-e-contributi",
+    "verificato": true,
+    "note": "Feed Atom generale: https://www.umbria.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera valdostana delle imprese e delle professioni",
+    "regione": "Valle d'Aosta",
+    "province": [
+      "AO"
+    ],
+    "sito": "https://www.ao.camcom.it/it",
+    "url_bandi": "https://www.ao.camcom.it/it/far-crescere-l-impresa/bandi-contributi-agevolazioni",
+    "verificato": true,
+    "note": "RSS generale: https://www.ao.camcom.it/it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Varese",
+    "regione": "Lombardia",
+    "province": [
+      "VA"
+    ],
+    "sito": "https://www.va.camcom.it/",
+    "url_bandi": "https://www.va.camcom.it/pagina737_contributi-e-agevolazioni.html",
+    "verificato": true,
+    "note": "Schede singole: archivio39_contributi_0_N.html ; l'elenco e' anche in homepage."
+  },
+  {
+    "nome": "Camera di commercio Venezia Giulia",
+    "regione": "Friuli-Venezia Giulia",
+    "province": [
+      "GO",
+      "TS"
+    ],
+    "sito": "https://vg.camcom.it/",
+    "url_bandi": "https://vg.camcom.it/contributi-e-agevolazioni",
+    "verificato": true,
+    "note": "Include i contributi delegati dalla Regione FVG. RSS generale: https://vg.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Venezia Rovigo",
+    "regione": "Veneto",
+    "province": [
+      "VE",
+      "RO"
+    ],
+    "sito": "https://www.dl.camcom.it/",
+    "url_bandi": "https://www.dl.camcom.it/sonoimpresa/cosa-puo-servire-sono/incentivi-ed-agevolazioni/contributi",
+    "verificato": true,
+    "note": "Bandi PID attivi: https://www.dl.camcom.it/azioni-e-progetti/punti-impresa-digitale-pid/pid-cosa-sono/bandi-attivi . Sito lento (pagine da 700 KB): usare timeout lunghi."
+  },
+  {
+    "nome": "Camera di commercio di Verona",
+    "regione": "Veneto",
+    "province": [
+      "VR"
+    ],
+    "sito": "https://www.vr.camcom.it/",
+    "url_bandi": "https://www.vr.camcom.it/promuovere-impresa-e-territorio/contributi-e-patrocini",
+    "verificato": true,
+    "note": "Sito Plone/Volto reso via JavaScript: l'HTML non contiene i link. Usare l'API JSON https://www.vr.camcom.it/++api++/promuovere-impresa-e-territorio/contributi-e-patrocini (voci: voucher doppia transizione, internazionalizzazione, bando enti terzi). Feed Atom generale: https://www.vr.camcom.it/rss.xml"
+  },
+  {
+    "nome": "Camera di commercio di Vicenza",
+    "regione": "Veneto",
+    "province": [
+      "VI"
+    ],
+    "sito": "https://www.vi.camcom.it/",
+    "url_bandi": "https://www.vi.camcom.it/it/servizi/bandi-per-contributi-alle-imprese/",
+    "verificato": true,
+    "note": ""
+  }
+]

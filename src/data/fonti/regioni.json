@@ -1,0 +1,1001 @@
+[
+ {
+  "regione": "Sicilia",
+  "ente": "Regione Siciliana - Bandi e avvisi pubblici",
+  "tipo": "regione",
+  "url_bandi": "https://www.regione.sicilia.it/istituzioni/servizi-informativi/bandi",
+  "feed": "",
+  "verificato": true,
+  "note": "Listing unico Drupal con filtri a faccette per tipologia (category:20 gare, 21 concorsi, 22 avvisi pubblici, 23 manifestazioni interesse), per struttura (group:N) e scaduti (expired:0/1). Nessun RSS. Per i contributi usare ?f[0]=category:22"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Regione Siciliana - solo Avvisi pubblici",
+  "tipo": "regione",
+  "url_bandi": "https://www.regione.sicilia.it/istituzioni/servizi-informativi/bandi?f%5B0%5D=category%3A22",
+  "feed": "",
+  "verificato": true,
+  "note": "Filtro consigliato per escludere gare e concorsi"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Dipartimento Attività Produttive",
+  "tipo": "dipartimento",
+  "url_bandi": "https://www.regione.sicilia.it/istituzioni/servizi-informativi/bandi?f%5B0%5D=group%3A12&f%5B1%5D=group%3A14",
+  "feed": "",
+  "verificato": true,
+  "note": "Faccetta del listing regionale. Pagina dipartimento: https://www.regione.sicilia.it/istituzioni/regione/strutture-regionali/assessorato-attivita-produttive/dipartimento-attivita-produttive. Avvisi 'Sicilia che piace', mercati rionali, PR FESR imprese; molte misure sono poi gestite da IRFIS/IRCA"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Dipartimento Agricoltura",
+  "tipo": "dipartimento",
+  "url_bandi": "https://www.regione.sicilia.it/istituzioni/servizi-informativi/bandi?f%5B0%5D=group%3A7&f%5B1%5D=group%3A26",
+  "feed": "",
+  "verificato": true,
+  "note": "Faccetta del listing regionale. Pagina dipartimento: https://www.regione.sicilia.it/istituzioni/regione/strutture-regionali/assessorato-agricoltura-sviluppo-rurale-pesca-mediterranea/dipartimento-agricoltura. Bandi PSR/CSR pubblicati anche su psrsicilia.it"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Dipartimento Pesca Mediterranea",
+  "tipo": "dipartimento",
+  "url_bandi": "https://www.regione.sicilia.it/istituzioni/servizi-informativi/bandi?f%5B0%5D=group%3A7&f%5B1%5D=group%3A27",
+  "feed": "",
+  "verificato": true,
+  "note": "Faccetta del listing regionale. Pagina dipartimento: https://www.regione.sicilia.it/istituzioni/regione/strutture-regionali/assessorato-agricoltura-sviluppo-rurale-pesca-mediterranea/dipartimento-pesca-mediterranea. FEAMPA e fondo solidarietà pesca"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Dipartimento Sviluppo Rurale e Territoriale",
+  "tipo": "dipartimento",
+  "url_bandi": "https://www.regione.sicilia.it/istituzioni/servizi-informativi/bandi?f%5B0%5D=group%3A7&f%5B1%5D=group%3A28",
+  "feed": "",
+  "verificato": true,
+  "note": "Faccetta del listing regionale. Pagina dipartimento: https://www.regione.sicilia.it/istituzioni/regione/strutture-regionali/assessorato-agricoltura-sviluppo-rurale-pesca-mediterranea/dipartimento-sviluppo-rurale-territoriale."
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Dipartimento Turismo, Sport e Spettacolo",
+  "tipo": "dipartimento",
+  "url_bandi": "https://www.regione.sicilia.it/istituzioni/servizi-informativi/bandi?f%5B0%5D=group%3A4&f%5B1%5D=group%3A18",
+  "feed": "",
+  "verificato": true,
+  "note": "Faccetta del listing regionale. Pagina dipartimento: https://www.regione.sicilia.it/istituzioni/regione/strutture-regionali/assessorato-turismo-sport-spettacolo/dipartimento-turismo-sport-spettacolo. Es. bando Borghi di Natale"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Dipartimento Acqua e Rifiuti",
+  "tipo": "dipartimento",
+  "url_bandi": "https://www.regione.sicilia.it/istituzioni/servizi-informativi/bandi?f%5B0%5D=group%3A13&f%5B1%5D=group%3A41",
+  "feed": "",
+  "verificato": true,
+  "note": "Faccetta del listing regionale. Pagina dipartimento: https://www.regione.sicilia.it/istituzioni/regione/strutture-regionali/assessorato-energia-servizi-pubblica-utilita/dipartimento-acqua-rifiuti."
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Dipartimento Famiglia e Politiche Sociali",
+  "tipo": "dipartimento",
+  "url_bandi": "https://www.regione.sicilia.it/istituzioni/servizi-informativi/bandi?f%5B0%5D=group%3A11&f%5B1%5D=group%3A39",
+  "feed": "",
+  "verificato": true,
+  "note": "Faccetta del listing regionale. Pagina dipartimento: https://www.regione.sicilia.it/istituzioni/regione/strutture-regionali/assessorato-famiglia-politiche-sociali-lavoro/dipartimento-famiglia-politiche-sociali."
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Dipartimento Beni Culturali e Identità Siciliana",
+  "tipo": "dipartimento",
+  "url_bandi": "https://www.regione.sicilia.it/istituzioni/servizi-informativi/bandi?f%5B0%5D=group%3A16&f%5B1%5D=group%3A22",
+  "feed": "",
+  "verificato": true,
+  "note": "Faccetta del listing regionale. Pagina dipartimento: https://www.regione.sicilia.it/istituzioni/regione/strutture-regionali/assessorato-beni-culturali-identita-siciliana/dipartimento-beni-culturali-identita-siciliana."
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Dipartimento Programmazione (Presidenza)",
+  "tipo": "dipartimento",
+  "url_bandi": "https://www.regione.sicilia.it/istituzioni/servizi-informativi/bandi?f%5B0%5D=group%3A3&f%5B1%5D=group%3A56",
+  "feed": "",
+  "verificato": true,
+  "note": "Faccetta del listing regionale. Pagina dipartimento: https://www.regione.sicilia.it/istituzioni/regione/strutture-regionali/presidenza-regione/dipartimento-programmazione. AdG PR FESR; i bandi sono su EuroInfoSicilia"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Dipartimento Ambiente",
+  "tipo": "dipartimento",
+  "url_bandi": "https://www.regione.sicilia.it/istituzioni/servizi-informativi/bandi?f%5B0%5D=group%3A5&f%5B1%5D=group%3A20",
+  "feed": "",
+  "verificato": true,
+  "note": "Faccetta del listing regionale. Pagina dipartimento: https://www.regione.sicilia.it/istituzioni/regione/strutture-regionali/assessorato-territorio-ambiente/dipartimento-ambiente."
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Dipartimento Energia",
+  "tipo": "dipartimento",
+  "url_bandi": "https://www.regione.sicilia.it/istituzioni/regione/strutture-regionali/assessorato-energia-servizi-pubblica-utilita/dipartimento-energia",
+  "feed": "",
+  "verificato": true,
+  "note": "Al momento della verifica nessuna faccetta attiva nel listing bandi (nessun avviso aperto): monitorare la pagina del dipartimento e il listing generale"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Dipartimento Lavoro, Impiego, Orientamento",
+  "tipo": "dipartimento",
+  "url_bandi": "https://www.regione.sicilia.it/istituzioni/regione/strutture-regionali/assessorato-famiglia-politiche-sociali-lavoro/dipartimento-lavoro-impiego-orientamento-servizi-attivita-formative",
+  "feed": "",
+  "verificato": true,
+  "note": "Nessuna faccetta attiva nel listing; contiene sezione 'Avvisi e bandi sul Fondo Sociale Europeo'. Gli avvisi FSE+ sono su sicilia-fse.it"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Dipartimento Formazione Professionale",
+  "tipo": "dipartimento",
+  "url_bandi": "https://www.regione.sicilia.it/istituzioni/regione/strutture-regionali/assessorato-istruzione-formazione-professionale/dipartimento-formazione-professionale",
+  "feed": "",
+  "verificato": true,
+  "note": "Avvisi POC/FSE+ pubblicati come news e su sicilia-fse.it"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Dipartimento Istruzione, Università e Diritto allo Studio",
+  "tipo": "dipartimento",
+  "url_bandi": "https://www.regione.sicilia.it/istituzioni/regione/strutture-regionali/assessorato-istruzione-formazione-professionale/dipartimento-istruzione-universita-diritto-allo-studio",
+  "feed": "",
+  "verificato": true,
+  "note": "Avvisi IeFP, borse di studio"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "EuroInfoSicilia - Bandi e avvisi aperti (Dip. Programmazione)",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://www.euroinfosicilia.it/bandi-e-avvisi-aperti/?sezione=aperti",
+  "feed": "https://www.euroinfosicilia.it/feed/",
+  "verificato": true,
+  "note": "Sezioni aperti / in scadenza / chiusi / archivio; al 18/11/2026: 4 aperti, 0 in scadenza, 106 chiusi. RSS WordPress generale del sito"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "PR FESR Sicilia 2021-2027 - Bandi e avvisi",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://www.euroinfosicilia.it/bandi-e-avvisi-pr-fesr-21-27/",
+  "feed": "https://www.euroinfosicilia.it/feed/",
+  "verificato": true,
+  "note": "Listing paginato (?paged=N)"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "FSC Sicilia 2021-2027 - Bandi e avvisi",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://www.euroinfosicilia.it/bandi-e-avvisi-fsc-sicilia-21-27/",
+  "feed": "https://www.euroinfosicilia.it/feed/",
+  "verificato": true,
+  "note": ""
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "EuroInfoSicilia - Bandi di altri programmi / POC 14-20",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://www.euroinfosicilia.it/bandi-e-avvisi-di-altri-programmi/",
+  "feed": "https://www.euroinfosicilia.it/feed/",
+  "verificato": true,
+  "note": "POC: https://www.euroinfosicilia.it/bandi-e-avvisi-poc-sicilia-14-20/"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "PR FSE+ Sicilia 2021-2027 - Avvisi e bandi",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://www.sicilia-fse.it/avvisi-e-bandi",
+  "feed": "",
+  "verificato": true,
+  "note": "Schede per avviso (/avvisi-e-bandi/pr-fse-2021-2027/avviso-NN-AAAA). Nessun RSS rilevato"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "PSR/CSR Sicilia - Bandi aperti",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://www.psrsicilia.it/bandi-aperti/",
+  "feed": "https://www.psrsicilia.it/feed/",
+  "verificato": true,
+  "note": "Anche /bandi-chiusi/. RSS WordPress generale"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "IRFIS FinSicilia - Avvisi aperti",
+  "tipo": "finanziaria",
+  "url_bandi": "https://www.irfis.it/category/articoli-misure-aperte/",
+  "feed": "https://www.irfis.it/category/articoli-misure-aperte/feed/",
+  "verificato": true,
+  "note": "WordPress: RSS dedicato alle misure aperte (verificato, 13 misure). Altre categorie: /category/articoli-misure-agevolative/ (tutte), /category/articoli-misure-chiuse/. Elenco misure attive in regioni-note.md"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "IRCA - Istituto Regionale per il Credito Agevolato (fusione CRIAS + IRCAC dal 28/04/2026)",
+  "tipo": "finanziaria",
+  "url_bandi": "https://www.ircasicilia.it/avvisi/",
+  "feed": "https://www.ircasicilia.it/avvisi/feed/",
+  "verificato": true,
+  "note": "crias.it e ircac.it reindirizzano a ircasicilia.it. Misure: AgriPesca (5 mln, domande dal 30/11/2026), 'Più Artigianato' (piattaforma riaperta dal 16/10) su https://www.ircasicilia.it/piu-arigianato/"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "CRIAS (confluita in IRCA)",
+  "tipo": "finanziaria",
+  "url_bandi": "https://www.ircasicilia.it/",
+  "feed": "",
+  "verificato": true,
+  "note": "https://www.crias.it/ fa redirect a ircasicilia.it: non più fonte autonoma"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "IRCAC (confluita in IRCA)",
+  "tipo": "finanziaria",
+  "url_bandi": "https://www.ircasicilia.it/",
+  "feed": "",
+  "verificato": true,
+  "note": "https://www.ircac.it/ fa redirect a ircasicilia.it: non più fonte autonoma"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Sviluppo Italia Sicilia",
+  "tipo": "agenzia",
+  "url_bandi": "",
+  "feed": "",
+  "verificato": false,
+  "note": "non verificato: sviluppoitaliasicilia.it non risponde; nessuna evidenza di bandi attivi (società storicamente in liquidazione). Da non includere come fonte"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "ZES Unica Mezzogiorno - Struttura di missione",
+  "tipo": "agenzia",
+  "url_bandi": "https://www.strutturazes.gov.it/it/sportello-unico/provvedimenti-di-autorizzazione/",
+  "feed": "",
+  "verificato": false,
+  "note": "non verificato: sito non raggiungibile dal nostro ambiente (timeout/blocco IP non italiani); URL ricavato dall'indice di ricerca. Fonte nazionale (Sicilia inclusa): autorizzazione unica e credito d'imposta ZES, non bandi a graduatoria. Notizie: https://www.strutturazes.gov.it/it/comunicazione/notizie/"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Città Metropolitana di Palermo",
+  "tipo": "agenzia",
+  "url_bandi": "https://cittametropolitana.pa.it/",
+  "feed": "https://cittametropolitana.pa.it/feed/",
+  "verificato": true,
+  "note": "Avvisi pubblici pubblicati come news WordPress (es. contributi ai Comuni); RSS generale. Il dominio con www non risponde. Concorsi: https://amministrazionetrasparente.cittametropolitana.pa.it/bandi-concorso"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Città Metropolitana di Catania",
+  "tipo": "agenzia",
+  "url_bandi": "https://www.cittametropolitana.ct.it/it/menu/179240",
+  "feed": "https://www.cittametropolitana.ct.it/it/feeds",
+  "verificato": true,
+  "note": "Sezione 'Avvisi on-line'; pagina feed RSS presente. Il vecchio cms_bandi (cmct.cittametropolitana.ct.it) risponde 500/bloccato"
+ },
+ {
+  "regione": "Sicilia",
+  "ente": "Città Metropolitana di Messina",
+  "tipo": "agenzia",
+  "url_bandi": "https://www.cittametropolitana.me.it/servizi/servizi-alle-imprese/bandi-di-gara/",
+  "feed": "",
+  "verificato": true,
+  "note": "Solo bandi di gara per direzione; nessuna sezione contributi dedicata né RSS"
+ },
+ {
+  "regione": "Lombardia",
+  "ente": "Regione Lombardia - Bandi e Servizi",
+  "tipo": "regione",
+  "url_bandi": "https://www.bandi.regione.lombardia.it/servizi/servizio/bandi",
+  "feed": "",
+  "verificato": true,
+  "note": "Catalogo filtrabile per tema (/bandi/attivita-produttive-imprese, /agricoltura-pesca, ecc.). Nessun RSS rilevato"
+ },
+ {
+  "regione": "Lombardia",
+  "ente": "PR FESR Lombardia 2021-2027",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://fesr.regione.lombardia.it/it/pc2127/prlombardiafesr2021-2027",
+  "feed": "",
+  "verificato": true,
+  "note": "Bandi in home (/bando/RLxxxx) e ricerca /ricerca-globale-bandi"
+ },
+ {
+  "regione": "Lombardia",
+  "ente": "PR FSE+ Lombardia 2021-2027",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://fse.regione.lombardia.it/it/pc2127/prlombardiafse2021-2027",
+  "feed": "",
+  "verificato": true,
+  "note": ""
+ },
+ {
+  "regione": "Lombardia",
+  "ente": "Sviluppo Rurale Lombardia 2023-2027 (CSR)",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://psr.regione.lombardia.it/it/pc2127/psr-2023-2027",
+  "feed": "",
+  "verificato": true,
+  "note": "Sezione /bandi-psn-pac"
+ },
+ {
+  "regione": "Lombardia",
+  "ente": "Finlombarda - Prodotti e servizi",
+  "tipo": "finanziaria",
+  "url_bandi": "https://www.finlombarda.it/it/prodotti-e-servizi/prodotti-servizi",
+  "feed": "",
+  "verificato": true,
+  "note": "Schede misura /prodotti-servizi/NNN/slug. Nessun RSS"
+ },
+ {
+  "regione": "Lombardia",
+  "ente": "Open Innovation Lombardia - Bandi e sperimentazioni",
+  "tipo": "agenzia",
+  "url_bandi": "https://www.openinnovation.regione.lombardia.it/",
+  "feed": "",
+  "verificato": true,
+  "note": "Bandi ricerca/innovazione, archivio bandi nel menu"
+ },
+ {
+  "regione": "Piemonte",
+  "ente": "Regione Piemonte - Bandi",
+  "tipo": "regione",
+  "url_bandi": "https://bandi.regione.piemonte.it/",
+  "feed": "https://bandi.regione.piemonte.it/tutti/rss.xml",
+  "verificato": true,
+  "note": "RSS ufficiale di tutti i bandi (verificato). Sezioni /contributi-finanziamenti, /avvisi-beni-regionali, /pre-informazione-fondi-ue"
+ },
+ {
+  "regione": "Piemonte",
+  "ente": "PR FESR Piemonte - Bandi (FINDOM)",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://servizi.regione.piemonte.it/catalogo/bandi-pr-fesr-finanziamenti-domande",
+  "feed": "",
+  "verificato": true,
+  "note": "Info programma: https://www.regione.piemonte.it/web/temi/fondi-progetti-europei"
+ },
+ {
+  "regione": "Piemonte",
+  "ente": "Finpiemonte - Agevolazioni e incentivi",
+  "tipo": "finanziaria",
+  "url_bandi": "https://www.finpiemonte.it/agevolazioni",
+  "feed": "",
+  "verificato": true,
+  "note": "Motore di ricerca agevolazioni; /bandi dà 404. Avvisi e gare: /news?field_tipologia_news_target_id=231"
+ },
+ {
+  "regione": "Valle d'Aosta",
+  "ente": "Regione VdA - Europa: Bandi e avvisi",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://new.regione.vda.it/europa/progetti/bandi-e-avvisi",
+  "feed": "https://new.regione.vda.it/rss?projection=1112",
+  "verificato": true,
+  "note": "Filtri per tema/destinatario (termids); RSS 'Elenco bandi' verificato. Il vecchio www.regione.vda.it risponde 403/404"
+ },
+ {
+  "regione": "Valle d'Aosta",
+  "ente": "Regione Valle d'Aosta - portale istituzionale bandi",
+  "tipo": "regione",
+  "url_bandi": "",
+  "feed": "",
+  "verificato": false,
+  "note": "non verificato: www.regione.vda.it risponde 403; usare il nuovo portale new.regione.vda.it"
+ },
+ {
+  "regione": "Valle d'Aosta",
+  "ente": "Finaosta - Bandi e avvisi",
+  "tipo": "finanziaria",
+  "url_bandi": "https://www.finaosta.com/tag/bandi-e-avvisi/",
+  "feed": "https://www.finaosta.com/tag/bandi-e-avvisi/feed/",
+  "verificato": true,
+  "note": "Pochi avvisi; l'operatività ordinaria (mutui LR) è descritta in /finanziaria-regionale/operativita/"
+ },
+ {
+  "regione": "Liguria",
+  "ente": "Regione Liguria - Bandi e avvisi",
+  "tipo": "regione",
+  "url_bandi": "https://www.regione.liguria.it/homepage-bandi-e-avvisi/publiccompetitions.html",
+  "feed": "",
+  "verificato": true,
+  "note": "Mescola concessioni, nomine e contributi: serve filtro lato nostro"
+ },
+ {
+  "regione": "Liguria",
+  "ente": "Regione Liguria - Fondi europei / calendario bandi FESR 21-27",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://www.regione.liguria.it/homepage-fondi-europei/cosa-cerchi/fesr_2021-2027_calendario_bandi.html",
+  "feed": "https://www.regione.liguria.it/homepage-fondi-europei.feed?type=rss",
+  "verificato": true,
+  "note": "Feed RSS dichiarato nella pagina fondi europei (non aperto)"
+ },
+ {
+  "regione": "Liguria",
+  "ente": "FILSE - Bandi attivi",
+  "tipo": "finanziaria",
+  "url_bandi": "https://www.filse.it/it/bandi-avvisi-gare/bandi-attivi/publiccompetitions/",
+  "feed": "",
+  "verificato": true,
+  "note": "Anche /in-apertura/ (bandi in apertura). Gestisce gran parte dei bandi regionali per imprese e famiglie"
+ },
+ {
+  "regione": "Veneto",
+  "ente": "Regione del Veneto - Bandi, Avvisi e Concorsi",
+  "tipo": "regione",
+  "url_bandi": "https://bandi.regione.veneto.it/Public/Elenco?Tipo=1",
+  "feed": "",
+  "verificato": true,
+  "note": "Tipo=1 bandi, 2 avvisi, 3 concorsi; scadenzario /Public/Scadenzario. Nessun RSS"
+ },
+ {
+  "regione": "Veneto",
+  "ente": "Regione del Veneto - Programmi comunitari: bandi",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://www.regione.veneto.it/web/programmi-comunitari/bandi",
+  "feed": "",
+  "verificato": true,
+  "note": "Rimanda a bandi.regione.veneto.it. Imprese: https://www.regione.veneto.it/web/attivita-produttive/bandi-e-finanziamenti-"
+ },
+ {
+  "regione": "Veneto",
+  "ente": "Veneto Innovazione - Finanza agevolata (ex Veneto Sviluppo)",
+  "tipo": "finanziaria",
+  "url_bandi": "https://agevolazioni.venetoinnovazione.it/",
+  "feed": "",
+  "verificato": true,
+  "note": "Finanziamenti, contributi, garanzie, fondo PR FESR. Il sito venetosviluppo.it rimanda qui"
+ },
+ {
+  "regione": "Veneto",
+  "ente": "Veneto Innovazione - Bandi in corso",
+  "tipo": "agenzia",
+  "url_bandi": "https://www.venetoinnovazione.it/bandi-in-corso/",
+  "feed": "https://www.venetoinnovazione.it/feed/",
+  "verificato": true,
+  "note": ""
+ },
+ {
+  "regione": "Veneto",
+  "ente": "Veneto Sviluppo",
+  "tipo": "finanziaria",
+  "url_bandi": "https://www.venetosviluppo.it/",
+  "feed": "",
+  "verificato": true,
+  "note": "Solo news; le misure sono su agevolazioni.venetoinnovazione.it"
+ },
+ {
+  "regione": "Veneto",
+  "ente": "AVEPA - Bandi regionali CSR 2023-2027",
+  "tipo": "agenzia",
+  "url_bandi": "https://www.avepa.it/bandi-regionali-csr-2023-2027",
+  "feed": "",
+  "verificato": false,
+  "note": "non verificato: sito non raggiungibile dal nostro ambiente (timeout/blocco IP non italiani); URL ricavato dall'indice di ricerca. Bandi PR FESR: https://www.avepa.it/servizi/settori/aiuti-e-contributi/fesr/pr-veneto-fesr-2021-2027/bandi-pr-veneto-fesr"
+ },
+ {
+  "regione": "Friuli-Venezia Giulia",
+  "ente": "Regione FVG - Bandi e avvisi",
+  "tipo": "regione",
+  "url_bandi": "https://www.regione.fvg.it/rafvg/cms/RAFVG/MODULI/bandi_avvisi/",
+  "feed": "https://www.regione.fvg.it/rafvg/cms/RAFVG/rss/",
+  "verificato": true,
+  "note": "Listing paginato (?pag=N). Pagina RSS regionale verificata"
+ },
+ {
+  "regione": "Friuli-Venezia Giulia",
+  "ente": "Regione FVG - Imprese (contributi per settore)",
+  "tipo": "regione",
+  "url_bandi": "https://www.regione.fvg.it/rafvg/cms/RAFVG/economia-imprese/",
+  "feed": "",
+  "verificato": true,
+  "note": "Accesso al credito (FRIE ecc.): /economia-imprese/accesso_al_credito/"
+ },
+ {
+  "regione": "Friuli-Venezia Giulia",
+  "ente": "Regione FVG - Fondi europei",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://www.regione.fvg.it/rafvg/cms/RAFVG/fondi-europei-fvg-internazionale/",
+  "feed": "",
+  "verificato": true,
+  "note": "Pagina hub; l'URL specifico dei bandi PR FESR non è stato individuato"
+ },
+ {
+  "regione": "Friuli-Venezia Giulia",
+  "ente": "Friulia",
+  "tipo": "finanziaria",
+  "url_bandi": "https://www.friulia.it/it/",
+  "feed": "",
+  "verificato": true,
+  "note": "Finanziaria di partecipazione (equity): non pubblica bandi a sportello. fvgcontributi.it non risponde (non verificato)"
+ },
+ {
+  "regione": "Emilia-Romagna",
+  "ente": "Regione Emilia-Romagna - Bandi per finanziamenti e contributi",
+  "tipo": "regione",
+  "url_bandi": "https://www.regione.emilia-romagna.it/leggi-atti-bandi/bandi-finanziamenti-contributi",
+  "feed": "",
+  "verificato": true,
+  "note": ""
+ },
+ {
+  "regione": "Emilia-Romagna",
+  "ente": "Portale Imprese E-R - Cerca in tutti i finanziamenti",
+  "tipo": "regione",
+  "url_bandi": "https://imprese.regione.emilia-romagna.it/leggi-atti-bandi/tutti-i-bandi/tutti-i-finanziamenti",
+  "feed": "",
+  "verificato": true,
+  "note": "Ricerca filtrabile"
+ },
+ {
+  "regione": "Emilia-Romagna",
+  "ente": "PR FESR Emilia-Romagna - Bandi 2021-2027",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://fesr.regione.emilia-romagna.it/opportunita/opportunita-di-finanziamento/bandi-21-27",
+  "feed": "",
+  "verificato": true,
+  "note": "Calendario bandi: /programmi-e-strategie/2021-2027/calendario-inviti-a-presentare-proposte"
+ },
+ {
+  "regione": "Emilia-Romagna",
+  "ente": "FSE+ Emilia-Romagna - Bandi",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://formazionelavoro.regione.emilia-romagna.it/leggi-atti-bandi/bandi-regionali/fseplus-2021-2027",
+  "feed": "",
+  "verificato": true,
+  "note": ""
+ },
+ {
+  "regione": "Emilia-Romagna",
+  "ente": "Agricoltura E-R (CSR) - Bandi",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://agricoltura.regione.emilia-romagna.it/bandi",
+  "feed": "",
+  "verificato": true,
+  "note": ""
+ },
+ {
+  "regione": "Emilia-Romagna",
+  "ente": "ART-ER - Contributi e vantaggi economici",
+  "tipo": "agenzia",
+  "url_bandi": "https://www.art-er.it/avvisi-e-gare/contributi-e-vantaggi-economici",
+  "feed": "",
+  "verificato": false,
+  "note": "non verificato: sito non raggiungibile dal nostro ambiente (timeout/blocco IP non italiani); URL ricavato dall'indice di ricerca. Portale FIRST (first.art-er.it) protetto da Cloudflare (403)"
+ },
+ {
+  "regione": "Toscana",
+  "ente": "Regione Toscana - Bandi aperti",
+  "tipo": "regione",
+  "url_bandi": "https://www.regione.toscana.it/bandi-aperti",
+  "feed": "",
+  "verificato": true,
+  "note": "Paginazione ?delta=20&start=N, ordinabile; tutti: /it/bandi-tutti; avvisi: /avvisi-pubblici"
+ },
+ {
+  "regione": "Toscana",
+  "ente": "PR FESR Toscana 2021-2027",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://www.regione.toscana.it/pr-fesr-2021-2027",
+  "feed": "",
+  "verificato": true,
+  "note": "Hub con link ai bandi"
+ },
+ {
+  "regione": "Toscana",
+  "ente": "Sviluppo Toscana - Bandi",
+  "tipo": "agenzia",
+  "url_bandi": "https://www.sviluppo.toscana.it/bandi/",
+  "feed": "https://www.sviluppo.toscana.it/bandi/feed/",
+  "verificato": true,
+  "note": "RSS dedicato ai bandi (verificato)"
+ },
+ {
+  "regione": "Toscana",
+  "ente": "Fidi Toscana",
+  "tipo": "finanziaria",
+  "url_bandi": "https://www.fiditoscana.it/agevolazioni-per-laccesso-al-credito-2025/",
+  "feed": "https://www.fiditoscana.it/feed/",
+  "verificato": true,
+  "note": "Garanzie e agevolazioni credito, non bandi a graduatoria"
+ },
+ {
+  "regione": "Umbria",
+  "ente": "Regione Umbria - Bandi",
+  "tipo": "regione",
+  "url_bandi": "https://applicazioni.regione.umbria.it/bandi1",
+  "feed": "",
+  "verificato": false,
+  "note": "non verificato: sito non raggiungibile dal nostro ambiente (timeout/blocco IP non italiani); URL ricavato dall'indice di ricerca (regione.umbria.it non risponde)"
+ },
+ {
+  "regione": "Umbria",
+  "ente": "Sviluppumbria - Avvisi pubblici",
+  "tipo": "agenzia",
+  "url_bandi": "https://www.sviluppumbria.it/avvisi-pubblici",
+  "feed": "",
+  "verificato": true,
+  "note": "/bandi dà 404; avvisi anche in home (ICC, STEP, fiere)"
+ },
+ {
+  "regione": "Umbria",
+  "ente": "Gepafin - Bandi e avvisi pubblici",
+  "tipo": "finanziaria",
+  "url_bandi": "https://gepafin.it/servizi/prestiti-diretti/",
+  "feed": "https://gepafin.it/feed/",
+  "verificato": true,
+  "note": "Bandi 2026: STEP, Efficienza energetica, Fonti rinnovabili, Riassicurazione, Riproduttori selezionati. Piattaforma domande: bandi.gepafin.it"
+ },
+ {
+  "regione": "Marche",
+  "ente": "Regione Marche - Bandi di finanziamento",
+  "tipo": "regione",
+  "url_bandi": "https://bandi.regione.marche.it/",
+  "feed": "",
+  "verificato": false,
+  "note": "non verificato: protetto da captcha Radware (anche https://www.regione.marche.it/Entra-in-Regione/Bandi). Il dominio esiste (allegati bandi indicizzati)"
+ },
+ {
+  "regione": "Marche",
+  "ente": "SVEM - Sviluppo Europa Marche",
+  "tipo": "agenzia",
+  "url_bandi": "https://www.svemarche.it/",
+  "feed": "",
+  "verificato": false,
+  "note": "non verificato: sito non raggiungibile dal nostro ambiente; pagina bandi non individuata"
+ },
+ {
+  "regione": "Lazio",
+  "ente": "Regione Lazio - Bandi di concorso e Avvisi",
+  "tipo": "regione",
+  "url_bandi": "https://www.regione.lazio.it/bandi-di-concorso-avvisi",
+  "feed": "",
+  "verificato": true,
+  "note": "Sottopagine /procedure-aperte, /ricerca. Pagina RSS: https://www.regione.lazio.it/rss . Gestore bandi: https://portalebandiavvisi.regione.lazio.it/"
+ },
+ {
+  "regione": "Lazio",
+  "ente": "Lazio Europa - Bandi (PR FESR, FSE+, CSR)",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://www.lazioeuropa.it/bandi/",
+  "feed": "https://www.lazioeuropa.it/bandi/feed/",
+  "verificato": true,
+  "note": "RSS dedicato ai bandi (verificato)"
+ },
+ {
+  "regione": "Lazio",
+  "ente": "Lazio Innova - Bandi",
+  "tipo": "agenzia",
+  "url_bandi": "https://www.lazioinnova.it/bandi/",
+  "feed": "https://www.lazioinnova.it/bandi/feed/",
+  "verificato": true,
+  "note": "RSS dedicato ai bandi (verificato). Credito: https://www.farelazio.it/"
+ },
+ {
+  "regione": "Abruzzo",
+  "ente": "Regione Abruzzo - Contributi e finanziamenti",
+  "tipo": "regione",
+  "url_bandi": "https://www.regione.abruzzo.it/contenuti/contributi-e-finanziamenti",
+  "feed": "",
+  "verificato": false,
+  "note": "non verificato: sito non raggiungibile dal nostro ambiente (timeout/blocco IP non italiani); URL ricavato dall'indice di ricerca"
+ },
+ {
+  "regione": "Abruzzo",
+  "ente": "Coesione Abruzzo (FESR, FSE+, FSC) - Avvisi pubblici",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://coesione.regione.abruzzo.it/avvisi-pubblici",
+  "feed": "",
+  "verificato": true,
+  "note": "Schede con scadenza, stato aperto/chiuso e fondo"
+ },
+ {
+  "regione": "Abruzzo",
+  "ente": "FiRA - Bandi e agevolazioni",
+  "tipo": "finanziaria",
+  "url_bandi": "https://www.fira.it/bandi_e_agevolazioni/",
+  "feed": "https://www.fira.it/feed/",
+  "verificato": true,
+  "note": "Categoria: /category/bandi-e-misure/"
+ },
+ {
+  "regione": "Molise",
+  "ente": "Regione Molise - Avvisi, bandi",
+  "tipo": "regione",
+  "url_bandi": "https://www.regione.molise.it/",
+  "feed": "",
+  "verificato": false,
+  "note": "non verificato: sito non raggiungibile dal nostro ambiente (timeout/blocco IP non italiani); URL ricavato dall'indice di ricerca; URL esatto del listing non individuato"
+ },
+ {
+  "regione": "Molise",
+  "ente": "Molise in Europa - Avvisi e bandi",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://moliseineuropa.regione.molise.it/avvisi",
+  "feed": "https://moliseineuropa.regione.molise.it/taxonomy/term/1/feed",
+  "verificato": true,
+  "note": "Feed dichiarato nella pagina (non aperto)"
+ },
+ {
+  "regione": "Molise",
+  "ente": "Finmolise - Avvisi pubblici",
+  "tipo": "finanziaria",
+  "url_bandi": "https://www.finmolise.it/avvisi.html",
+  "feed": "",
+  "verificato": true,
+  "note": "Avvisi numerati per anno; anche /avvisi-sviluppo-e-servizi.html"
+ },
+ {
+  "regione": "Molise",
+  "ente": "Sviluppo Italia Molise - Bandi PR Molise (OI)",
+  "tipo": "agenzia",
+  "url_bandi": "https://www.sviluppoitaliamolise.com/bandi-pr-molise/",
+  "feed": "",
+  "verificato": true,
+  "note": "Dominio attuale .com (il .it reindirizza). Anche /bandi-pubblici/"
+ },
+ {
+  "regione": "Campania",
+  "ente": "Regione Campania - portale istituzionale",
+  "tipo": "regione",
+  "url_bandi": "https://www.regione.campania.it/regione-informa/notizie",
+  "feed": "",
+  "verificato": false,
+  "note": "non verificato: 403 Access Denied al nostro IP; non esiste una pagina bandi unica evidente, gli avvisi escono tra le notizie"
+ },
+ {
+  "regione": "Campania",
+  "ente": "PR Campania FESR 2021-2027 - Opportunità e bandi",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://prfesr2127.regione.campania.it/category/opportunita-e-bandi/",
+  "feed": "https://prfesr2127.regione.campania.it/feed/",
+  "verificato": true,
+  "note": ""
+ },
+ {
+  "regione": "Campania",
+  "ente": "Campania PNRR - Bandi e avvisi",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://pnrr.regione.campania.it/bandi-e-avvisi/",
+  "feed": "https://pnrr.regione.campania.it/feed/",
+  "verificato": true,
+  "note": "Verificata la home; link bandi presente nel menu"
+ },
+ {
+  "regione": "Campania",
+  "ente": "Europa Campania (FSE+ e altri)",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://europa.regione.campania.it/",
+  "feed": "",
+  "verificato": false,
+  "note": "non verificato: sito non raggiungibile dal nostro ambiente (timeout/blocco IP non italiani); URL ricavato dall'indice di ricerca"
+ },
+ {
+  "regione": "Campania",
+  "ente": "Sviluppo Campania - Bandi aperti",
+  "tipo": "agenzia",
+  "url_bandi": "https://www.sviluppocampania.it/bandi-aperti/",
+  "feed": "",
+  "verificato": true,
+  "note": "Anche /avvisi/ e /bandi-chiusi/"
+ },
+ {
+  "regione": "Puglia",
+  "ente": "Regione Puglia - Bandi e avvisi",
+  "tipo": "regione",
+  "url_bandi": "https://regione.puglia.it/bandi-e-avvisi",
+  "feed": "https://www.regione.puglia.it/feed-bandi-regione-puglia",
+  "verificato": false,
+  "note": "non verificato: sito non raggiungibile dal nostro ambiente (timeout/blocco IP non italiani); URL ricavato dall'indice di ricerca. Esiste una pagina 'Feed Bandi Regione Puglia'"
+ },
+ {
+  "regione": "Puglia",
+  "ente": "Regione Puglia - Catalogo bandi (Servizi digitali / Sistema Puglia)",
+  "tipo": "regione",
+  "url_bandi": "https://sistema.regione.puglia.it/catalogo-bandi",
+  "feed": "",
+  "verificato": true,
+  "note": "Schede /catalogo-bandi/-/scheda-bando/ID"
+ },
+ {
+  "regione": "Puglia",
+  "ente": "CSR Puglia 2023-2027 - Bandi e avvisi",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://csr.regione.puglia.it/bandi",
+  "feed": "",
+  "verificato": true,
+  "note": "Filtro aperti/chiusi"
+ },
+ {
+  "regione": "Puglia",
+  "ente": "POR/PR Puglia FESR-FSE - Bandi e avvisi",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://por.regione.puglia.it/bandi-e-avvisi",
+  "feed": "",
+  "verificato": true,
+  "note": "Portale intitolato ancora POR 2014-2020; filtri per categoria. Open data: https://dati.puglia.it/"
+ },
+ {
+  "regione": "Puglia",
+  "ente": "Puglia Sviluppo - Finanziamenti e servizi",
+  "tipo": "finanziaria",
+  "url_bandi": "https://pugliasviluppo.eu/it/finanziamenti-e-servizi",
+  "feed": "",
+  "verificato": true,
+  "note": "Misure per categoria (creazione impresa, sviluppo aziendale, turismo, liquidità, JTF Taranto). Nessun RSS"
+ },
+ {
+  "regione": "Basilicata",
+  "ente": "Regione Basilicata - Portale Bandi",
+  "tipo": "regione",
+  "url_bandi": "https://portalebandi.regione.basilicata.it/avvisi-e-bandi/",
+  "feed": "",
+  "verificato": false,
+  "note": "non verificato: sito non raggiungibile dal nostro ambiente (timeout/blocco IP non italiani); URL ricavato dall'indice di ricerca; link a schede di questo portale presenti sul sito europa.regione.basilicata.it"
+ },
+ {
+  "regione": "Basilicata",
+  "ente": "PR Basilicata FESR FSE+ 2021-2027 - Avvisi emanati",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://europa.regione.basilicata.it/2021-27/avvisi-emanati/",
+  "feed": "https://europa.regione.basilicata.it/2021-27/feed/",
+  "verificato": true,
+  "note": ""
+ },
+ {
+  "regione": "Basilicata",
+  "ente": "Sviluppo Basilicata - Incentivi",
+  "tipo": "finanziaria",
+  "url_bandi": "https://www.sviluppobasilicata.it/kweb-sviluppobasilicata/sito/sb/incentivi",
+  "feed": "",
+  "verificato": true,
+  "note": "La home è un redirect JS; /bandi dà 404"
+ },
+ {
+  "regione": "Calabria",
+  "ente": "Regione Calabria - Bandi e avvisi",
+  "tipo": "regione",
+  "url_bandi": "https://www.regione.calabria.it/bandi-e-avvisi/",
+  "feed": "https://www.regione.calabria.it/feed/?post_type=rc-procedure",
+  "verificato": true,
+  "note": "RSS Bandi ufficiale (verificato)"
+ },
+ {
+  "regione": "Calabria",
+  "ente": "Calabria Europa - Bandi e opportunità",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://calabriaeuropa.regione.calabria.it/bandi/",
+  "feed": "https://calabriaeuropa.regione.calabria.it/feed/",
+  "verificato": true,
+  "note": ""
+ },
+ {
+  "regione": "Calabria",
+  "ente": "Fincalabra - Bandi",
+  "tipo": "finanziaria",
+  "url_bandi": "https://www.fincalabra.it/web/index.php/bandi",
+  "feed": "https://www.fincalabra.it/web/index.php/bandi?format=feed&type=rss",
+  "verificato": true,
+  "note": "Elenco caricato via JS; il feed RSS risponde ma risulta quasi vuoto"
+ },
+ {
+  "regione": "Sardegna",
+  "ente": "Regione Sardegna - Bandi",
+  "tipo": "regione",
+  "url_bandi": "https://www.regione.sardegna.it/atti-bandi-archivi/atti-amministrativi/bandi",
+  "feed": "",
+  "verificato": true,
+  "note": "Archivio storico: https://old.regione.sardegna.it/servizi/cittadino/bandi/"
+ },
+ {
+  "regione": "Sardegna",
+  "ente": "Sardegna Programmazione (PR FESR, FSE+)",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://www.sardegnaprogrammazione.it/",
+  "feed": "",
+  "verificato": false,
+  "note": "non verificato: sito solo JavaScript, contenuto non leggibile. Risulta una pagina 'Open data calendario inviti FESR': https://www.sardegnaprogrammazione.it/programmi/fesr/opportunita-di-finanziamento-fesr/articolo/open-data-calendario-inviti-fesr"
+ },
+ {
+  "regione": "Sardegna",
+  "ente": "SardegnaImpresa - Agevolazioni per le imprese",
+  "tipo": "agenzia",
+  "url_bandi": "https://www.sardegnaimpresa.eu/it/agevolazioni",
+  "feed": "",
+  "verificato": true,
+  "note": "Aggregatore filtrabile per macrosettore; include bandi comunali e nazionali"
+ },
+ {
+  "regione": "Sardegna",
+  "ente": "SFIRS - Bandi per le imprese",
+  "tipo": "finanziaria",
+  "url_bandi": "https://www.sfirs.it/bandi/bandi-per-le-imprese/",
+  "feed": "https://www.sfirs.it/feed/",
+  "verificato": true,
+  "note": ""
+ },
+ {
+  "regione": "Sardegna",
+  "ente": "Sardegna Agricoltura - Bandi e finanziamenti (ARGEA/LAORE)",
+  "tipo": "agenzia",
+  "url_bandi": "https://www.sardegnaagricoltura.it/bandi/",
+  "feed": "https://www.sardegnaagricoltura.it/rss/scadenze.rss",
+  "verificato": true,
+  "note": "RSS 'Prossime scadenze' verificato"
+ },
+ {
+  "regione": "Trento (P.A.)",
+  "ente": "Provincia autonoma di Trento - Servizi: agevolazioni e contributi",
+  "tipo": "regione",
+  "url_bandi": "https://www.provincia.tn.it/Servizi/(tipologia)/Agevolazioni-e-contributi",
+  "feed": "",
+  "verificato": true,
+  "note": "Catalogo servizi; avvisi: https://www.provincia.tn.it/News/Avvisi"
+ },
+ {
+  "regione": "Trento (P.A.)",
+  "ente": "FESR Trento - Opportunità di finanziamento",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://fesr.provincia.tn.it/OPPORTUNITA-DI-FINANZIAMENTO2",
+  "feed": "https://fesr.provincia.tn.it/rss/feed/my_feed",
+  "verificato": true,
+  "note": "Feed dichiarato (non aperto)"
+ },
+ {
+  "regione": "Trento (P.A.)",
+  "ente": "FSE+ Trento - Avvisi e bandi",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://fse.provincia.tn.it/Area-organismi-pubblici-e-privati/OPPORTUNITA-DI-FINANZIAMENTO-Avvisi-e-Bandi/Avvisi",
+  "feed": "https://fse.provincia.tn.it/rss/feed/my_feed",
+  "verificato": true,
+  "note": "Link rilevato dalla home fse.provincia.tn.it (pagina di destinazione non aperta)"
+ },
+ {
+  "regione": "Trento (P.A.)",
+  "ente": "Trentino Sviluppo - Bandi attivi",
+  "tipo": "agenzia",
+  "url_bandi": "https://www.trentinosviluppo.it/it/bandi-e-appalti/bandi-attivi",
+  "feed": "",
+  "verificato": true,
+  "note": "Anche /it/scopri/finanza-bandi"
+ },
+ {
+  "regione": "Bolzano (P.A.)",
+  "ente": "Provincia autonoma di Bolzano - Economia: contributi",
+  "tipo": "regione",
+  "url_bandi": "https://economia.provincia.bz.it/it/contributi-per-gli-anni-2024-2028",
+  "feed": "",
+  "verificato": false,
+  "note": "non verificato: risponde 200 ma è una SPA JavaScript, contenuto non leggibile. Schede servizio su https://mycivis.civis.bz.it/ (verificata una scheda contributi piccole imprese)"
+ },
+ {
+  "regione": "Bolzano (P.A.)",
+  "ente": "Provincia autonoma di Bolzano - Innovazione e ricerca: agevolazioni imprese",
+  "tipo": "regione",
+  "url_bandi": "https://innovazione-ricerca.provincia.bz.it/it/agevolazioni-favore-imprese",
+  "feed": "",
+  "verificato": false,
+  "note": "non verificato: SPA JavaScript"
+ },
+ {
+  "regione": "Bolzano (P.A.)",
+  "ente": "Provincia autonoma di Bolzano - Europa (FESR, FSE+)",
+  "tipo": "fondi-ue",
+  "url_bandi": "https://europa.provincia.bz.it/it/home",
+  "feed": "",
+  "verificato": false,
+  "note": "non verificato: SPA JavaScript; pagina bandi non individuata"
+ },
+ {
+  "regione": "Bolzano (P.A.)",
+  "ente": "IDM Alto Adige",
+  "tipo": "agenzia",
+  "url_bandi": "https://www.idm-suedtirol.com/it/news-appuntamenti/news-appuntamenti/news/silngle-view/panoramica-delle-agevolazioni-per-imprese-in-alto-adige",
+  "feed": "",
+  "verificato": true,
+  "note": "Non pubblica un listing bandi; solo pagina panoramica delle agevolazioni provinciali"
+ },
+ {
+  "regione": "Bolzano (P.A.)",
+  "ente": "NOI Techpark - Finanziare l'innovazione / Lab Bonus",
+  "tipo": "agenzia",
+  "url_bandi": "https://noi.bz.it/it/per-aziende/ricevere-supporto-per-finanziare-il-mio-progetto-di-innovazione",
+  "feed": "",
+  "verificato": true,
+  "note": "Lab Bonus: https://noi.bz.it/it/servizi/lab-bonus"
+ }
+]

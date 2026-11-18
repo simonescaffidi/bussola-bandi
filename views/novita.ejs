@@ -1,0 +1,25 @@
+<%- include('layout_top', {pageTitle: t('novita_title') + ' - ' + t('site_name'), pageDesc: t('novita_lede')}) %>
+<section class="hero">
+  <h1><%= t('novita_title') %></h1>
+  <p><%= t('novita_lede') %></p>
+</section>
+<form class="filters one" method="get" action="/novita">
+  <div class="field">
+    <label for="regione"><%= t('f_region') %></label>
+    <select name="regione" id="regione" onchange="this.form.submit()">
+      <option value=""><%= t('all') %></option>
+      <% regioni.forEach(function(r){ %><option value="<%= r %>" <%= regione===r?'selected':'' %>><%= r %></option><% }) %>
+    </select>
+  </div>
+</form>
+<div class="results">
+  <% voci.forEach(function(v){ %>
+  <article class="card slim">
+    <div class="ente"><%= v.pubblicato ? new Date(v.pubblicato).toLocaleDateString(lang === 'en' ? 'en-GB' : 'it-IT') + ' · ' : '' %><%= v.fonte_nome %><%= v.regione ? ' · ' + v.regione : '' %></div>
+    <h3><a href="<%= v.link %>" target="_blank" rel="noopener nofollow"><%= v.titolo %></a></h3>
+    <% if (v.estratto) { %><p><%= v.estratto.length > 280 ? v.estratto.slice(0, 277) + '…' : v.estratto %></p><% } %>
+  </article>
+  <% }) %>
+</div>
+<% if (!voci.length) { %><p class="count"><%= t('novita_empty') %></p><% } %>
+<%- include('layout_bottom') %>

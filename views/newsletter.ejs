@@ -8,13 +8,22 @@
   <% if (err) { %><div class="msg-err">Errore, controlla l'indirizzo email.</div><% } %>
   <form method="post" action="/newsletter">
     <input type="email" name="email" required placeholder="<%= t('newsletter_email') %>">
+    <label><%= t('f_target') %></label>
     <select name="target">
       <option value="tutti"><%= t('all') %></option>
       <option value="cittadino"><%= t('citizen') %></option>
       <option value="impresa"><%= t('business') %></option>
     </select>
-    <input type="text" name="regione" placeholder="<%= t('f_region') %> (<%= t('all').toLowerCase() %>)">
-    <input type="text" name="settore" placeholder="<%= t('f_sector') %> (<%= t('all').toLowerCase() %>)">
+    <label><%= t('f_region') %></label>
+    <select name="regione">
+      <option value=""><%= t('all') %></option>
+      <% regioni.forEach(function(r){ %><option value="<%= r %>"><%= r %></option><% }) %>
+    </select>
+    <label><%= t('f_sector') %></label>
+    <select name="settore">
+      <option value=""><%= t('all') %></option>
+      <% settori.forEach(function(s){ %><option value="<%= s %>"><%= t('settore_' + s) %></option><% }) %>
+    </select>
     <button type="submit"><%= t('newsletter_submit') %></button>
   </form>
 </div>

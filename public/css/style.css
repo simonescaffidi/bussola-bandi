@@ -36,3 +36,34 @@ footer a{color:var(--accent)}
 #cookie-banner .row{display:flex;gap:10px;justify-content:flex-end;margin-top:10px}
 .btn2{border-radius:7px;padding:8px 14px;font-size:12.5px;font-weight:700;cursor:pointer;border:1px solid var(--line);background:transparent}
 .btn2.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+/* v2: ricerca lato server, registro fonti, novità */
+.stats{font-size:13.5px;color:var(--ink-soft);margin-top:8px}
+.stats a{color:var(--accent)}
+form.filters{grid-template-columns:repeat(3,1fr);align-items:end}
+form.filters.one{grid-template-columns:minmax(0,320px)}
+@media (max-width:900px){form.filters{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){form.filters{grid-template-columns:1fr}}
+.field-wide{grid-column:1/-1}
+.field label.check{text-transform:none;font-size:13.5px;display:flex;align-items:center;gap:8px;color:var(--ink)}
+.field label.check input{width:auto}
+.field.actions{display:flex;align-items:center;gap:14px;grid-column:1/-1}
+button.btn{background:var(--accent);color:var(--accent-ink);border:0;padding:10px 22px;border-radius:7px;font-weight:700;font-size:14px;cursor:pointer}
+a.reset{font-size:13px;color:var(--ink-soft)}
+.count{color:var(--ink-soft);font-size:13.5px;margin:6px 0}
+.card h3 a{color:inherit;text-decoration:none}
+.card h3 a:hover{text-decoration:underline}
+.card h3{font-size:17px;line-height:1.3;margin:8px 0 4px;overflow-wrap:anywhere}
+.card p{font-size:14px;color:var(--ink-soft);margin:6px 0;overflow-wrap:anywhere}
+.card.slim{border-left-color:var(--gold);padding:12px 16px}
+.chip.alt{background:#f4e9d2;color:#7a5712}
+.chip.warn{background:#faeed7;color:#8a5a0c;margin-left:6px}
+.muted{color:var(--ink-soft);font-weight:400}
+.pager{display:flex;justify-content:center;align-items:center;gap:18px;margin:20px 0;font-size:14px}
+.pager a{color:var(--accent);font-weight:700;text-decoration:none}
+details.gruppo{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);margin:10px 0;padding:4px 16px}
+details.gruppo summary{cursor:pointer;font-weight:700;padding:10px 0;font-size:16px}
+.tablewrap{overflow-x:auto}
+table.canali td{vertical-align:top;overflow-wrap:anywhere}
+table.canali td:last-child{min-width:180px}
+nav a{display:inline-block;padding:4px 0}
+.nl-box label{display:block;font-size:11px;text-transform:uppercase;color:var(--ink-soft);margin:4px 0}

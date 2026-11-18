@@ -9,6 +9,7 @@ const { sendAlert } = require('./src/alert');
 const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.set('trust proxy', 1);
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -37,4 +38,10 @@ app.use((err, req, res, next) => {
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Bussola Bandi in ascolto sulla porta ${port}`));
+app.listen(port, () => {
+  console.log(`Bussola Bandi in ascolto sulla porta ${port}`);
+  require('./src/seed-fonti').seedFonti()
+    .then(n => console.log('Registro fonti aggiornato:', n))
+    .catch(e => { console.error(e); sendAlert('Caricamento registro fonti', e); });
+  require('./src/importers').pianifica();
+});

@@ -16,7 +16,7 @@ const signupSchema = z.object({
 
 router.get('/newsletter', (req, res) => {
   const lang = res.locals.lang;
-  res.render('newsletter', { t: (k) => t(lang, k), lang, ok: req.query.ok, err: req.query.err });
+  res.render('newsletter', { t: (k) => t(lang, k), lang, ok: req.query.ok, err: req.query.err, regioni: require('./index').REGIONI, settori: require('../bandi-store').SETTORI });
 });
 
 router.post('/newsletter', async (req, res) => {
