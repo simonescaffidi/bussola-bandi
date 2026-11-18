@@ -4,7 +4,7 @@ const db = require('../db');
 
 const UA = 'Mozilla/5.0 (compatible; BussolaBandi/1.0; +https://www.simonescaffidi.it)';
 const SI = /\b(band[oi]|avvis[oi]|contribut[oi]|voucher|finanziament[oi]|agevolazion[ei]|incentiv[oi]|fondo perduto|manifestazion[ei] di interesse|graduatori[ae]|sovvenzion[ei]|ristor[oi]|misura|sportello|domande|decreto|call for proposals|bonus|credito d'imposta|prestit[oi])\b/i;
-const NO = /\b(concors[oi] pubblic[oi]|selezione (del )?personale|gara d'appalto|procedura (aperta|negoziata)|esito di gara|aggiudicazione|convegno|webinar|seminario|comunicato stampa|rassegna stampa|cordoglio)\b/i;
+const NO = /\b(concors[oi] pubblic[oi]|selezione (del )?personale|gara d'appalto|procedura (aperta|negoziata)|esito di gara|aggiudicazione|convegno|webinar|seminario|comunicato stampa|rassegna stampa|cordoglio|chiusura uffic\w*|selezione di n\.? ?\d+|selezione (di|per) (un|una|esperti|figure)|band[oi] esami|accreditamento|valutazione ambientale|personale non dirigenziale|interruzione|sciopero|avviso di convocazione)\b/i;
 const DEDICATO = /bandi|misure-aperte|avvisi|scadenze|notices|rc-procedure|incentivi/i;
 
 const dec = (s) => String(s || '').replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1').replace(/<[^>]+>/g, ' ')
@@ -74,6 +74,10 @@ async function importa() {
     }
     await db.query('UPDATE fonti SET last_feed_at = now(), last_feed_status = $2 WHERE id = $1', [f.id, stato.slice(0, 200)]);
   }
+  // Ripulisce anche le segnalazioni già salvate che i filtri aggiornati oggi escluderebbero.
+  const { rows: vecchie } = await db.query(`SELECT id, titolo FROM segnalazioni WHERE stato = 'nuova'`);
+  const daScartare = vecchie.filter(v => NO.test(v.titolo)).map(v => v.id);
+  if (daScartare.length) await db.query(`UPDATE segnalazioni SET stato = 'scartata' WHERE id = ANY($1)`, [daScartare]);
   return { feed_letti: ok, feed_in_errore: ko, nuove_segnalazioni: nuove, errori };
 }
 

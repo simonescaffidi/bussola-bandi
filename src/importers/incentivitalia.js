@@ -35,6 +35,7 @@ async function scarica() {
 }
 
 const REGIONI = { 'Trentino-Alto Adige/Südtirol': 'Trentino-Alto Adige', "Valle d'Aosta/Vallée d'Aoste": "Valle d'Aosta" };
+const ent = (s) => String(s || '').replace(/&#0?39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&nbsp;/g, ' ');
 const euro = (n) => '€ ' + Math.round(n).toLocaleString('it-IT');
 
 function settore(x) {
@@ -68,13 +69,13 @@ function mappa(x) {
   const altri = sogg.some(s => s !== 'Cittadino');
   const max = x.Agevolazione_Concedibile_Max, stanz = x.Stanziamento_incentivo;
   const importo = [max > 0 ? 'Agevolazione fino a ' + euro(max) : '', stanz > 0 ? 'dotazione ' + euro(stanz) : ''].filter(Boolean).join(' · ') || 'Vedi bando';
-  const desc = String(x.Descrizione || '').replace(/^Cos'è\s*/i, '').replace(/\s+/g, ' ').trim();
+  const desc = ent(x.Descrizione).replace(/^Cos'è\s*/i, '').replace(/\s+/g, ' ').trim();
   const forma = (x.Forma_agevolazione || []).join(', ');
   const chiusura = isoDate(x.Data_chiusura);
   return {
     id: 'ii-' + x.ID_Incentivo,
-    title_it: String(x.Titolo || '').trim().slice(0, 300),
-    ente: String(x.Soggetto_Concedente || x.Amministrazione_responsabile || '').trim(),
+    title_it: ent(x.Titolo).replace(/\s+/g, ' ').trim().slice(0, 300),
+    ente: ent(x.Soggetto_Concedente || x.Amministrazione_responsabile).trim(),
     livello: regione === 'Nazionale' ? 'nazionale' : 'regionale',
     tipo: cittadino ? (altri ? 'entrambi' : 'cittadino') : 'impresa',
     regione, provincia: '',
