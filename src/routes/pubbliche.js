@@ -104,7 +104,7 @@ router.post('/richiesta', rateLimit({ windowMs: 60 * 60 * 1000, max: 8 }), async
 });
 
 router.get('/robots.txt', (req, res) => {
-  res.type('text/plain').send(`User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: ${base(req)}/sitemap.xml\n`);
+  res.type('text/plain').send(`User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /admin/\nSitemap: ${base(req)}/sitemap.xml\n`);
 });
 
 router.get('/sitemap.xml', async (req, res, next) => {

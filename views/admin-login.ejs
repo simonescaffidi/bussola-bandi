@@ -1,0 +1,13 @@
+<%- include('layout_top', {pageTitle: 'Area riservata - ' + t('site_name')}) %>
+<section class="hero"><h1>Area riservata</h1></section>
+<div class="nl-box">
+  <% if (!attiva) { %><div class="msg-err">Accesso non configurato: manca la variabile ADMIN_PASSWORD.</div><% } %>
+  <% if (errore) { %><div class="msg-err">Credenziali non valide.</div><% } %>
+  <form method="post" action="/admin/login">
+    <input type="hidden" name="csrf" value="<%= csrf %>">
+    <label for="a-email">Email</label><input id="a-email" type="email" name="email" required autocomplete="username">
+    <label for="a-pw">Password</label><input id="a-pw" type="password" name="password" required autocomplete="current-password">
+    <button type="submit">Entra</button>
+  </form>
+</div>
+<%- include('layout_bottom') %>

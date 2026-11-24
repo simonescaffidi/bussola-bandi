@@ -1,18 +1,19 @@
 <%- include('layout_top', {pageTitle: t('privacy_link') + ' - ' + t('site_name')}) %>
 <section class="hero">
 <h1><%= t('privacy_link') %></h1>
+<% if (sito.titolare) { %><p><strong><%= t('owner_title') %>:</strong> <%= sito.titolare %><% if (sito.indirizzo) { %>, <%= sito.indirizzo %><% } %><% if (sito.piva) { %>, P.IVA <%= sito.piva %><% } %><% if (sito.email) { %>, <a href="mailto:<%= sito.email %>"><%= sito.email %></a><% } %><% if (sito.pec) { %>, PEC <%= sito.pec %><% } %>.</p><% } %>
 <% if (lang==='it') { %>
 <p>Bussola Bandi (<a href="https://www.simonescaffidi.it">www.simonescaffidi.it</a>) non è un ente erogatore né un intermediario finanziario: è un servizio informativo indipendente.</p>
 <p><strong>Dati raccolti:</strong> se vi iscrivete alla newsletter raccogliamo l'indirizzo email e i filtri scelti (regione, settore, destinatario), al solo scopo di inviarvi le notifiche richieste. I dati sono trattati tramite Brevo (fornitore email) e conservati fino a disiscrizione.</p>
 <p><strong>Richieste di assistenza:</strong> se compilate il modulo "Richiedi assistenza" raccogliamo nome, email, telefono, azienda, regione e messaggio, al solo scopo di ricontattarvi sul bando indicato. Con il vostro consenso i dati possono essere comunicati a un consulente di finanza agevolata che vi assista nella domanda. I dati sono conservati per 24 mesi.</p>
-<p><strong>Vostri diritti:</strong> potete annullare l'iscrizione in ogni momento tramite il link presente in ogni email, oppure scrivendo a info@simonescaffidi.it per l'accesso, la rettifica o la cancellazione dei vostri dati (artt. 15-22 GDPR Reg. UE 2016/679).</p>
-<p><strong>Cookie:</strong> usiamo solo cookie tecnici necessari (lingua) e nessun cookie di tracciamento o profilazione pubblicitaria.</p>
+<p><strong>Vostri diritti:</strong> potete annullare l'iscrizione in ogni momento tramite il link presente in ogni email, oppure scrivendo al titolare per l'accesso, la rettifica o la cancellazione dei vostri dati (artt. 15-22 GDPR Reg. UE 2016/679).</p>
+<p><strong>Cookie:</strong> usiamo cookie tecnici necessari (lingua, scelta sui cookie)<% if (sito.ga4) { %> e, solo con il vostro consenso, cookie statistici di Google Analytics 4 con indirizzo IP anonimizzato (fornitore Google Ireland Ltd). Potete cambiare scelta in ogni momento dal link "Gestisci cookie" in fondo alla pagina<% } %>. Nessun cookie pubblicitario o di profilazione.</p>
 <% } else { %>
 <p>Bussola Bandi (<a href="https://www.simonescaffidi.it">www.simonescaffidi.it</a>) is not a funding body or financial intermediary: it is an independent information service.</p>
 <p><strong>Data collected:</strong> if you subscribe to the newsletter we collect your email address and chosen filters (region, sector, audience), solely to send the notifications you requested. Data is processed via Brevo (email provider) and kept until you unsubscribe.</p>
 <p><strong>Assistance requests:</strong> if you fill in the "Request assistance" form we collect your name, email, phone, company, region and message, solely to contact you about the call indicated. With your consent the data may be passed to a subsidised-finance consultant who can assist you with the application. Data is kept for 24 months.</p>
-<p><strong>Your rights:</strong> you can unsubscribe anytime via the link in every email, or write to info@simonescaffidi.it to access, correct or delete your data (GDPR Articles 15-22, EU Regulation 2016/679).</p>
-<p><strong>Cookies:</strong> we only use necessary technical cookies (language) and no tracking or advertising cookies.</p>
+<p><strong>Your rights:</strong> you can unsubscribe anytime via the link in every email, or write to the data controller to access, correct or delete your data (GDPR Articles 15-22, EU Regulation 2016/679).</p>
+<p><strong>Cookies:</strong> we use necessary technical cookies (language, cookie choice)<% if (sito.ga4) { %> and, only with your consent, Google Analytics 4 statistical cookies with anonymised IP (provider Google Ireland Ltd). You can change your choice anytime from the "Manage cookies" link at the bottom of the page<% } %>. No advertising or profiling cookies.</p>
 <% } %>
 </section>
 <%- include('layout_bottom') %>

@@ -1,12 +1,14 @@
 </main>
 <footer>
   <div class="wrap">
-    <p><%= t('footer_disclaimer') %> &middot; <a href="/privacy"><%= t('privacy_link') %></a></p>
-    <p><%= t('powered') %> <a href="https://www.simonescaffidi.it" target="_blank" rel="noopener">www.simonescaffidi.it</a></p>
+    <p><%= t('footer_disclaimer') %></p>
+    <p class="foot-links"><a href="/privacy"><%= t('privacy_link') %></a> · <a href="#" id="cookie-riapri"><%= t('cookie_manage') %></a> · <a href="/canali"><%= t('nav_canali') %></a><% if (sito.email) { %> · <a href="mailto:<%= sito.email %>"><%= sito.email %></a><% } %></p>
+    <% if (sito.titolare) { %><p><%= sito.titolare %><% if (sito.piva) { %> · P.IVA <%= sito.piva %><% } %><% if (sito.indirizzo) { %> · <%= sito.indirizzo %><% } %><% if (sito.pec) { %> · PEC <%= sito.pec %><% } %></p><% } %>
+    <p>© <%= new Date().getFullYear() %> <%= t('site_name') %> · <%= t('powered') %> <a href="https://www.simonescaffidi.it" target="_blank" rel="noopener">www.simonescaffidi.it</a></p>
   </div>
 </footer>
-<div id="cookie-banner" role="dialog" style="display:none">
-  <p><%= t('cookie_text') %></p>
+<div id="cookie-banner" role="dialog" aria-label="Cookie" style="display:none">
+  <p><%= sito.ga4 ? t('cookie_text_ga') : t('cookie_text') %> <a href="/privacy"><%= t('privacy_link') %></a></p>
   <div class="row">
     <button class="btn2" id="cookie-decline"><%= t('cookie_decline') %></button>
     <button class="btn2 primary" id="cookie-accept"><%= t('cookie_accept') %></button>
@@ -14,19 +16,21 @@
 </div>
 <script>
 (function(){
-  try{
-    if(!localStorage.getItem('cookie-consent')){
-      document.getElementById('cookie-banner').style.display='block';
-    }
-    document.getElementById('cookie-accept').onclick=function(){
-      localStorage.setItem('cookie-consent','accepted');
-      document.getElementById('cookie-banner').style.display='none';
-    };
-    document.getElementById('cookie-decline').onclick=function(){
-      localStorage.setItem('cookie-consent','essential');
-      document.getElementById('cookie-banner').style.display='none';
-    };
-  }catch(e){}
+  var GA = <%- JSON.stringify(sito.ga4 || '') %>, banner = document.getElementById('cookie-banner');
+  function leggi(){ try { return localStorage.getItem('cookie-consent'); } catch(e){ return null; } }
+  function salva(v){ try { localStorage.setItem('cookie-consent', v); } catch(e){} }
+  // Le statistiche (Google Analytics) partono solo dopo il consenso esplicito.
+  function statistiche(){
+    if (!GA || window.__ga) return; window.__ga = 1;
+    var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA; document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || []; window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date()); gtag('config', GA, { anonymize_ip: true });
+  }
+  var c = leggi();
+  if (c === 'accepted') statistiche(); else if (!c) banner.style.display = 'block';
+  document.getElementById('cookie-accept').onclick = function(){ salva('accepted'); banner.style.display = 'none'; statistiche(); };
+  document.getElementById('cookie-decline').onclick = function(){ salva('essential'); banner.style.display = 'none'; };
+  var r = document.getElementById('cookie-riapri'); if (r) r.onclick = function(e){ e.preventDefault(); banner.style.display = 'block'; };
 })();
 </script>
 </body>

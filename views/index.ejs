@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <label for="regione"><%= t('f_region') %></label>
-    <select name="regione" id="regione">
+    <select name="regione" id="regione" onchange="var p=this.form.provincia; if(p) p.value=''; this.form.submit()">
       <option value=""><%= t('all') %></option>
       <% regioni.forEach(function(r){ %><option value="<%= r %>" <%= f.regione===r?'selected':'' %>><%= r %></option><% }) %>
     </select>
@@ -47,15 +47,13 @@
       <% stati.forEach(function(st){ %><option value="<%= st %>" <%= f.stato===st?'selected':'' %>><%= t('stato_' + st) %></option><% }) %>
     </select>
   </div>
-  <% if (province.length) { %>
   <div class="field">
     <label for="provincia"><%= t('f_province') %></label>
-    <select name="provincia" id="provincia">
-      <option value=""><%= t('all') %></option>
+    <select name="provincia" id="provincia" <%= province.length ? '' : 'disabled' %>>
+      <option value=""><%= province.length ? t('all') : t('f_province_hint') %></option>
       <% province.forEach(function(pr){ %><option value="<%= pr %>" <%= f.provincia===pr?'selected':'' %>><%= pr %></option><% }) %>
     </select>
   </div>
-  <% } %>
   <div class="field field-wide">
     <label class="check"><input type="hidden" name="naz" value="0"><input type="checkbox" name="naz" value="1" <%= f.naz==='1'?'checked':'' %>> <%= t('f_naz') %></label>
   </div>
@@ -69,7 +67,7 @@
 <div class="results">
   <% bandi.forEach(function(b){ var scad = b.data_chiusura ? new Date(b.data_chiusura).toLocaleDateString(lang === 'en' ? 'en-GB' : 'it-IT') : (b.scadenza === 'rolling' || b.scadenza === 'a sportello' ? t('rolling') : (b.scadenza || '-')); %>
   <article class="card">
-    <div><span class="chip st-<%= b.stato %>"><%= t('stato_' + b.stato) %></span><span class="chip"><%= t('lvl_' + b.livello) %></span><span class="chip"><%= b.regione %></span><span class="chip alt"><%= t('settore_' + b.settore) %></span></div>
+    <div><span class="chip st-<%= b.stato %>"><%= t('stato_' + b.stato) %></span><span class="chip"><%= t('lvl_' + b.livello) %></span><span class="chip"><%= b.regione %><%= b.provincia ? ' · ' + b.provincia : '' %></span><span class="chip alt"><%= t('settore_' + b.settore) %></span></div>
     <h3><a href="/bando/<%= encodeURIComponent(b.id) %>"><%= lang==='en' ? b.title_en : b.title_it %></a></h3>
     <div class="ente"><%= b.ente %></div>
     <p><%= lang==='en' ? b.sintesi_en : b.sintesi_it %></p>

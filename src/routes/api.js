@@ -36,9 +36,14 @@ router.post('/ingest', json, async (req, res) => {
   }
 });
 
-// Avvio manuale degli importatori automatici (?solo=incentivitalia,eu,rss). Risponde subito, il lavoro prosegue in background.
-router.post('/import', (req, res) => {
+// Avvio degli importatori automatici (?solo=incentivitalia,eu,rss,monitor). Risponde subito, il lavoro prosegue in background.
+// Se un giro completo è finito da meno di 3 ore non riparte, salvo ?forza=1.
+router.post('/import', async (req, res) => {
   const solo = String(req.query.solo || '').split(',').filter(Boolean);
+  if (!solo.length && req.query.forza !== '1') {
+    const { rows } = await db.query(`SELECT max(created_at) AS t FROM import_log WHERE ok AND importer = 'monitor'`);
+    if (rows[0].t && Date.now() - new Date(rows[0].t).getTime() < 3 * 3600 * 1000) return res.json({ ok: true, avviato: false, recente: true });
+  }
   eseguiTutti(solo).then(r => console.log('Import completato', JSON.stringify(r))).catch(e => console.error(e));
   res.json({ ok: true, avviato: true });
 });
@@ -121,6 +126,45 @@ router.post('/segnalazioni/:id', json, async (req, res) => {
   const stato = ['convertita', 'scartata', 'nuova'].includes((req.body || {}).stato) ? req.body.stato : 'scartata';
   await db.query('UPDATE segnalazioni SET stato=$2 WHERE id=$1', [req.params.id, stato]);
   res.json({ ok: true });
+});
+
+// Fonti che il controllo automatico non riesce a leggere.
+router.get('/fonti/non-lette', async (req, res) => {
+  const { rows } = await db.query(`SELECT id, nome, gruppo, regione, url_bandi, monitor_status FROM fonti WHERE url_bandi ~ '^https?://' AND monitor_status <> 'ok' ORDER BY gruppo, id`);
+  res.json(rows);
+});
+
+// Traduzioni in inglese dei bandi arrivati solo in italiano.
+router.get('/traduzioni/mancanti', async (req, res) => {
+  const n = Math.min(parseInt(req.query.n, 10) || 60, 150);
+  const { rows } = await db.query(`SELECT id, title_it, categoria_it, importo_it, sintesi_it FROM bandi WHERE attivo AND NOT tradotto ORDER BY in_evidenza DESC, (regione IN ('Nazionale','Multiregionale')) DESC, data_chiusura ASC NULLS LAST LIMIT $1`, [n]);
+  res.json(rows);
+});
+router.post('/traduzioni', json, async (req, res) => {
+  const lista = Array.isArray((req.body || {}).traduzioni) ? req.body.traduzioni : [];
+  let n = 0;
+  for (const t of lista) {
+    if (!t || !t.id || !t.title_en || !t.sintesi_en) continue;
+    const r = await db.query(`UPDATE bandi SET title_en=$2, sintesi_en=$3, importo_en=COALESCE(NULLIF($4,''), importo_en), categoria_en=COALESCE(NULLIF($5,''), categoria_en), tradotto=true WHERE id=$1`,
+      [t.id, String(t.title_en).slice(0, 300), String(t.sintesi_en).slice(0, 900), t.importo_en || '', t.categoria_en || '']);
+    n += r.rowCount;
+  }
+  res.json({ ok: true, aggiornati: n });
+});
+
+// Esclusione di un bando chiuso, doppione o errato: resta fuori anche ai prossimi import. {"escluso": false} lo riattiva.
+router.post('/bandi/:id/escludi', json, async (req, res) => {
+  const b = req.body || {};
+  const escluso = b.escluso !== false;
+  const r = await db.query(`UPDATE bandi SET escluso=$2, attivo=NOT $2, motivo_esclusione=$3 WHERE id=$1`, [req.params.id, escluso, String(b.motivo || '').slice(0, 300)]);
+  res.json({ ok: true, aggiornati: r.rowCount });
+});
+
+// Bandi importanti ancora senza scheda completa.
+router.get('/bandi/senza-scheda', async (req, res) => {
+  const n = Math.min(parseInt(req.query.n, 10) || 10, 50);
+  const { rows } = await db.query(`SELECT id, title_it, ente, link, data_chiusura FROM bandi WHERE attivo AND dettagli IS NULL AND livello = 'nazionale' AND origine <> 'eu' AND ente !~* '^comune' ORDER BY data_chiusura ASC NULLS LAST LIMIT $1`, [n]);
+  res.json(rows);
 });
 
 // Elenco compatto dei bandi attivi, per evitare duplicati.

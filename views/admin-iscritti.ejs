@@ -1,0 +1,9 @@
+<%- include('layout_top', {pageTitle: 'Iscritti - ' + t('site_name')}) %>
+<section class="hero"><p class="crumb"><a href="/admin">← Gestione</a></p><h1>Iscritti alla newsletter</h1></section>
+<% if (!iscritti.length) { %><p class="count">Nessun iscritto.</p><% } else { %>
+<div class="tablewrap"><table class="canali">
+  <tr><th>Email</th><th>Destinatario</th><th>Regione</th><th>Settore</th><th>Confermato</th><th>Data</th></tr>
+  <% iscritti.forEach(function(s){ %><tr><td><%= s.email %></td><td><%= s.target %></td><td><%= s.regione || 'tutte' %><%= s.provincia ? ' / ' + s.provincia : '' %></td><td><%= s.settore || 'tutti' %></td><td><%= s.confirmed ? 'sì' : 'no' %></td><td><%= new Date(s.created_at).toLocaleDateString('it-IT') %></td></tr><% }) %>
+</table></div>
+<% } %>
+<%- include('layout_bottom') %>

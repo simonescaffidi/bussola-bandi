@@ -110,5 +110,9 @@
   "sim_apri": "Apri il simulatore",
   "sim_stima": "Contributo stimato",
   "sim_agg": "Regole aggiornate al",
-  "sim_scheda": "Leggi la scheda del bando"
+  "sim_scheda": "Leggi la scheda del bando",
+  "cookie_manage": "Gestisci cookie",
+  "cookie_text_ga": "Usiamo cookie tecnici necessari al sito e, solo se accettate, cookie statistici di Google Analytics per capire quali pagine vengono lette. Nessuna pubblicità.",
+  "owner_title": "Titolare del trattamento",
+  "f_province_hint": "Scegli prima la regione"
 }

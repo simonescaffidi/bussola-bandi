@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><%= typeof pageTitle !== 'undefined' ? pageTitle : t('site_name') + ' - ' + t('tagline') %></title>
 <meta name="description" content="<%= typeof pageDesc !== 'undefined' ? pageDesc : t('lede') %>">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="<%= (typeof noindex !== 'undefined' && noindex) ? 'noindex, nofollow' : 'index, follow' %>">
+<% if (sito.gsc) { %><meta name="google-site-verification" content="<%= sito.gsc %>"><% } %>
 <link rel="alternate" hreflang="it" href="?lang=it">
 <link rel="alternate" hreflang="en" href="?lang=en">
 <meta property="og:title" content="<%= t('site_name') %>">

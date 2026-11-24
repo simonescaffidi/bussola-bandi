@@ -1,6 +1,7 @@
 // Import dell'open data "Incentivi Italia" (incentivitalia.gov.it, licenza CC BY 4.0).
 const { upsertBando, isoDate } = require('../bandi-store');
 const db = require('../db');
+const { provinciaDi } = require('../province');
 
 const URL_DATI = 'https://www.incentivitalia.gov.it/open-data/incentivi/OpenData_Incentivi.json';
 const UA = 'Mozilla/5.0 (compatible; BussolaBandi/1.0; +https://www.simonescaffidi.it)';
@@ -67,18 +68,22 @@ function mappa(x) {
   const sogg = x.Tipologia_Soggetto || [];
   const cittadino = sogg.includes('Cittadino');
   const altri = sogg.some(s => s !== 'Cittadino');
-  const max = x.Agevolazione_Concedibile_Max, stanz = x.Stanziamento_incentivo;
+  const finto = (n) => !(n > 0) || n >= 9e9 || /^9{6,}/.test(String(Math.round(n)));
+  const max = finto(x.Agevolazione_Concedibile_Max) ? 0 : x.Agevolazione_Concedibile_Max, stanz = finto(x.Stanziamento_incentivo) ? 0 : x.Stanziamento_incentivo;
   const importo = [max > 0 ? 'Agevolazione fino a ' + euro(max) : '', stanz > 0 ? 'dotazione ' + euro(stanz) : ''].filter(Boolean).join(' · ') || 'Vedi bando';
   const desc = ent(x.Descrizione).replace(/^Cos'è\s*/i, '').replace(/\s+/g, ' ').trim();
   const forma = (x.Forma_agevolazione || []).join(', ');
-  const chiusura = isoDate(x.Data_chiusura);
+  let chiusura = isoDate(x.Data_chiusura);
+  // date come 31/12/2050 sono segnaposto per "senza scadenza"
+  if (chiusura && parseInt(chiusura.slice(0, 4), 10) > new Date().getFullYear() + 6) chiusura = null;
+  const ente = ent(x.Soggetto_Concedente || x.Amministrazione_responsabile).trim();
   return {
     id: 'ii-' + x.ID_Incentivo,
     title_it: ent(x.Titolo).replace(/\s+/g, ' ').trim().slice(0, 300),
-    ente: ent(x.Soggetto_Concedente || x.Amministrazione_responsabile).trim(),
+    ente,
     livello: regione === 'Nazionale' ? 'nazionale' : 'regionale',
     tipo: cittadino ? (altri ? 'entrambi' : 'cittadino') : 'impresa',
-    regione, provincia: '',
+    regione, provincia: provinciaDi(regione, x.Comuni, ente),
     settore: settore(x),
     categoria_it: forma, categoria_en: forma,
     scadenza: chiusura || 'a sportello',

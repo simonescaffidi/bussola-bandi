@@ -3,6 +3,7 @@ const router = express.Router();
 const db = require('../db');
 const { t } = require('../i18n');
 const { STATO_SQL, STATI } = require('../stato');
+const { PROVINCE } = require('../province');
 
 const PER_PAGINA = 30;
 const REGIONI = ['Abruzzo', 'Basilicata', 'Calabria', 'Campania', 'Emilia-Romagna', 'Friuli-Venezia Giulia', 'Lazio', 'Liguria', 'Lombardia', 'Marche', 'Molise', 'Piemonte', 'Puglia', 'Sardegna', 'Sicilia', 'Toscana', 'Trentino-Alto Adige', 'Umbria', "Valle d'Aosta", 'Veneto'];
@@ -27,7 +28,8 @@ router.get('/', async (req, res, next) => {
       p.push(f.regione);
       where.push(f.naz === '1' ? `(regione = $${p.length} OR regione IN ('Nazionale','Multiregionale'))` : `regione = $${p.length}`);
     }
-    if (f.provincia) { p.push(f.provincia); where.push(`provincia = $${p.length}`); }
+    if (f.provincia && !(PROVINCE[f.regione] || []).includes(f.provincia)) f.provincia = '';
+    if (f.provincia) { p.push(f.provincia); where.push(`(provincia = $${p.length} OR provincia = '')`); }
     if (f.settore) { p.push(f.settore); where.push(`settore = $${p.length}`); }
     if (f.livello) { p.push(f.livello); where.push(`livello = $${p.length}`); }
     if (f.stato) { p.push(f.stato); where.push(`(${STATO_SQL}) = $${p.length}`); }
@@ -35,11 +37,11 @@ router.get('/', async (req, res, next) => {
     const pagina = Math.max(parseInt(req.query.p, 10) || 1, 1);
     const tot = (await db.query(`SELECT count(*)::int AS n FROM bandi WHERE ${w}`, p)).rows[0].n;
     // Prima i bandi della regione scelta, poi per scadenza più vicina; quelli senza data in fondo.
-    const ord = f.regione ? `(regione = $${p.indexOf(f.regione) + 1}) DESC, ` : '';
+    const ord = (f.provincia ? `(provincia = $${p.indexOf(f.provincia) + 1}) DESC, ` : '') + (f.regione ? `(regione = $${p.indexOf(f.regione) + 1}) DESC, ` : '');
     const { rows } = await db.query(
       `SELECT *, ${STATO_SQL} AS stato FROM bandi WHERE ${w} ORDER BY ${ord} in_evidenza DESC, data_chiusura ASC NULLS LAST, updated_at DESC LIMIT ${PER_PAGINA} OFFSET ${(pagina - 1) * PER_PAGINA}`, p);
     const settori = (await db.query(`SELECT settore, count(*)::int AS n FROM bandi WHERE attivo GROUP BY settore ORDER BY settore`)).rows;
-    const province = (await db.query(`SELECT DISTINCT provincia FROM bandi WHERE attivo AND provincia <> '' ORDER BY provincia`)).rows.map(r => r.provincia);
+    const province = PROVINCE[f.regione] || [];
     const stat = (await db.query(`SELECT count(*)::int AS n, max(updated_at) AS agg FROM bandi WHERE attivo`)).rows[0];
     const nFonti = (await db.query(`SELECT count(*)::int AS n FROM fonti`)).rows[0].n;
     const qs = new URLSearchParams(Object.entries(f).filter(([k, v]) => v && !(k === 'naz' && v === '1'))).toString();

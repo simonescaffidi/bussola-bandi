@@ -4,7 +4,7 @@
 <%- include('layout_top', {pageTitle: titolo.slice(0, 90) + ' - ' + t('site_name'), pageDesc: (sint || titolo).slice(0, 155)}) %>
 <article class="scheda">
   <p class="crumb"><a href="/">← <%= t('nav_home') %></a></p>
-  <div><span class="chip st-<%= b.stato %>"><%= t('stato_' + b.stato) %></span><span class="chip"><%= t('lvl_' + b.livello) %></span><span class="chip"><%= b.regione %></span><span class="chip alt"><%= t('settore_' + b.settore) %></span></div>
+  <div><span class="chip st-<%= b.stato %>"><%= t('stato_' + b.stato) %></span><span class="chip"><%= t('lvl_' + b.livello) %></span><span class="chip"><%= b.regione %><%= b.provincia ? ' · ' + b.provincia : '' %></span><span class="chip alt"><%= t('settore_' + b.settore) %></span></div>
   <h1><%= titolo %></h1>
   <p class="ente"><%= b.ente %></p>
   <dl class="fatti">

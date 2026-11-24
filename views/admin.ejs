@@ -1,0 +1,39 @@
+<%- include('layout_top', {pageTitle: 'Gestione - ' + t('site_name')}) %>
+<section class="hero">
+  <h1>Gestione</h1>
+  <form method="post" action="/admin/logout" class="inline"><input type="hidden" name="csrf" value="<%= csrf %>"><a href="/admin/iscritti">Iscritti alla newsletter</a> · <button class="linkbtn" type="submit">Esci</button></form>
+</section>
+<% if (!brevo) { %><div class="msg-err">Chiave Brevo non impostata: newsletter, notifiche delle richieste e avvisi di errore non vengono inviati.</div><% } %>
+<dl class="fatti">
+  <div><dt>Bandi aperti</dt><dd><%= bandi.reduce(function(a,b){return a+b.n},0).toLocaleString('it-IT') %> <span class="muted small">(<%= bandi.map(function(b){return b.origine + ' ' + b.n}).join(', ') %>)</span></dd></div>
+  <div><dt>Fonti</dt><dd><%= fonti.n %> <span class="muted small">(<%= fonti.lette %> lette ogni giorno)</span></dd></div>
+  <div><dt>Iscritti newsletter</dt><dd><%= iscritti.confermati %> confermati <span class="muted small">su <%= iscritti.totali %></span></dd></div>
+  <div><dt>Richieste</dt><dd><%= conteggi.map(function(c){return c.n + ' ' + c.stato}).join(', ') || 'nessuna' %></dd></div>
+</dl>
+
+<h2 class="sez">Richieste di assistenza</h2>
+<p class="filtri-admin"><a class="<%= stato===''?'on':'' %>" href="/admin">Tutte</a><% ['nuova','contattata','chiusa'].forEach(function(s){ %> <a class="<%= stato===s?'on':'' %>" href="/admin?stato=<%= s %>"><%= s %></a><% }) %></p>
+<% if (!richieste.length) { %><p class="count">Nessuna richiesta.</p><% } %>
+<% richieste.forEach(function(r){ %>
+<article class="card slim rich st-r-<%= r.stato %>">
+  <div class="ente"><%= new Date(r.created_at).toLocaleString('it-IT', { timeZone: 'Europe/Rome', dateStyle: 'short', timeStyle: 'short' }) %> · <%= r.origine %><% if (r.regione) { %> · <%= r.regione %><% } %></div>
+  <h3><%= r.nome %><% if (r.azienda) { %> <span class="muted">· <%= r.azienda %></span><% } %></h3>
+  <p><a href="mailto:<%= r.email %>"><%= r.email %></a><% if (r.telefono) { %> · <a href="tel:<%= r.telefono %>"><%= r.telefono %></a><% } %></p>
+  <% if (r.bando_id) { %><p>Bando: <a href="/bando/<%= encodeURIComponent(r.bando_id) %>" target="_blank"><%= r.bando_titolo || r.bando_id %></a></p><% } %>
+  <% if (r.simulazione) { %><p class="muted small"><%= r.simulazione %></p><% } %>
+  <% if (r.messaggio) { %><p><%= r.messaggio %></p><% } %>
+  <form method="post" action="/admin/richieste/<%= r.id %>" class="rich-form">
+    <input type="hidden" name="csrf" value="<%= csrf %>"><input type="hidden" name="filtro" value="<%= stato %>">
+    <select name="stato" aria-label="Stato"><% ['nuova','contattata','chiusa'].forEach(function(s){ %><option value="<%= s %>" <%= r.stato===s?'selected':'' %>><%= s %></option><% }) %></select>
+    <input type="text" name="note" value="<%= r.note || '' %>" placeholder="Note interne" aria-label="Note interne">
+    <button type="submit" class="btn2 primary">Salva</button>
+    <button type="submit" name="azione" value="elimina" class="btn2" onclick="return this.dataset.ok ? true : (this.dataset.ok = 1, this.textContent = 'Conferma eliminazione', false)">Elimina</button>
+  </form>
+</article>
+<% }) %>
+
+<h2 class="sez">Ultimi import</h2>
+<div class="tablewrap"><table class="canali">
+  <% log.forEach(function(l){ %><tr><td><%= new Date(l.created_at).toLocaleString('it-IT', { timeZone: 'Europe/Rome', dateStyle: 'short', timeStyle: 'short' }) %></td><td><strong><%= l.importer %></strong> <%= l.ok ? 'ok' : 'ERRORE' %></td><td class="small"><%= String(l.dettagli || '').slice(0, 220) %></td></tr><% }) %>
+</table></div>
+<%- include('layout_bottom') %>

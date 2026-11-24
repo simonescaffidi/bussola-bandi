@@ -110,5 +110,9 @@
   "sim_apri": "Open the calculator",
   "sim_stima": "Estimated grant",
   "sim_agg": "Rules updated on",
-  "sim_scheda": "Read the call details"
+  "sim_scheda": "Read the call details",
+  "cookie_manage": "Manage cookies",
+  "cookie_text_ga": "We use technical cookies needed by the site and, only if you accept, Google Analytics statistical cookies to understand which pages are read. No advertising.",
+  "owner_title": "Data controller",
+  "f_province_hint": "Pick a region first"
 }

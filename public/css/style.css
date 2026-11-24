@@ -112,3 +112,15 @@ details.faq{border-top:1px solid var(--line);padding:8px 0}details.faq summary{c
 .giorno li a{color:var(--ink);font-weight:600;text-decoration:none}.giorno li a:hover{color:var(--accent)}
 .site-bar nav{display:flex;flex-wrap:wrap;gap:2px 16px}.site-bar nav a{margin-right:0}
 .wrap.site-bar{padding:14px 20px}
+/* v4: area riservata, footer con dati del titolare */
+footer p{margin:6px 0}.foot-links a{color:var(--accent)}
+h2.sez{font-size:19px;margin:26px 0 8px}
+form.inline{display:inline}.linkbtn{background:none;border:0;color:var(--accent);cursor:pointer;font:inherit;padding:0;text-decoration:underline}
+.filtri-admin a{display:inline-block;padding:4px 12px;border:1px solid var(--line);border-radius:999px;margin-right:6px;font-size:13px;text-decoration:none;color:var(--ink-soft)}
+.filtri-admin a.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.rich.st-r-nuova{border-left-color:#a3421a}.rich.st-r-contattata{border-left-color:var(--gold)}.rich.st-r-chiusa{border-left-color:var(--line)}
+.rich-form{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.rich-form select,.rich-form input{padding:7px 9px;border:1px solid var(--line);border-radius:7px;background:var(--paper);font:inherit;font-size:13px}
+.rich-form input{flex:1;min-width:160px}
+.nl-box input[type=password]{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:7px;margin-bottom:10px}
+table.canali th{font-size:11px;text-transform:uppercase;color:var(--ink-soft)}
