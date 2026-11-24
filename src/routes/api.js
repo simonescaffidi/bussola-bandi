@@ -160,6 +160,19 @@ router.post('/bandi/:id/escludi', json, async (req, res) => {
   res.json({ ok: true, aggiornati: r.rowCount });
 });
 
+// Correzione puntuale di alcuni campi di un bando (link, date, importo, testi italiani).
+const CAMPI_CORREGGIBILI = ['title_it', 'link', 'scadenza', 'data_apertura', 'data_chiusura', 'importo_it', 'sintesi_it', 'beneficiari', 'forma', 'provincia'];
+router.post('/bandi/:id/correggi', json, async (req, res) => {
+  const b = req.body || {};
+  const campi = CAMPI_CORREGGIBILI.filter(c => b[c] !== undefined);
+  if (!campi.length) return res.status(400).json({ error: 'nessun campo da correggere', ammessi: CAMPI_CORREGGIBILI });
+  if (b.link !== undefined && !/^https?:\/\//.test(b.link)) return res.status(400).json({ error: 'link non valido' });
+  const set = campi.map((c, i) => `${c} = $${i + 2}`).join(', ');
+  const testoCambiato = campi.some(c => ['title_it', 'importo_it', 'sintesi_it'].includes(c));
+  const r = await db.query(`UPDATE bandi SET ${set}, updated_at = now()${testoCambiato ? ', tradotto = false' : ''} WHERE id = $1`, [req.params.id, ...campi.map(c => (b[c] === '' && c.startsWith('data_')) ? null : b[c])]);
+  res.json({ ok: true, aggiornati: r.rowCount, campi });
+});
+
 // Bandi importanti ancora senza scheda completa.
 router.get('/bandi/senza-scheda', async (req, res) => {
   const n = Math.min(parseInt(req.query.n, 10) || 10, 50);
