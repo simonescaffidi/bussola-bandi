@@ -20,6 +20,8 @@ Il servizio non deve andare in pausa automatica (impostazione Railway "sleep" di
 | Avviare subito gli import (`?solo=incentivitalia,eu,rss,monitor`) | `POST /api/import` |
 | Richieste di assistenza ricevute | `GET /api/richieste` |
 | Aggiungere una fonte | `POST /api/fonti` |
+| Correggere l'indirizzo di una fonte | `POST /api/fonti/:id` |
+| Fonti da far leggere all'agente (`?non_lette=1` solo quelle che il server non legge) | `GET /api/fonti/da-controllare` |
 | Scheda completa di un bando | `POST /api/bandi/:id/dettagli` |
 | Bandi importanti ancora senza scheda | `GET /api/bandi/senza-scheda` |
 | Correggere link, date, importo o testi di un bando | `POST /api/bandi/:id/correggi` |

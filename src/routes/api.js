@@ -84,9 +84,9 @@ router.get('/fonti/da-controllare', async (req, res) => {
     `SELECT id, nome, gruppo, area, regione, url_bandi, note,
             (changed_at IS NOT NULL AND (last_checked_at IS NULL OR changed_at > last_checked_at)) AS cambiata
      FROM fonti
-     WHERE url_bandi <> '' AND ($2::text IS NULL OR gruppo = $2)
+     WHERE url_bandi <> '' AND ($2::text IS NULL OR gruppo = $2) AND ($3::boolean IS NOT TRUE OR monitor_status <> 'ok')
      ORDER BY (changed_at IS NOT NULL AND (last_checked_at IS NULL OR changed_at > last_checked_at)) DESC,
-              (gruppo = 'Altri enti erogatori') ASC, last_checked_at ASC NULLS FIRST, id LIMIT $1`, [n, gruppo]);
+              (gruppo = 'Altri enti erogatori') ASC, last_checked_at ASC NULLS FIRST, id LIMIT $1`, [n, gruppo, req.query.non_lette === '1']);
   await db.query('UPDATE fonti SET last_checked_at = now() WHERE id = ANY($1)', [rows.map(r => r.id)]);
   res.json(rows);
 });
@@ -101,6 +101,15 @@ router.post('/fonti', json, async (req, res) => {
     `INSERT INTO fonti (chiave, nome, gruppo, area, regione, url, url_bandi, feed, verificato, note) VALUES ($1,$2,$3,$4,$5,$6,$6,$7,true,$8) ON CONFLICT (chiave) DO NOTHING RETURNING id`,
     [chiave, f.nome, gruppi.includes(f.gruppo) ? f.gruppo : 'Altri enti erogatori', f.area || '', f.regione || '', f.url_bandi, f.feed || '', f.note || 'Aggiunta dall\'agente']);
   res.json({ ok: true, aggiunta: r.rowCount === 1 });
+});
+
+// Correzione dell'indirizzo di una fonte (pagina bandi spostata) o delle sue note.
+router.post('/fonti/:id', json, async (req, res) => {
+  const f = req.body || {};
+  if (f.url_bandi !== undefined && !/^https?:\/\//.test(f.url_bandi)) return res.status(400).json({ error: 'url_bandi non valido' });
+  const r = await db.query(`UPDATE fonti SET url_bandi = COALESCE($2, url_bandi), note = COALESCE($3, note), hash = CASE WHEN $2 IS NULL THEN hash ELSE NULL END WHERE id = $1`,
+    [req.params.id, f.url_bandi || null, f.note === undefined ? null : String(f.note).slice(0, 500)]);
+  res.json({ ok: true, aggiornate: r.rowCount });
 });
 
 // Scheda completa di un bando (requisiti, spese, procedura, FAQ) e messa in evidenza.
